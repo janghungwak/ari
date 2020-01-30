@@ -24,12 +24,12 @@
 	<repositories>
 		<repository>
 			<id>mvn2</id>
-			<url>http://repo1.maven.org/maven2/</url>
+			<url>https://repo1.maven.org/maven2/</url>
 			<releases>
 				<enabled>true</enabled>
 			</releases>
 			<snapshots>
-				<enabled>true</enabled>
+				<enabled>false</enabled>
 			</snapshots>
 		</repository>
 		<repository>
@@ -297,4 +297,6 @@
             </plugin>
         </plugins>
     </reporting>
+    
+    
 </project>

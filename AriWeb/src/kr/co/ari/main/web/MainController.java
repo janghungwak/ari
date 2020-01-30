@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class MainController {
 
-	@RequestMapping("ari/main1")
+	@RequestMapping("/")
 	public String MainPage() {
 		
 		
@@ -35,5 +35,4 @@ public class MainController {
 		
 		return "/cmmn/dataAccessFailure";
 	}
-	
 }

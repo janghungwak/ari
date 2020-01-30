@@ -24,12 +24,12 @@
 	<repositories>
 		<repository>
 			<id>mvn2</id>
-			<url>http://repo1.maven.org/maven2/</url>
+			<url>https://repo1.maven.org/maven2/</url>
 			<releases>
 				<enabled>true</enabled>
 			</releases>
 			<snapshots>
-				<enabled>true</enabled>
+				<enabled>false</enabled>
 			</snapshots>
 		</repository>
 		<repository>
@@ -297,4 +297,19 @@
             </plugin>
         </plugins>
     </reporting>
+    
+    <pluginRepositories>
+    <pluginRepository>
+            <releases>
+                <updatePolicy>never</updatePolicy>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <id>central</id>
+            <name>Central Repository</name>
+        <url>https://repo.maven.apache.org/maven2</url>
+    </pluginRepository>
+	</pluginRepositories>
+    
 </project>
