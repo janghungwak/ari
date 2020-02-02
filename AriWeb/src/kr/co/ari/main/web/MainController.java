@@ -6,33 +6,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class MainController {
 
-	@RequestMapping("/")
-	public String MainPage() {
-		
-		
-		String test = "";
-		
-		
-		test ="test";
-		
-		System.out.println("test");
-		
-		
-		return "/cmmn/error";
-	}
-	
+	/**
+	 * 메인홈페이지 이동
+	 * 
+	 *  메인 홈페이지로 이동한다.
+	 */
 	@RequestMapping("/ari/main.do")
 	public String MainPageTest() {
-		
-		
-		String test = "";
-		
-		
-		test ="test";
-		
-		System.out.println("test1");
-		
-		
-		return "/cmmn/dataAccessFailure";
+		return "/cmmn/main";
 	}
 }
