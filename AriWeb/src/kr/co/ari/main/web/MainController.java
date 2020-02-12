@@ -13,6 +13,6 @@ public class MainController {
 	 */
 	@RequestMapping("/ari/main.do")
 	public String MainPageTest() {
-		return "/cmmn/main";
+		return "cmmn/main.tiles";
 	}
 }
