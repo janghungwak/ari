@@ -24,6 +24,9 @@
     Author: BootstrapMade
     Author URL: https://bootstrapmade.com
   ======================================================= -->
+  <style type="text/css">
+  
+  </style>
 </head>
 
 <body>
@@ -54,7 +57,7 @@
   </nav>
 
 
-	<div style ="background-image: url(../../../img/mainBanner/bg.png); background-repeat:repeat-x; background-size: contain;">	 
+	<div style ="background-image: url(../../../img/mainBanner/bg.png); background-repeat:repeat-x; background-position: center; min-height:780px;">	 
 	  <div class="container">
 	    <div class="row">
 	      <div class="slider">
