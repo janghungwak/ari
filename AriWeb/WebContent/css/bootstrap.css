@@ -934,7 +934,12 @@ figure {
 img {
   vertical-align: middle;
 }
-.img-responsive,
+.img-responsive{
+  display: inline-block;
+  max-width: 550px;
+  height: auto;
+}
+
 .thumbnail > img,
 .thumbnail a > img,
 .carousel-inner > .item > img,
