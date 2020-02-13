@@ -936,7 +936,7 @@ img {
 }
 .img-responsive{
   display: inline-block;
-  max-width: 550px;
+  width: 550px;
   height: auto;
 }
 
@@ -6334,4 +6334,24 @@ button.close {
     display: none !important;
   }
 }
+
+#map_view {
+	width:670px; height:300px;
+} 
+
+@media screen and (max-width: 50em) {.img-responsive {width: 100%;} }
+
+
+@media screen and (max-width: 50em) {
+	
+	/*슬라이더 영역 2개 media처리*/
+	.img-responsive {
+		width: 100px;
+	}
+
+	/*지도영역 media처리*/	
+	#map_view{width:100%;}
+}
+
+
 /*# sourceMappingURL=bootstrap.css.map */

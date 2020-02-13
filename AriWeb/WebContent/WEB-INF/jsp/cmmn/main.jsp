@@ -187,7 +187,7 @@
 					</div>
 					<div class="col-md-4 f-contact">
 						<h3 class="widgetheading"></h3>
-						<div id="map_view" style="width:670px; height:300px;"></div>
+						<div id="map_view"></div>
 					</div>
 				</div>
 			</div>

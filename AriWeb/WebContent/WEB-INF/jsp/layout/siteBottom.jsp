@@ -32,7 +32,7 @@
                 Licensing information: https://bootstrapmade.com/license/
                 Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=eNno
               -->
-              Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>, Directed by KIM&GWAK
+              Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a><br>Directed by KIM&GWAK
             </div>
           </div>
         </div>
