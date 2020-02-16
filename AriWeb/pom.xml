@@ -159,8 +159,35 @@
 			<artifactId>tiles-core</artifactId>
 			<version>${org.apache.tiles-version}</version>
 		</dependency>
-	</dependencies>
+		
+	<!-- Maria DB -->
+	<dependency>
+   		<groupId>org.mariadb.jdbc</groupId>
+    	<artifactId>mariadb-java-client</artifactId>
+    	<version>2.5.4</version>
+	</dependency>
+	
+	<!-- Mybatis -->
+	<dependency>
+    	<groupId>org.mybatis</groupId>
+   	 	<artifactId>mybatis</artifactId>
+    	<version>3.5.4</version>
+	</dependency>
 
+	<dependency>
+    	<groupId>org.mybatis</groupId>
+    	<artifactId>mybatis-spring</artifactId>
+    	<version>2.0.3</version>
+	</dependency>
+	
+	<!-- Spring-jdbc -->
+	<dependency>
+    	<groupId>org.springframework</groupId>
+    	<artifactId>spring-jdbc</artifactId>
+    	<version>5.2.3.RELEASE</version>
+	</dependency>
+	</dependencies>
+	
 	<build>
         <defaultGoal>install</defaultGoal>
         <directory>${basedir}/target</directory>
