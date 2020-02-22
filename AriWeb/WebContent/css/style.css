@@ -110,6 +110,42 @@ a.navbar-brand span {
 .nav-tabs > li {
     margin-bottom: 0;
 }
+.snb {
+  border-bottom:0; 
+  padding-left: 3px;
+}
+.snb > li > a {
+	margin-right: 2px;
+	line-height: 1.42857143;
+	border: 0;
+	border-radius: 0 0 0 0;
+	text-transform:uppercase;
+	font-weight:700;
+	color:black;
+}
+.snb > li.active > a {
+	color: #fff;
+	cursor: default;
+	background-color:#36CBD4;
+	border: 0;
+	border-bottom-color: transparent;
+
+}
+.snb > li.active > a:hover {
+	color: #fff;
+	border: 0;
+	cursor: pointer;
+}
+
+.snb > li {
+    margin-bottom: 5px;
+    list-style: none;
+    background-color: #fff;
+    cursor: pointer;
+    display: block;
+    text-align: center;
+    
+}
 
 .slider {
 	margin-top:110px;

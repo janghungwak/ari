@@ -13,7 +13,7 @@
 				auto:true,
 				speed:500,
 				pause:4000,
-				controls : false,
+				controls : true,
 			});
 		});
 	 	
@@ -67,19 +67,19 @@
 				<div class="slider" >
 					<div class="img-responsive">
 						<ul class="bxslider">
+							<li><img src="../../../img/mainBanner/leftMain_1.png" alt="" style="width: 100%; height:100%"/></li>
 							<li><img src="../../../img/mainBanner/coil1.jpg" alt="" style="width: 100%; height:100%"/></li>
 							<li><img src="../../../img/mainBanner/stsPan1.png" alt="" style="width: 100%; height:100%"/></li>
 							<li><img src="../../../img/mainBanner/stsPan2.png" alt="" style="width: 100%; height:100%"/></li>
-							<li><img src="../../../img/mainBanner/leftMain_1.png" alt="" style="width: 100%; height:100%"/></li>
 						</ul>
 					</div>
 
 					<div class="img-responsive">
 						<ul class="bxslider">
+							<li><img src="../../../img/mainBanner/rightMain.png" alt="" style="width: 90%; height:100%"/></li>
 							<li><img src="../../../img/mainBanner/stsPan1.png" alt="" style="width: 100%; height:100%"/></li>
 							<li><img src="../../../img/mainBanner/stsPan3.png" alt="" style="width: 100%; height:100%"/></li>
 							<li><img src="../../../img/mainBanner/stsPan2.png" alt="" style="width: 100%; height:100%"/></li>
-							<li><img src="../../../img/mainBanner/rightMain.png" alt="" style="width: 90%; height:100%"/></li>
 						</ul>
 					</div>
 				</div>
@@ -129,7 +129,7 @@
 				
 				<div class="col-md-4">
 					<div class="wow bounceIn" data-wow-offset="0" data-wow-delay="1.0s">
-						<h4>제품소개</h4>
+						<h4>견적문의</h4>
 						<div class="icon">
 							<i class="fa fa-desktop fa-3x"></i>
 						</div>
@@ -217,15 +217,15 @@
 		<div class="inner-footer">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-4 f-contact">
+					<div class="col-md-13 f-contact">
 						<h3 class="widgetheading">문의사항 및 오시는길</h3>
 						<p>
-							<i class="fa fa-envelope"></i><a href="mailto:kms@arists.co.kr">유통 : kms@arists.co.kr</a><br>
-							<i class="fa fa-envelope"></i><a href="mailto:niri.19@hanmail.net">제조 : niri.19@hanmail.net</a>
+							<i class="fa fa-envelope"></i><a href="mailto:kms@arists.co.kr">원자재 유통 : kms@arists.co.kr</a><br>
+							<i class="fa fa-envelope"></i><a href="mailto:niri.19@hanmail.net">분전함 제조 : niri.19@hanmail.net</a>
 						</p>
 						<p>
-							<i class="fa fa-phone"></i> 유통 : TEL) 031-354-6994&nbsp;&nbsp;&nbsp;FAX) 031-354-6937<br> 
-							<i class="fa fa-phone"></i> 제조 : TEL) 031-8055-0860 FAX) 031-8055-0870
+							<i class="fa fa-phone"></i> 원자재 유통 : TEL) 031-354-6994&nbsp;&nbsp;&nbsp;FAX) 031-354-6937<br> 
+							<i class="fa fa-phone"></i> 분전함 제조 : TEL) 031-8055-0860 FAX) 031-8055-0870
 						</p>
 						<p><i class="fa fa-home"></i> (주)아리 | 경기도 화성시 정남면 서봉로 877</p>
 					</div>

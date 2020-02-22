@@ -5,7 +5,23 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script type="text/javascript">
+
+	$(document).ready(function(){
+		$(".snb").hide();
+		$(".lnb").mouseenter(function(){	
+				$(this).find(".snb").stop().slideDown(100);
+		});
+		 $(".lnb").mouseleave(function(){	
+				 $(".snb").hide();
+		});
+		 
+	});
+	
+</script>
+
 <title>(주)아리에 오신것을 환영합니다.</title>
 </head>
 <body>
@@ -24,11 +40,23 @@
       <div class="navbar-collapse collapse">
         <div class="menu">
           <ul class="nav nav-tabs" role="tablist">
-           	<li role="presentation" class="active"><a href="/ari/main.do">Home</a></li> 
-            <li role="presentation"><a href="/ari/main.do">회사소개</a></li>
-            <li role="presentation"><a href="/ari/main.do">제품소개</a></li>
-            <li role="presentation"><a href="/ari/main.do">견적문의</a></li>
-            <li role="presentation"><a href="/ari/main.do">고객센터</a></li>
+            <li role="presentation" class="lnb">
+            	<a href="/ari/main.do">회사소개</a>
+            	<ul class="snb">
+            		<li><a href="/ari/main.do">연혁</a></li>
+            		<li><a href="/ari/main.do">조직도</a></li>
+            	</ul>
+            </li>
+            
+            <li role="presentation" class="lnb">
+            	<a href="/ari/main.do">제품소개</a>
+            	<ul class="snb">
+            		<li><a href="/ari/main.do">원자재 유통</a></li>
+            		<li><a href="/ari/main.do">분전함 제조</a></li>
+            	</ul>
+            </li>
+            
+            <li role="presentation" class="lnb"><a href="/ari/main.do">견적문의</a></li>
           </ul>
         </div>
       </div>
