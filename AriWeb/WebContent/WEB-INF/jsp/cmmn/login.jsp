@@ -62,7 +62,7 @@ body {
 </head>
 <script type="text/javascript">
 $(document).ready(function(){
-	alert('바보');		
+	alert("${test}");		
 })
 </script>
 <body>

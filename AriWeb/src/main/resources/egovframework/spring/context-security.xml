@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-4.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<security:http auto-config="true" use-expressions="true">
+	<security:intercept-url pattern="/ari/main.do" access="permitAll"/>
+	<security:intercept-url pattern="/**" access="permitAll"/>
+	<!-- <security:intercept-url pattern="/ari/main.do" access="hasRole('ROLE_ADMIN')"/> -->
+	
+	<security:form-login login-page="/ari/login.do"
+		default-target-url="/ari/main.do"
+		username-parameter="username"
+		password-parameter="password"
+		authentication-failure-url="/ari/login.do?error"
+		always-use-default-target="true"/>
+	<security:logout invalidate-session="true" logout-url="/logout.do"/>
+	<security:csrf/>	
+</security:http>
+
+<security:authentication-manager>
+	<security:authentication-provider user-service-ref="authUserDetailsService"/>
+</security:authentication-manager>
+
+<bean id="authUserDetailsService" class="kr.co.ari.auth.service.AuthUserDetailsService"/>
+</beans>
