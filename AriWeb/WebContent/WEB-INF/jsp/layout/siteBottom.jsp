@@ -4,19 +4,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-  <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="../../../js/bootstrap.min.js"></script>
-  <script src="../../../js/wow.min.js"></script>
-  <script src="../../../js/jquery.easing.1.3.js"></script>
-  <script src="../../../js/jquery.isotope.min.js"></script>
-  <script src="../../../js/jquery.bxslider.min.js"></script>
-  <script src="../../../js/functions.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
-  
-  <script type="text/javascript">
-	
-  </script>
+  <style type="text/css">
+  	a.adm{
+  	     display: inline-block;
+    	line-height: 100%;
+    	margin-left: 10px;
+    	padding: 3px 10px 5px 10px;
+    	color: #fff;
+    	border: 1px solid #fff;
+  	}
+  </style>
 </head>
 <body>
 	<footer>
@@ -32,7 +29,7 @@
                 Licensing information: https://bootstrapmade.com/license/
                 Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=eNno
               -->
-              Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a><br>Directed by KIM&GWAK
+              Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a><br>Directed by KIM&GWAK <a class="adm" href="/ari/login.do">ADMIN</a>
             </div>
           </div>
         </div>

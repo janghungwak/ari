@@ -3,6 +3,6 @@
 <configuration>
 	<!-- Mybatis 정의 -->	
 	<typeAliases>
-	
+		<typeAlias alias="memberVO" type="kr.co.ari.member.vo.MemberVO"/>
 	</typeAliases>
 </configuration>

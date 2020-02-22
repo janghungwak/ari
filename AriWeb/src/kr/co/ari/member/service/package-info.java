@@ -5,4 +5,4 @@
  * @author 곽장훈
  *
  */
-package kr.co.ari.conmmon.dao;
+package kr.co.ari.member.service;

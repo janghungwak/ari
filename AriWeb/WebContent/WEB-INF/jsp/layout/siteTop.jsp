@@ -6,18 +6,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<link rel="stylesheet" href="../../../css/bootstrap.min.css" >
-<link rel="stylesheet" href="../../../css/animate.css">
-<link rel="stylesheet" href="../../../css/font-awesome.min.css">
-<link rel="stylesheet" href="../../../css/jquery.bxslider.css">
-<link rel="stylesheet" type="text/css" href="../../../css/normalize.css" />
-<link rel="stylesheet" type="text/css" href="../../../css/demo.css" />
-<link rel="stylesheet" type="text/css" href="../../../css/set1.css" />
-<link href="../../../css/overwrite.css" rel="stylesheet">
-<link href="../../../css/style.css" rel="stylesheet">
-  
-
 <title>(주)아리에 오신것을 환영합니다.</title>
 </head>
 <body>

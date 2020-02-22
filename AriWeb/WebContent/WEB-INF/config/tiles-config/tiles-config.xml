@@ -7,6 +7,8 @@
 
 	<!-- tiles 적용 -->
 	<definition name="tilesLayout" template="/WEB-INF/jsp/layout/tilesLayout.jsp">
+		<put-attribute name="css" value="/WEB-INF/jsp/layout/css.jsp" />
+		<put-attribute name="script" value="/WEB-INF/jsp/layout/script.jsp" />
 		<put-attribute name="siteTop" value="/WEB-INF/jsp/layout/siteTop.jsp" />
 		<put-attribute name="content" value="" />
 		<put-attribute name="siteBottom" value="/WEB-INF/jsp/layout/siteBottom.jsp" />

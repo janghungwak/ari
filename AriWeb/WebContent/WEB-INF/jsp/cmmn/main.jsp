@@ -6,15 +6,59 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript">
+
+	$(document).ready(function() {
+			$('.bxslider').bxSlider({
+				auto:true,
+				speed:500,
+				pause:4000,
+				controls : false,
+			});
+		});
+	 	
+	 	function initialize() {
+		var Y_point			= 37.1527200;		// Y 좌표
+		var X_point			= 126.9629000;		// X 좌표
+		var zoomLevel		= 18;						// 지도의 확대 레벨 : 숫자가 클수록 확대정도가 큼
+		var markerTitle		= "(주)아리";				// 현재 위치 마커에 마우스를 오버을때 나타나는 정보
+		var markerMaxWidth	= 300;						// 마커를 클릭했을때 나타나는 말풍선의 최대 크기
 	
-	<!-- =======================================================
-	  Theme Name: eNno
-	  Theme URL: https://bootstrapmade.com/enno-free-simple-bootstrap-template/
-	  Author: BootstrapMade
-	  Author URL: https://bootstrapmade.com
-	======================================================= -->
+		// 말풍선 내용
+		/*
+		var contentString	= '<div>' +
+		'<h2></h2>'+
+		'<p></p>' +
+		//'<a href="" target="_blank"></a>'+ //링크도 넣을 수 있음
+		'</div>';
+		*/
+		
+		var myLatlng = new google.maps.LatLng(Y_point, X_point);
+		var mapOptions = {
+							zoom: zoomLevel,
+							center: myLatlng,
+							mapTypeId: google.maps.MapTypeId.ROADMAP
+		}
+		var map = new google.maps.Map(document.getElementById('map_view'), mapOptions);
+	
+		var marker = new google.maps.Marker({
+												position: myLatlng,
+												map: map,
+												title: markerTitle
+		});
+	
+		/*
+		var infowindow = new google.maps.InfoWindow(
+													{	content: contentString,
+														maxWidth: markerMaxWidth
+													}
+		);
+		*/
+		google.maps.event.addListener(marker, 'click', function() {
+			infowindow.open(map, marker);
+		});
+	}
+</script>
 </head>
 <body onload="initialize();">
 	<div style ="background-image: url(../../../img/mainBanner/bg.png); background-repeat:repeat-x; background-position: bottom; min-height:768px;">	 
@@ -194,58 +238,6 @@
 		</div>
 	</footer>
   
-	<script type="text/javascript">
 
-	$(document).ready(function() {
-			$('.bxslider').bxSlider({
-				auto:true,
-				speed:500,
-				pause:4000,
-				controls : false,
-			});
-		});
-	 	
-	 	function initialize() {
-		var Y_point			= 37.1527200;		// Y 좌표
-		var X_point			= 126.9629000;		// X 좌표
-		var zoomLevel		= 18;						// 지도의 확대 레벨 : 숫자가 클수록 확대정도가 큼
-		var markerTitle		= "(주)아리";				// 현재 위치 마커에 마우스를 오버을때 나타나는 정보
-		var markerMaxWidth	= 300;						// 마커를 클릭했을때 나타나는 말풍선의 최대 크기
-	
-		// 말풍선 내용
-		/*
-		var contentString	= '<div>' +
-		'<h2></h2>'+
-		'<p></p>' +
-		//'<a href="" target="_blank"></a>'+ //링크도 넣을 수 있음
-		'</div>';
-		*/
-		
-		var myLatlng = new google.maps.LatLng(Y_point, X_point);
-		var mapOptions = {
-							zoom: zoomLevel,
-							center: myLatlng,
-							mapTypeId: google.maps.MapTypeId.ROADMAP
-		}
-		var map = new google.maps.Map(document.getElementById('map_view'), mapOptions);
-	
-		var marker = new google.maps.Marker({
-												position: myLatlng,
-												map: map,
-												title: markerTitle
-		});
-	
-		/*
-		var infowindow = new google.maps.InfoWindow(
-													{	content: contentString,
-														maxWidth: markerMaxWidth
-													}
-		);
-		*/
-		google.maps.event.addListener(marker, 'click', function() {
-			infowindow.open(map, marker);
-		});
-	}
-	</script>
 </body>
 </html>
