@@ -1,3 +1,4 @@
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -14,6 +15,12 @@
     	border: 1px solid #fff;
   	}
   </style>
+  <script type="text/javascript">
+  function logout(){
+	var frm = document.frm;
+	frm.submit();
+  }
+  </script>
 </head>
 <body>
 	<footer>
@@ -21,6 +28,7 @@
       <div class="container">
         <div class="row">
           <div class="copyright">
+          <form name="frm" action="/logout" method="post">
             &copy; (주)아리. All Rights Reserved
             <div class="credits">
               <!--
@@ -29,8 +37,16 @@
                 Licensing information: https://bootstrapmade.com/license/
                 Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=eNno
               -->
-              Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a><br>Directed by KIM&GWAK <a class="adm" href="/ari/login.do">ADMIN</a>
+              Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a><br>Directed by KIM&GWAK 
+              <sec:authorize access="isAnonymous()">
+              <a class="adm" href="/ari/login.do">ADMIN</a>
+              </sec:authorize>
+              <sec:authorize access="hasRole('ROLE_ADMIN')">
+              <a class="adm" id="logout" href="javascript:logout();">LOGOUT</a>
+              <sec:csrfInput/>
+              </sec:authorize>
             </div>
+           </form>
           </div>
         </div>
       </div>

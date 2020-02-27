@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -62,19 +64,25 @@ body {
 </head>
 <script type="text/javascript">
 $(document).ready(function(){
-	alert("${test}");		
+	
+	var loginFail = "${loginFail}";
+	
+	if(loginFail == "true"){
+		alert("존재하지 않는 아이디 또는 비밀번호가 일치하지 않습니다.");
+	}
 })
 </script>
 <body>
   <div class="wrapper">
-    <form class="form-signin">       
+    <form class="form-signin" action="/login" method="post">       
       <h2 class="form-signin-heading">관리자 로그인</h2>
-      <input type="text" class="form-control" name="username" placeholder="Email Address" required="" autofocus="" />
+      <input type="text" class="form-control" name="username" placeholder="Id" required="" autofocus="" />
       <input type="password" class="form-control" name="password" placeholder="Password" required=""/>      
       <label class="checkbox">
         <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> 아이디 저장하기
       </label>
-      <button class="btn btn-lg btn-primary btn-block" type="submit">로그인</button>   
+      <button class="btn btn-lg btn-primary btn-block" type="submit">로그인</button>
+      <sec:csrfInput/>
     </form>
   </div>
 </body>

@@ -13,9 +13,9 @@ public class MemberDAOImpl implements MemberDAO {
 	private SqlSessionTemplate sqlSession;
 	
 	@Override
-	public MemberVO selectMember() {
+	public MemberVO selectMember(MemberVO memberVO) {
 		// TODO Auto-generated method stub
-		return sqlSession.selectOne("kr.co.ari.member.dao.MemberDAO.selectMember", null);
+		return sqlSession.selectOne("kr.co.ari.member.dao.MemberDAO.selectMember", memberVO);
 	}
 
 }
