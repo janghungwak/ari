@@ -14,11 +14,6 @@ body {
 	background: #eee !important;	
 }
 
-.wrapper {	
-	margin-top: 80px;
-  margin-bottom: 80px;
-}
-
 .form-signin {
   max-width: 380px;
   padding: 15px 35px 45px;
@@ -61,17 +56,22 @@ body {
 }
 </style>
 
-</head>
 <script type="text/javascript">
 $(document).ready(function(){
 	
 	var loginFail = "${loginFail}";
+	var duplication = "${duplication}"
 	
 	if(loginFail == "true"){
 		alert("존재하지 않는 아이디 또는 비밀번호가 일치하지 않습니다.");
 	}
-})
+	
+	if(duplication == "true"){
+		alert("다른곳에서 로그인되었습니다.");
+	}
+}) 
 </script>
+</head>
 <body>
   <div class="wrapper">
     <form class="form-signin" action="/login" method="post">       

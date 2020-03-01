@@ -56,7 +56,7 @@
             	</ul>
             </li>
             
-            <li role="presentation" class="lnb"><a href="/ari/main.do">견적문의</a></li>
+            <li role="presentation" class="lnb"><a href="/ari/board.do">견적문의</a></li>
           </ul>
         </div>
       </div>

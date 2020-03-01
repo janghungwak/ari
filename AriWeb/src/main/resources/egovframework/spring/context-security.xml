@@ -9,7 +9,7 @@
 	<security:intercept-url pattern="/ari/main.do" access="permitAll"/>
 	<security:intercept-url pattern="/**" access="permitAll"/>
 	<!-- <security:intercept-url pattern="/ari/main.do" access="hasRole('ROLE_ADMIN')"/> -->
-	
+
 	<security:form-login
 	    login-page="/ari/login.do"
 		default-target-url="/ari/main.do"
@@ -18,7 +18,15 @@
 		authentication-failure-url="/ari/login.do?loginFail=true"
 		always-use-default-target="true"/>
 	<security:logout invalidate-session="true" logout-url="/logout"/>
-	<security:csrf disabled="false"/>	
+	
+	<security:session-management>
+		<security:concurrency-control error-if-maximum-exceeded="false" max-sessions="1" expired-url="/ari/login.do?duplication=true"/>
+	</security:session-management>
+	
+	<security:csrf disabled="false"/>
+	<security:headers>
+		<security:frame-options disabled="true"/>
+	</security:headers>		
 </security:http>
 
 <security:authentication-manager>
@@ -26,4 +34,7 @@
 </security:authentication-manager>
 
 <bean id="authUserDetailsService" class="kr.co.ari.auth.service.AuthUserDetailsService"/>
+
+
+
 </beans>

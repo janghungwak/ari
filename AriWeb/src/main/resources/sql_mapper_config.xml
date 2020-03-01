@@ -4,5 +4,6 @@
 	<!-- Mybatis 정의 -->	
 	<typeAliases>
 		<typeAlias alias="memberVO" type="kr.co.ari.member.vo.MemberVO"/>
+		<typeAlias alias="boardVO" type="kr.co.ari.borad.vo.BoardVO"/>
 	</typeAliases>
 </configuration>

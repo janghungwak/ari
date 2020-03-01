@@ -15,8 +15,8 @@ public class MainController {
 	 * 
 	 *  메인 홈페이지로 이동한다.
 	 */
-	@RequestMapping("/ari/main.do")
-	public String MainPage() {
+	@RequestMapping("/ari/main.do") 
+	public String mainPage() throws Exception {
 		System.out.println("메인화면");
 		return "cmmn/main.tiles";
 	}
@@ -27,9 +27,14 @@ public class MainController {
 	 *  로그인페이지로 이동한다.
 	 */
 	@RequestMapping("/ari/login.do")
-	public String loginPage(Model model, HttpServletRequest request) {
+	public String loginPage(Model model, HttpServletRequest request) throws Exception {
+		//로그인 실패 메시지 처리
 		String loginFail = request.getParameter("loginFail");
+		//로그인 중복사용자가 있을시 메시지 처리
+		String duplication = request.getParameter("duplication");
+		
 		model.addAttribute("loginFail", loginFail);
+		model.addAttribute("duplication", duplication);
 		return "cmmn/login.tiles";
 	}
 }
