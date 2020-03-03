@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>    
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>  
+<%@ taglib prefix="ui" uri="http://egovframework.gov/ctl/ui" %>  
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -9,7 +10,17 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>견적문의</title>
+<style type="text/css">
+.pagination{
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+</style>
 <script type="text/javascript">
+	function linkPage(pageNo){
+		$('#currentPageNo').val(pageNo);
+		$('#boardForm').submit();
+	}
 </script>
 </head>
 <body>
@@ -23,6 +34,7 @@
 				</h3>
 		</div>
 		<div class ="table_content">
+			<form id="boardForm" action="/ari/board.do">
 			<table class="table table-striped">
 				<colgroup>
 					<col width="70%"/>
@@ -49,6 +61,13 @@
 					</c:forEach>
 				</tbody>
 			</table>
+			<div class="text-center">
+				<ul class="pagination pagination-sm">
+					<ui:pagination paginationInfo="${paginationInfo }" type="text" jsFunction="linkPage"/>
+				</ul>
+			</div>
+			<input type="hidden" name="currentPageNo" id="currentPageNo"/>
+			</form>
 			<a href="/ari/boardInsertPage.do" class="btn btn-primary pull-right">글쓰기</a>
 		</div>
 	</div>

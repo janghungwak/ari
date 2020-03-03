@@ -10,9 +10,9 @@
 <script type="text/javascript">
 
 function board_insert(){
-	var btitle = "${btitle}";
-	var bwriter = "${bwriter}";
-	var bpass = "${bpass}";
+	var btitle = $('#btitle').val();
+	var bwriter = $('#bwriter').val();
+	var bpass = $('#bpass').val();
 	
 	if(btitle==""){
 		alert('제목을 입력해주세요.');

@@ -6,7 +6,9 @@ import kr.co.ari.borad.vo.BoardVO;
 
 public interface BoardService {
 	
-	public abstract List<?> selectBoardList();
+	public abstract List<?> selectBoardList(BoardVO boardVO);
+	
+	public abstract int selectBoardCount();
 	
 	public abstract int insertBoard(BoardVO boardVO);
 	

@@ -17,9 +17,15 @@ public class BoardServiceImpl implements BoardService {
 	
 	
 	@Override
-	public List<?> selectBoardList() {
+	public List<?> selectBoardList(BoardVO boardVO) {
 		// TODO Auto-generated method stub
-		return boardDAO.selectBoardList();
+		return boardDAO.selectBoardList(boardVO);
+	}
+	
+	@Override
+	public int selectBoardCount() {
+		// TODO Auto-generated method stub
+		return boardDAO.selectBoardCount();
 	}
 	
 	@Override

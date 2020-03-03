@@ -16,9 +16,15 @@ public class BoardDAOImpl implements BoardDAO {
 
 	
 	@Override
-	public List<?> selectBoardList() {
+	public List<?> selectBoardList(BoardVO boardVO) {
 		// TODO Auto-generated method stub
-		return sqlSession.selectList("kr.co.ari.board.dao.BoardDAO.selectBoardList");
+		return sqlSession.selectList("kr.co.ari.board.dao.BoardDAO.selectBoardList", boardVO);
+	}
+	
+	@Override
+	public int selectBoardCount() {
+		// TODO Auto-generated method stub
+		return sqlSession.selectOne("kr.co.ari.board.dao.BoardDAO.selectBoardCount");
 	}
 	
 	@Override
