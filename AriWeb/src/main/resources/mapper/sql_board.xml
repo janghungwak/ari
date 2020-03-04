@@ -11,6 +11,11 @@
 	<select id="selectBoardCount" resultType="int">
 		SELECT COUNT(*) FROM BOARD
 	</select>
+	
+	<select id="selectBoardView" parameterType="String" resultType="boardVO">
+		SELECT * FROM BOARD
+		WHERE BNO = #{bno}
+	</select>
 		
 	<insert id="insertBoard" parameterType="boardVO">
 		INSERT INTO BOARD(BTITLE, BPASS, BWRITER, BCONTENT, BREGDATE)

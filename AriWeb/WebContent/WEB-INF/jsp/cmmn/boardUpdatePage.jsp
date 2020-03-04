@@ -6,10 +6,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>견적 문의 입력</title>
+<title>견적 문의 수정</title>
 <script type="text/javascript">
 
-function board_insert(){
+function board_update(){
 	var btitle = $('#btitle').val();
 	var bwriter = $('#bwriter').val();
 	var bpass = $('#bpass').val();
@@ -29,8 +29,10 @@ function board_insert(){
 		return;
 	}
 	
-	oEditors.getById["bcontent"].exec("UPDATE_CONTENTS_FIELD", []);
-	$('#insertform').submit();
+	if(confirm('수정하시겠습니까?')){
+		oEditors.getById["bcontent"].exec("UPDATE_CONTENTS_FIELD", []);
+		$('#updateform').submit();
+	}
 }
 
 </script>
@@ -46,27 +48,30 @@ function board_insert(){
 			</h3>
 		</div>
 		<div class="table_content">
-			<form id="insertform" action="/ari/insertBoard.do" method="POST">
+			<form id="updateform" action="/ari/updateBoard.do" method="POST">
 			 <table class="table">
 			 	<tbody>
 			 		<tr>
 			 			<th>제목</th>
-			 			<td><input type="text" name="btitle" id="btitle"/></td>
+			 			<td><input type="text" name="btitle" id="btitle" value="${boardVO.btitle }"/></td>
 			 		</tr>
 			 		<tr>
 			 			<th>작성자</th>
-			 			<td><input type="text" name="bwriter" id="bwriter"/> <span><input type="checkbox"/>비밀글</span></td>
+			 			<td><input type="text" name="bwriter" id="bwriter" value="${boardVO.bwriter }"/> <span><input type="checkbox"/>비밀글</span></td>
 			 		</tr>
 			 		<tr>
 			 		<td colspan="2">
 			 		<textarea rows="10" cols="100" name="bcontent" id="bcontent" style="width: 100%; min-width:260px;"></textarea> 
 			 		<script type="text/javascript">
 			 			var oEditors = [];
-			 			oAppRef: oEditors,
+			 			
 			 			nhn.husky.EZCreator.createInIFrame({
 			 				oAppRef : oEditors,
 			 				elPlaceHolder : "bcontent",
 			 				sSkinURI : "../../../smarteditor/SmartEditor2Skin.html",
+			 				fOnAppLoad : function(){
+			 					oEditors.getById["bcontent"].exec("PASTE_HTML",["${boardVO.bcontent}"]);
+			 				},
 			 			    fCreator: "createSEditor2"		 				
 			 			});
 			 		</script>
@@ -77,9 +82,10 @@ function board_insert(){
 			 			<td><input type="text" name="bpass" id="bpass"/></td>
 			 		</tr>
 			 	</tbody>
-			 </table>			 
+			 </table>
+			 <input type="hidden" name="bno" value="${boardVO.bno }">			 
 			 <sec:csrfInput/>
-			 <a href="javascript:board_insert();" class="btn btn-primary pull-right binsert">등록</a>	
+			 <a href="javascript:board_update();" class="btn btn-primary pull-right binsert">수정</a>	
 			 <a href="javascript:history.back(-1);" class="btn btn-primary pull-right">취소</a>			 
 			</form>
 		</div>

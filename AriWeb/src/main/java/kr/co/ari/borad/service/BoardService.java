@@ -10,6 +10,8 @@ public interface BoardService {
 	
 	public abstract int selectBoardCount();
 	
+	public abstract BoardVO selectBoardView(String bno);
+	
 	public abstract int insertBoard(BoardVO boardVO);
 	
 	public abstract int updateBoard(BoardVO boardVO);

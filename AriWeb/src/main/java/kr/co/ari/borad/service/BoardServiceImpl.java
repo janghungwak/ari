@@ -29,6 +29,12 @@ public class BoardServiceImpl implements BoardService {
 	}
 	
 	@Override
+	public BoardVO selectBoardView(String bno) {
+		// TODO Auto-generated method stub
+		return boardDAO.selectBoardView(bno);
+	}
+	
+	@Override
 	public int insertBoard(BoardVO boardVO) {
 		return boardDAO.insertBoard(boardVO);
 	}
@@ -40,7 +46,7 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public int deleteBoard(BoardVO boardVO) {
-		return boardDAO.updateBoard(boardVO);
+		return boardDAO.deleteBoard(boardVO);
 	}
 
 }

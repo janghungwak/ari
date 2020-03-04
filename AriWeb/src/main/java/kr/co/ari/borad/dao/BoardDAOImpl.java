@@ -28,6 +28,12 @@ public class BoardDAOImpl implements BoardDAO {
 	}
 	
 	@Override
+	public BoardVO selectBoardView(String bno) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectOne("kr.co.ari.board.dao.BoardDAO.selectBoardView", bno);
+	}
+	
+	@Override
 	public int insertBoard(BoardVO boardVO) {
 		return sqlSession.insert("kr.co.ari.board.dao.BoardDAO.insertBoard", boardVO);
 	}

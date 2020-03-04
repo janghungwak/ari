@@ -50,7 +50,7 @@
 				</thead>
 				<tbody>
 					<c:forEach var="boardList" items="${boardList }">
-						<c:url var="link" value="/ari/main.do">
+						<c:url var="link" value="/ari/boardView.do">
 							<c:param name="bno" value="${boardList.bno }"></c:param>
 						</c:url>
 						<tr>
@@ -68,7 +68,7 @@
 			</div>
 			<input type="hidden" name="currentPageNo" id="currentPageNo"/>
 			</form>
-			<a href="/ari/boardInsertPage.do" class="btn btn-primary pull-right">글쓰기</a>
+			<a href="/ari/insertBoardPage.do" class="btn btn-primary pull-right">글쓰기</a>
 		</div>
 	</div>
 	
