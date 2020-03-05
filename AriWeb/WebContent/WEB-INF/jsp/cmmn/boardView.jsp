@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>    
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -14,7 +15,7 @@
  }
 
  function board_delete(){
-	 if(confirm("삭제하시겠습니까?")){
+	 if(confirm("삭제하시겠습니까?")){		 
 		$('#formAction').attr('action', '/ari/deleteBoard.do')
 		$('#formAction').submit();
 	 }
@@ -60,7 +61,7 @@
 			</table>
 			<form id="formAction" method="post">
 				<input type="hidden" name="bno" value="${boardVO.bno }">
-				<sec:csrfInput/>
+				<sec:csrfInput/> 
 			</form>
 			<a href="javascript:board_updatePage();" class="btn btn-primary pull-right binsert">수정</a>	
 			<a href="javascript:board_delete();" class="btn btn-primary pull-right binsert">삭제</a>	

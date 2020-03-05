@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.apache.commons.lang3.StringEscapeUtils;
 import org.springframework.stereotype.Service;
 
 import kr.co.ari.borad.dao.BoardDAO;
@@ -31,7 +32,9 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public BoardVO selectBoardView(String bno) {
 		// TODO Auto-generated method stub
-		return boardDAO.selectBoardView(bno);
+		BoardVO boardVO = boardDAO.selectBoardView(bno);
+		boardVO.setBcontent(StringEscapeUtils.unescapeHtml4(boardVO.getBcontent()));
+		return boardVO;
 	}
 	
 	@Override

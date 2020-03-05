@@ -5,6 +5,7 @@ import java.util.List;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.commons.lang3.StringEscapeUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -68,9 +69,9 @@ public class BoardController {
 	@RequestMapping("/ari/boardView.do")
 	public String boardView(Model model, HttpServletRequest request) throws Exception {
 		String bno = request.getParameter("bno");
-
-		BoardVO boardVO = boardService.selectBoardView(bno);
-				
+		
+		BoardVO boardVO = boardService.selectBoardView(bno);	
+		
 		model.addAttribute("boardVO", boardVO);
 		return "cmmn/boardView.tiles";
 	}
@@ -78,35 +79,45 @@ public class BoardController {
 	@RequestMapping("/ari/insertBoardPage.do")
 	public String insertBoardPage() throws Exception {
 		System.out.println("게시판입력페이지");
+		
 		return "cmmn/boardInsertPage.tiles";
 	}
 	
 	@RequestMapping("/ari/insertBoard.do")
 	public String insertBoard(@ModelAttribute BoardVO boardVO) throws Exception {
 		System.out.println("게시판입력");
-		boardService.insertBoard(boardVO);		
+		
+		boardService.insertBoard(boardVO);	
+		
 		return "redirect:/ari/board.do";
 	}
 	
 	@RequestMapping("/ari/updateBoardPage.do")
 	public String updateBoardPage(@ModelAttribute BoardVO boardVO, Model model) throws Exception {
 		System.out.println("게시판수정페이지");
-		BoardVO uboardVO = boardService.selectBoardView(boardVO.getBno());	
+		
+		BoardVO uboardVO = boardService.selectBoardView(boardVO.getBno());
+		
 		model.addAttribute("boardVO", uboardVO);
+		
 		return "cmmn/boardUpdatePage.tiles";
 	}
 	
 	@RequestMapping("/ari/updateBoard.do")
 	public String updateBoard(@ModelAttribute BoardVO boardVO) throws Exception {
 		System.out.println("게시판수정");
+		
 		boardService.updateBoard(boardVO);
+		
 		return "forward:/ari/boardView.do";
 	}
 	
 	@RequestMapping("/ari/deleteBoard.do")
 	public String deleteBoard(@ModelAttribute BoardVO boardVO) throws Exception {
 		System.out.println("게시판삭제");
+		
 		boardService.deleteBoard(boardVO);
+		
 		return "redirect:/ari/board.do";
 	}
 

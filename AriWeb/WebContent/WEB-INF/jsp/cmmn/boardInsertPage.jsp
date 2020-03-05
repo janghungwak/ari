@@ -8,7 +8,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>견적 문의 입력</title>
 <script type="text/javascript">
-
 function board_insert(){
 	var btitle = $('#btitle').val();
 	var bwriter = $('#bwriter').val();
@@ -61,7 +60,7 @@ function board_insert(){
 			 		<td colspan="2">
 			 		<textarea rows="10" cols="100" name="bcontent" id="bcontent" style="width: 100%; min-width:260px;"></textarea> 
 			 		<script type="text/javascript">
-			 			var oEditors = [];
+			 		var oEditors = [];
 			 			oAppRef: oEditors,
 			 			nhn.husky.EZCreator.createInIFrame({
 			 				oAppRef : oEditors,

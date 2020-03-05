@@ -61,16 +61,15 @@ function board_update(){
 			 		</tr>
 			 		<tr>
 			 		<td colspan="2">
-			 		<textarea rows="10" cols="100" name="bcontent" id="bcontent" style="width: 100%; min-width:260px;"></textarea> 
+			 		<textarea rows="10" cols="100" name="bcontent" id="bcontent" style="width: 100%; min-width:260px; height: 300px; display: none;">${boardVO.bcontent }</textarea> 
 			 		<script type="text/javascript">
-			 			var oEditors = [];
-			 			
+			 			var oEditors = [];			 			
 			 			nhn.husky.EZCreator.createInIFrame({
 			 				oAppRef : oEditors,
 			 				elPlaceHolder : "bcontent",
 			 				sSkinURI : "../../../smarteditor/SmartEditor2Skin.html",
 			 				fOnAppLoad : function(){
-			 					oEditors.getById["bcontent"].exec("PASTE_HTML",["${boardVO.bcontent}"]);
+			 					//oEditors.getById["bcontent"].exec("SET_IR",['']);
 			 				},
 			 			    fCreator: "createSEditor2"		 				
 			 			});
