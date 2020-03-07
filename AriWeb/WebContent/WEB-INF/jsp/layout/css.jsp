@@ -51,5 +51,32 @@ a.adm{
 .binsert {
 	margin-left: 10px;
 }
-  
+
+.fileButton {
+ 	float: left;
+}
+
+.fileButton a {
+	display: inline-block;
+    width: 22px;
+    height: 22px;
+    line-height: 20px;
+    text-align: center;
+    border: 1px solid #a1a1a1;
+}
+.fileInput {
+	clear: both;
+}
+
+.fileInput p {
+	padding: 2px 0px 0px 0px;
+	margin-bottom: 3px;
+}
+
+.pfile {
+	border: 1px solid #bcbcbc;
+    background-color: #f8f8f8;
+    padding: 3px 0 0 3px;
+    height: 32px;
+}  
 </style>  

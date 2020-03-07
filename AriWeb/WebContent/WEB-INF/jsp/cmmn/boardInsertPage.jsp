@@ -32,6 +32,29 @@ function board_insert(){
 	$('#insertform').submit();
 }
 
+var file_count=0;
+function attachFile() {
+	
+	file_count++;
+	
+	if(file_count > 5){
+		alert("최대 첨부파일 수량은 5개 입니다.");
+		return false;
+	}
+	
+	var html = "<p><input type='file' name='file_"+file_count+"' id='file_"+file_count+"' class='pfile'/></p>"
+	$('.fileInput').append(html);
+	
+}
+
+function removeFile() {
+	if(file_count > 0){
+		$('#file_'+file_count).parent().remove();
+		//$('input').remove('#file_'+file_count);
+		file_count--;
+	}
+}
+
 </script>
 </head>
 <body>
@@ -45,8 +68,12 @@ function board_insert(){
 			</h3>
 		</div>
 		<div class="table_content">
-			<form id="insertform" action="/ari/insertBoard.do" method="POST">
+			<form id="insertform" action="/ari/insertBoard.do?${_csrf.parameterName}=${_csrf.token}" method="POST" enctype="multipart/form-data">
 			 <table class="table">
+			 	<colgroup>
+			 		<col width="10%"/>
+			 		<col width="90%"/>
+			 	</colgroup>
 			 	<tbody>
 			 		<tr>
 			 			<th>제목</th>
@@ -54,11 +81,11 @@ function board_insert(){
 			 		</tr>
 			 		<tr>
 			 			<th>작성자</th>
-			 			<td><input type="text" name="bwriter" id="bwriter"/> <span><input type="checkbox"/>비밀글</span></td>
+			 			<td><input type="text" name="bwriter" id="bwriter"/></td>
 			 		</tr>
 			 		<tr>
 			 		<td colspan="2">
-			 		<textarea rows="10" cols="100" name="bcontent" id="bcontent" style="width: 100%; min-width:260px;"></textarea> 
+			 		<textarea rows="10" cols="100" name="bcontent" id="bcontent" style="width: 100%; min-width:260px; height: 300px; display: none;"></textarea> 
 			 		<script type="text/javascript">
 			 		var oEditors = [];
 			 			oAppRef: oEditors,
@@ -72,12 +99,15 @@ function board_insert(){
 			 		</td>
 			 		</tr>
 			 		<tr>
+			 			<th>첨부파일</th>
+			 			<td><div class="fileButton"><a onclick="attachFile();">＋</a> <a onclick="removeFile();">－</a></div ><div class="fileInput"></div></td>			 			
+			 		</tr>
+			 		<tr>
 			 			<th>비밀번호</th>
 			 			<td><input type="text" name="bpass" id="bpass"/></td>
 			 		</tr>
 			 	</tbody>
-			 </table>			 
-			 <sec:csrfInput/>
+			 </table>
 			 <a href="javascript:board_insert();" class="btn btn-primary pull-right binsert">등록</a>	
 			 <a href="javascript:history.back(-1);" class="btn btn-primary pull-right">취소</a>			 
 			</form>

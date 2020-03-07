@@ -17,11 +17,22 @@ public class BoardVO implements Serializable{
 	private int recordCountPerPage=10;
 	//현재페이지 번호
 	private int currentPageNo;
+	//보여지는 페이지 수
+	private int pageSize=5;
+	
+	//첨부파일 
+	private String fno;
+	private String fname;
+	private String rname;
+	private long fsize;
+	private String delyn;
+	private String isnew;
 	
 	public BoardVO() {}
 
 	public BoardVO(String bno, String btitle, String bpass, String bwriter, String bcontent, String bregdate,
-			int firstIndex, int recordCountPerPage, int currentPageNo) {
+			int firstIndex, int recordCountPerPage, int currentPageNo, int pageSize, String fno, String fname,
+			String rname, long fsize, String delyn, String isnew) {
 		super();
 		this.bno = bno;
 		this.btitle = btitle;
@@ -32,6 +43,13 @@ public class BoardVO implements Serializable{
 		this.firstIndex = firstIndex;
 		this.recordCountPerPage = recordCountPerPage;
 		this.currentPageNo = currentPageNo;
+		this.pageSize = pageSize;
+		this.fno = fno;
+		this.fname = fname;
+		this.rname = rname;
+		this.fsize = fsize;
+		this.delyn = delyn;
+		this.isnew = isnew;
 	}
 
 	public String getBno() {
@@ -105,7 +123,61 @@ public class BoardVO implements Serializable{
 	public void setCurrentPageNo(int currentPageNo) {
 		this.currentPageNo = currentPageNo;
 	}
-	
-	
-	
+
+	public int getPageSize() {
+		return pageSize;
+	}
+
+	public void setPageSize(int pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public String getFno() {
+		return fno;
+	}
+
+	public void setFno(String fno) {
+		this.fno = fno;
+	}
+
+	public String getFname() {
+		return fname;
+	}
+
+	public void setFname(String fname) {
+		this.fname = fname;
+	}
+
+	public String getRname() {
+		return rname;
+	}
+
+	public void setRname(String rname) {
+		this.rname = rname;
+	}
+
+	public long getFsize() {
+		return fsize;
+	}
+
+	public void setFsize(long fsize) {
+		this.fsize = fsize;
+	}
+
+	public String getDelyn() {
+		return delyn;
+	}
+
+	public void setDelyn(String delyn) {
+		this.delyn = delyn;
+	}
+
+	public String getIsnew() {
+		return isnew;
+	}
+
+	public void setIsnew(String isnew) {
+		this.isnew = isnew;
+	}
+			
 }

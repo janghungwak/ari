@@ -2,7 +2,8 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>  
-<%@ taglib prefix="ui" uri="http://egovframework.gov/ctl/ui" %>  
+<%@ taglib prefix="ui" uri="http://egovframework.gov/ctl/ui" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>  
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -37,8 +38,9 @@
 			<form id="boardForm" action="/ari/board.do">
 			<table class="table table-striped">
 				<colgroup>
-					<col width="70%"/>
-					<col width="10%"/>
+					<col width="40%"/>
+					<col width="20%"/>
+					<col width="20%"/>
 					<col width="20%"/>
 				</colgroup>
 				<thead>
@@ -46,6 +48,7 @@
 						<th>제목</th>
 						<th>작성자</th>
 						<th>작성일</th>
+						<th>첨부파일</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -54,14 +57,15 @@
 							<c:param name="bno" value="${boardList.bno }"></c:param>
 						</c:url>
 						<tr>
-							<td><a href="${link }"><c:out value="${boardList.btitle }"/></a></td>
+							<td><div style="width: 100px; text-overflow: ellipsis; overflow: hidden;"><a href="${link }"><c:out value="${boardList.btitle }"/></a></div></td>
 							<td><c:out value="${boardList.bwriter }"/></td>
 							<td><c:out value="${boardList.bregdate }"/></td>
+							<td>첨부</td>
 						</tr>
 					</c:forEach>
 				</tbody>
 			</table>
-			<div class="text-center">
+			<div class="text-center" style="min-width:330px;">
 				<ul class="pagination pagination-sm">
 					<ui:pagination paginationInfo="${paginationInfo }" type="text" jsFunction="linkPage"/>
 				</ul>

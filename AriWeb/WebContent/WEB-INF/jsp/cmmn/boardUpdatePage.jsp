@@ -2,6 +2,8 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -35,6 +37,32 @@ function board_update(){
 	}
 }
 
+var file_count=0;
+$(document).ready(function(){
+	file_count = parseInt($('#fileCnt').val());
+})
+function attachFile() {	
+	file_count++;
+	
+	if(file_count > 5){
+		alert("최대 첨부파일 수량은 5개 입니다.");
+		return false;
+	}
+	
+	var html = "<p><input type='file' name='file_"+file_count+"' id='file_"+file_count+"' class='pfile'/></p>"
+	$('.fileInput').append(html);
+	
+}
+
+function removeFile() {
+	var fileCnt = parseInt($('#fileCnt').val());
+	if(file_count > fileCnt){
+		$('#file_'+file_count).parent().remove();
+		//$('input').remove('#file_'+file_count);
+		file_count--;
+	}
+}
+
 </script>
 </head>
 <body>
@@ -48,7 +76,7 @@ function board_update(){
 			</h3>
 		</div>
 		<div class="table_content">
-			<form id="updateform" action="/ari/updateBoard.do" method="POST">
+			<form id="updateform" action="/ari/updateBoard.do?bno=${boardVO.bno }&${_csrf.parameterName}=${_csrf.token}" method="POST" enctype="multipart/form-data">
 			 <table class="table">
 			 	<tbody>
 			 		<tr>
@@ -75,6 +103,19 @@ function board_update(){
 			 			});
 			 		</script>
 			 		</td>
+			 		</tr>
+			 		<tr>
+			 			<th>첨부파일</th>
+			 			<td><div class="fileButton"><a onclick="attachFile();">＋</a> <a onclick="removeFile();">－</a></div >
+			 			<div class="fileInput">
+			 			<c:set var="fileCnt" value="${fn:length(fileList)}" />
+			 			<input type="hidden" id="fileCnt" name="fileCnt" value="${fileCnt }">	 
+			 				<c:forEach items="${fileList }" var="file" varStatus="idx">
+			 					<input type="hidden" name="IDX_${idx.count }" id="IDX" value="${file.fno }" />
+			 					<a href="#this" name="name_${idx.count }" id="name_${idx.count }">${file.fname }</a>
+			 			    	<p><input type="file" name="file_${idx.count }" class='pfile'/></p>
+			 				</c:forEach>		 
+			 			</div></td>			 			
 			 		</tr>
 			 		<tr>
 			 			<th>비밀번호</th>

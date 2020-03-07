@@ -2,7 +2,8 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>    
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>   
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -20,6 +21,14 @@
 		$('#formAction').submit();
 	 }
  }
+ 
+ function board_fileDownload(fno){
+	 var html = "<input type='hidden' name='fno' value='"+fno+"' />"
+	 $('#formAction').append(html);
+	 $('#formAction').attr('action', '/ari/downloadFile.do')
+	 $('#formAction').submit();
+	 $('#formAction').find('input[name=fno]').remove();
+ }
 </script>
 </head>
 <body>
@@ -33,6 +42,7 @@
 			</h3>
 		</div>
 		<div class="table_content">
+
 			<table class="table">
 				<colgroup>
 					<col width="20%">
@@ -44,13 +54,23 @@
 				<tbody>
 					<tr>
 						<th scope="row">제목</th>
-						<td colspan="4"><c:out value="${boardVO.btitle }"/></td>
+						<td colspan="3"><c:out value="${boardVO.btitle }"/></td>
 					</tr>
 					<tr>
 						<th scope="row">작성자</th>
 						<td><c:out value="${boardVO.bwriter }"/></td>
 						<th scope="row">등록일</th>
-						<td><c:out value="${boardVO.bregdate }"/></td>
+						<td colspan="2"><c:out value="${boardVO.bregdate }"/></td>
+					</tr>
+					<tr>
+						<th>첨부파일</th>
+						<td colspan="4">
+							<c:forEach items="${fileList }" var="file">
+								<p>
+									<a href="javascript:board_fileDownload(${file.fno });">${file.fname }(${file.fsize }Byte)</a>
+								</p>
+							</c:forEach>
+						</td>
 					</tr>
 					<tr>
 						<td colspan="5" style="border-bottom: 1px solid #ddd;">

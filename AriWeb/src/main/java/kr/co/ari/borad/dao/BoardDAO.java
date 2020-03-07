@@ -18,4 +18,14 @@ public interface BoardDAO {
 	public abstract int updateBoard(BoardVO boardVO);
 	
 	public abstract int deleteBoard(BoardVO boardVO);
+
+	public abstract int insertFile(BoardVO boardVO);
+	
+	public abstract List<?> selectFileList(String bno);
+	
+	public abstract BoardVO selectFile(BoardVO boardVO);
+	
+	public abstract int deleteFile(String bno);
+	
+	public abstract int updateFile(BoardVO boardVO);
 }

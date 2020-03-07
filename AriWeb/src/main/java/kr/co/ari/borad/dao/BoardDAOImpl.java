@@ -48,4 +48,34 @@ public class BoardDAOImpl implements BoardDAO {
 		return sqlSession.delete("kr.co.ari.board.dao.BoardDAO.deleteBoard", boardVO);
 	}
 
+	@Override
+	public int insertFile(BoardVO boardVO) {
+		// TODO Auto-generated method stub
+		return sqlSession.insert("kr.co.ari.board.dao.BoardDAO.insertFile", boardVO);
+	}
+
+	@Override
+	public List<?> selectFileList(String bno) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectList("kr.co.ari.board.dao.BoardDAO.selectFileList", bno);
+	}
+
+	@Override
+	public BoardVO selectFile(BoardVO boardVO) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectOne("kr.co.ari.board.dao.BoardDAO.selectFile", boardVO);
+	}
+
+	@Override
+	public int deleteFile(String bno) {
+		// TODO Auto-generated method stub
+		return sqlSession.delete("kr.co.ari.board.dao.BoardDAO.deleteFile", bno);
+	}
+
+	@Override
+	public int updateFile(BoardVO boardVO) {
+		// TODO Auto-generated method stub
+		return sqlSession.update("kr.co.ari.board.dao.BoardDAO.updateFile", boardVO);
+	}
+	
 }

@@ -3,7 +3,7 @@
 <mapper namespace="kr.co.ari.board.dao.BoardDAO">
 	
 	<select id="selectBoardList" parameterType="boardVO" resultType="boardVO">
-		SELECT * FROM BOARD
+		SELECT BNO, BTITLE, BWRITER, BPASS, BCONTENT, DATE_FORMAT(BREGDATE, "%Y-%m-%d %T")AS BREGDATE FROM BOARD
 		ORDER BY bno DESC
 		LIMIT #{firstIndex}, #{recordCountPerPage}
 	</select>
@@ -13,14 +13,30 @@
 	</select>
 	
 	<select id="selectBoardView" parameterType="String" resultType="boardVO">
-		SELECT * FROM BOARD
+		SELECT BNO, BTITLE, BWRITER, BPASS, BCONTENT, DATE_FORMAT(BREGDATE, "%Y-%m-%d %T")AS BREGDATE FROM BOARD
 		WHERE BNO = #{bno}
 	</select>
 		
-	<insert id="insertBoard" parameterType="boardVO">
+	<insert id="insertBoard" parameterType="boardVO" useGeneratedKeys="true" keyProperty="bno">
 		INSERT INTO BOARD(BTITLE, BPASS, BWRITER, BCONTENT, BREGDATE)
 		VALUES (#{btitle}, #{bpass}, #{bwriter}, #{bcontent}, NOW())
 	</insert>
+	
+	<insert id="insertFile" >
+		INSERT INTO BOARDFILE(BNO, FNAME, RNAME, FSIZE, ISNEW)
+		VALUES (#{bno}, #{fname}, #{rname}, #{fsize}, #{isnew})
+	</insert>
+	
+	<select id="selectFileList" parameterType="String" resultType="boardVO">
+		SELECT FNO, BNO, FNAME, RNAME, FSIZE FROM BOARDFILE
+		WHERE BNO = #{bno}
+	</select>
+	
+	<select id="selectFile" parameterType="boardVO" resultType="boardVO">
+		SELECT FNO, BNO, FNAME, RNAME, FSIZE FROM BOARDFILE
+		WHERE FNO = #{fno}
+		AND BNO = #{bno}
+	</select>
 	
 	<update id="updateBoard" parameterType="boardVO">
 		UPDATE BOARD SET
@@ -30,6 +46,19 @@
 		BCONTENT = #{bcontent},
 		BREGDATE = NOW()
 		WHERE BNO = #{bno}
+	</update>
+	
+	<delete id="deleteFile" parameterType="String">
+		UPDATE BOARDFILE
+		SET DELYN = 'Y'
+		WHERE BNO = #{bno}
+	</delete>
+	
+	<update id="updateFile" parameterType="boardVO">
+		UPDATE BOARDFILE
+		SET DELYN = 'N',
+			ISNEW = #{isnew}
+		WHERE FNO = #{fno}
 	</update>
 	
 	<delete id="deleteBoard" parameterType="boardVO">

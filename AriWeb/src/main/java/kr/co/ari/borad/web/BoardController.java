@@ -1,15 +1,19 @@
 package kr.co.ari.borad.web;
 
+import java.io.File;
+import java.net.URLEncoder;
 import java.util.List;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
-import org.apache.commons.lang3.StringEscapeUtils;
+import org.apache.commons.io.FileUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import egovframework.rte.ptl.mvc.tags.ui.pagination.PaginationInfo;
 import kr.co.ari.borad.service.BoardService;
@@ -37,8 +41,8 @@ public class BoardController {
 			//한 페이지당 게시되는 게시물 건수 10
 			paginationInfo.setRecordCountPerPage(boardVO.getRecordCountPerPage());
 			
-			//페이지 리스트에 게시되는 페이지 건수 10
-			paginationInfo.setPageSize(boardVO.getRecordCountPerPage());
+			//페이지 리스트에 게시되는 페이지 건수 5
+			paginationInfo.setPageSize(boardVO.getPageSize());
 			
 			//(현재페이지번호 -1 * 한 페이지당 게시되는 게시물 건 수)
 			int firstIndex = paginationInfo.getFirstRecordIndex();
@@ -72,7 +76,10 @@ public class BoardController {
 		
 		BoardVO boardVO = boardService.selectBoardView(bno);	
 		
+		List<?> fileList = boardService.selectFileList(boardVO.getBno());
+		
 		model.addAttribute("boardVO", boardVO);
+		model.addAttribute("fileList", fileList);
 		return "cmmn/boardView.tiles";
 	}
 	
@@ -84,10 +91,15 @@ public class BoardController {
 	}
 	
 	@RequestMapping("/ari/insertBoard.do")
-	public String insertBoard(@ModelAttribute BoardVO boardVO) throws Exception {
+	public String insertBoard(@ModelAttribute BoardVO boardVO, MultipartHttpServletRequest mrequest) throws Exception {
 		System.out.println("게시판입력");
-		
-		boardService.insertBoard(boardVO);	
+		try {
+
+			boardService.insertBoard(boardVO, mrequest);	
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		
 		return "redirect:/ari/board.do";
 	}
@@ -98,27 +110,59 @@ public class BoardController {
 		
 		BoardVO uboardVO = boardService.selectBoardView(boardVO.getBno());
 		
+		List<?> fileList = boardService.selectFileList(boardVO.getBno());
+		
 		model.addAttribute("boardVO", uboardVO);
+		model.addAttribute("fileList", fileList);
 		
 		return "cmmn/boardUpdatePage.tiles";
 	}
 	
 	@RequestMapping("/ari/updateBoard.do")
-	public String updateBoard(@ModelAttribute BoardVO boardVO) throws Exception {
+	public String updateBoard(@ModelAttribute BoardVO boardVO, MultipartHttpServletRequest mrequest) throws Exception {
 		System.out.println("게시판수정");
+		try {
+			boardService.updateBoard(boardVO, mrequest);			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
 		
-		boardService.updateBoard(boardVO);
-		
-		return "forward:/ari/boardView.do";
+		return "redirect:/ari/boardView.do?bno="+boardVO.getBno();
 	}
 	
 	@RequestMapping("/ari/deleteBoard.do")
 	public String deleteBoard(@ModelAttribute BoardVO boardVO) throws Exception {
 		System.out.println("게시판삭제");
-		
-		boardService.deleteBoard(boardVO);
+		try {
+			boardService.deleteBoard(boardVO);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		
 		return "redirect:/ari/board.do";
 	}
-
+	
+	@RequestMapping("/ari/downloadFile.do")
+	public void downloadFile(@ModelAttribute BoardVO boardVO, HttpServletResponse response) throws Exception {
+		try {
+		BoardVO vo = boardService.selectFile(boardVO);
+		String fname = vo.getFname();
+		String rname = vo.getRname();
+		
+		byte[] fileByte = FileUtils.readFileToByteArray(new File(File.separator+"fileUpload"+File.separator+rname));
+		
+		response.setContentType("application/octet-stream");
+		response.setContentLength(fileByte.length);
+        response.setHeader("Content-Disposition", "attachment; fileName=\"" + URLEncoder.encode(fname,"UTF-8")+"\";");
+        response.setHeader("Content-Transfer-Encoding", "binary");
+        response.getOutputStream().write(fileByte);
+          
+        response.getOutputStream().flush();
+        response.getOutputStream().close();
+		}catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+	}
 }
