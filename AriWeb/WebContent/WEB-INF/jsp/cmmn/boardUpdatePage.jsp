@@ -55,12 +55,12 @@ function attachFile() {
 }
 
 function removeFile() {
-	var fileCnt = parseInt($('#fileCnt').val());
-	if(file_count > fileCnt){
+	//var fileCnt = parseInt($('#fileCnt').val());
+	//if(file_count > fileCnt){
 		$('#file_'+file_count).parent().remove();
 		//$('input').remove('#file_'+file_count);
 		file_count--;
-	}
+	//}
 }
 
 </script>
@@ -111,9 +111,9 @@ function removeFile() {
 			 			<c:set var="fileCnt" value="${fn:length(fileList)}" />
 			 			<input type="hidden" id="fileCnt" name="fileCnt" value="${fileCnt }">	 
 			 				<c:forEach items="${fileList }" var="file" varStatus="idx">
-			 					<input type="hidden" name="IDX_${idx.count }" id="IDX" value="${file.fno }" />
+			 					<p><input type="hidden" name="IDX_${idx.count }" id="IDX" value="${file.fno }" />
 			 					<a href="#this" name="name_${idx.count }" id="name_${idx.count }">${file.fname }</a>
-			 			    	<p><input type="file" name="file_${idx.count }" class='pfile'/></p>
+			 			    	<input type="file" name="file_${idx.count }" id="file_${idx.count }" class='pfile'/></p>
 			 				</c:forEach>		 
 			 			</div></td>			 			
 			 		</tr>

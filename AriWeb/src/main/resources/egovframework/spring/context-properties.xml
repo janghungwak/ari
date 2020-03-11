@@ -9,6 +9,12 @@
 	        	<entry key="pageSize" value="10"/>
 	        </map>
 		</property>
+		<property name="extFileName">
+			<map>
+				<entry key="encoding" value="UTF-8"/>
+				<entry key="filename" value="classpath:/properties/*.properties"/>
+			</map>
+		</property>
 	</bean>
 	
 </beans>	

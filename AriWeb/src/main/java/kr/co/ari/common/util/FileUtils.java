@@ -8,6 +8,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
@@ -16,10 +17,15 @@ import kr.co.ari.borad.vo.BoardVO;
 
 @Component("fileUtiles")
 public class FileUtils {
-	//String filePath = "C:\\DEV\\FILE\\";
-	String filePath = File.separator+"fileUpload"+File.separator;
 	
+	@Value("${file.filepath}")
+	private String fileupload;
+	
+	private String filePath;
+
 	public List<BoardVO> parseInsertFileInfo(BoardVO boardVO, MultipartHttpServletRequest mrequest) {
+		//파일경로
+		filePath = File.separator + fileupload + File.separator;
 		//파일명
 		String originalName = null;
 		//파일확장자
@@ -32,7 +38,7 @@ public class FileUtils {
 
 		BoardVO vo = null;
 		List<BoardVO> fileList = new ArrayList<BoardVO>();
-		
+		System.out.println("파일경로:"+filePath);
 		File file = new File(filePath);
 		
 		//디렉토리 없을때 생성함.
@@ -76,6 +82,8 @@ public class FileUtils {
 	}
 
 	public List<BoardVO> parseUpdateFileInfo(BoardVO boardVO, MultipartHttpServletRequest mrequest) {
+		//파일경로
+		filePath = File.separator + fileupload + File.separator;
 		//파일명
 		String originalName = null;
 		//파일확장자
@@ -130,7 +138,6 @@ public class FileUtils {
 			Map<String, Object> map = new HashMap<String, Object>();
 			map.put(fno, mrequest.getParameter(fno));
 			if(map.containsKey(fno) == true && mrequest.getParameter(fno) != null) {
-				System.out.println("여기는?");
 				vo = new BoardVO();
 				vo.setIsnew("N");
 				vo.setFno((String) map.get(fno));

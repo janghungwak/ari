@@ -30,6 +30,7 @@
 	<select id="selectFileList" parameterType="String" resultType="boardVO">
 		SELECT FNO, BNO, FNAME, RNAME, FSIZE FROM BOARDFILE
 		WHERE BNO = #{bno}
+		AND DELYN = 'N'
 	</select>
 	
 	<select id="selectFile" parameterType="boardVO" resultType="boardVO">
