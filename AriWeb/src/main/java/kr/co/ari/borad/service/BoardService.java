@@ -10,7 +10,7 @@ public interface BoardService {
 	
 	public abstract List<?> selectBoardList(BoardVO boardVO);
 	
-	public abstract int selectBoardCount();
+	public abstract int selectBoardCount(BoardVO boardVO);
 	
 	public abstract BoardVO selectBoardView(String bno);
 	
@@ -23,4 +23,6 @@ public interface BoardService {
 	public abstract List<?> selectFileList(String bno);
 	
 	public abstract BoardVO selectFile(BoardVO boardVO);
+	
+	public abstract int insertReplyBoard(BoardVO boardVO, MultipartHttpServletRequest mrequest);
 }

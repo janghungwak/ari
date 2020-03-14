@@ -3,29 +3,66 @@
 <mapper namespace="kr.co.ari.board.dao.BoardDAO">
 	
 	<select id="selectBoardList" parameterType="boardVO" resultType="boardVO">
-		SELECT BNO, BTITLE, BWRITER, BPASS, BCONTENT, DATE_FORMAT(BREGDATE, "%Y-%m-%d %T")AS BREGDATE FROM BOARD
-		ORDER BY bno DESC
+		<![CDATA[
+		SELECT BNO, BNOREREF, BNORELEV, BNORESEQ, BTITLE, BWRITER, BPASS, BCONTENT, DATE_FORMAT(BREGDATE, "%Y-%m-%d %T")AS BREGDATE, FILEEXIST FROM BOARD
+		]]>
+		<trim prefix="WHERE" prefixOverrides="AND|OR">
+			<if test="searchtype=='btitle' and keyword != null and keyword !=''">
+				AND BTITLE LIKE CONCAT('%',#{keyword},'%')
+			</if>
+			<if test="searchtype=='bwriter' and keyword != null and keyword !=''">
+				AND BWRITER LIKE CONCAT('%',#{keyword},'%')
+			</if>
+			<if test="searchtype=='bcontent' and keyword != null and keyword !=''">
+				AND BCONTENT LIKE CONCAT('%',#{keyword},'%')
+			</if>
+		</trim>
+		<![CDATA[
+		ORDER BY BNOREREF DESC, BNORESEQ ASC
 		LIMIT #{firstIndex}, #{recordCountPerPage}
+		]]>
 	</select>
 	
-	<select id="selectBoardCount" resultType="int">
+	<select id="selectBoardCount" resultType="int" parameterType="boardVO">
+		<![CDATA[
 		SELECT COUNT(*) FROM BOARD
+		]]>
+		<trim prefix="WHERE" prefixOverrides="AND|OR">
+			<if test="searchtype=='btitle' and keyword != null and keyword !=''">
+				AND BTITLE LIKE CONCAT('%',#{keyword},'%')
+			</if>
+			<if test="searchtype=='bwriter' and keyword != null and keyword !=''">
+				AND BWRITER LIKE CONCAT('%',#{keyword},'%')
+			</if>
+			<if test="searchtype=='bcontent' and keyword != null and keyword !=''">
+				AND BCONTENT LIKE CONCAT('%',#{keyword},'%')
+			</if>
+		</trim>
 	</select>
 	
 	<select id="selectBoardView" parameterType="String" resultType="boardVO">
-		SELECT BNO, BTITLE, BWRITER, BPASS, BCONTENT, DATE_FORMAT(BREGDATE, "%Y-%m-%d %T")AS BREGDATE FROM BOARD
+		SELECT BNO, BNOREREF, BNORELEV, BNORESEQ, BTITLE, BWRITER, BPASS, BCONTENT, DATE_FORMAT(BREGDATE, "%Y-%m-%d %T")AS BREGDATE FROM BOARD
 		WHERE BNO = #{bno}
 	</select>
 		
 	<insert id="insertBoard" parameterType="boardVO" useGeneratedKeys="true" keyProperty="bno">
-		INSERT INTO BOARD(BTITLE, BPASS, BWRITER, BCONTENT, BREGDATE)
-		VALUES (#{btitle}, #{bpass}, #{bwriter}, #{bcontent}, NOW())
+		<selectKey keyProperty="bnoreref" resultType="boardVO" order="BEFORE">
+			SELECT MAX(BNO)+1 AS BNOREREF FROM BOARD
+		</selectKey>		
+		INSERT INTO BOARD(BNOREREF, BTITLE, BPASS, BWRITER, BCONTENT, BREGDATE)
+		VALUES (#{bnoreref}, #{btitle}, #{bpass}, #{bwriter}, #{bcontent}, NOW())
 	</insert>
 	
 	<insert id="insertFile" >
 		INSERT INTO BOARDFILE(BNO, FNAME, RNAME, FSIZE, ISNEW)
 		VALUES (#{bno}, #{fname}, #{rname}, #{fsize}, #{isnew})
 	</insert>
+	
+	<update id="updateFileExist" parameterType="boardVO">
+		UPDATE BOARD SET
+		FILEEXIST = #{fileExist}
+		WHERE BNO = #{bno}
+	</update>
 	
 	<select id="selectFileList" parameterType="String" resultType="boardVO">
 		SELECT FNO, BNO, FNAME, RNAME, FSIZE FROM BOARDFILE
@@ -65,4 +102,15 @@
 	<delete id="deleteBoard" parameterType="boardVO">
 		DELETE FROM BOARD WHERE BNO = #{bno}
 	</delete>
+	
+	<update id="updateBnoreseq" parameterType="boardVO">
+		UPDATE BOARD SET BNORESEQ=BNORESEQ+1
+		WHERE BNOREREF = #{bnoreref}
+		and BNORESEQ > #{bnoreseq}
+	</update>
+	
+	<insert id="insertReplyBoard" parameterType="boardVO">
+		INSERT INTO BOARD(BNOREREF, BNORELEV, BNORESEQ, BTITLE, BPASS, BWRITER, BCONTENT, BREGDATE)
+		VALUES (#{bnoreref}, #{bnorelev}+1, #{bnoreseq}+1, #{btitle}, #{bpass}, #{bwriter}, #{bcontent}, NOW())
+	</insert>
 </mapper>

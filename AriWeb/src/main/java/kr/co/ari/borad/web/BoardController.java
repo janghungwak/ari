@@ -1,6 +1,7 @@
 package kr.co.ari.borad.web;
 
 import java.io.File;
+import java.io.PrintWriter;
 import java.net.URLEncoder;
 import java.util.List;
 
@@ -55,12 +56,14 @@ public class BoardController {
 			
 			List<?> boardList = boardService.selectBoardList(boardVO);
 			
-			int boardCount = boardService.selectBoardCount();
+			int boardCount = boardService.selectBoardCount(boardVO);
 			
 			paginationInfo.setTotalRecordCount(boardCount);
 			
 			model.addAttribute("boardList", boardList);
 			model.addAttribute("paginationInfo", paginationInfo);
+			model.addAttribute("searchtype", boardVO.getSearchtype());
+			model.addAttribute("keyword", boardVO.getKeyword());
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -157,12 +160,44 @@ public class BoardController {
         response.setHeader("Content-Disposition", "attachment; fileName=\"" + URLEncoder.encode(fname,"UTF-8")+"\";");
         response.setHeader("Content-Transfer-Encoding", "binary");
         response.getOutputStream().write(fileByte);
-          
-        response.getOutputStream().flush();
-        response.getOutputStream().close();
+        
+
 		}catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
+	        response.setContentType("text/html;charset=euc-kr");	 
+	        
+	        PrintWriter out = response.getWriter();
+	        out.println("<script type='text/javascript'>");
+	        out.println("alert('파일 오픈 중 오류가 발생하였습니다.');");
+	        out.println("history.back(-1);");
+	        out.println("</script>");
+	        
+	        out.flush();
+	        out.close();
+		}finally {
+	        response.getOutputStream().flush();
+	        response.getOutputStream().close();
 		}
+	}
+	
+	@RequestMapping("/ari/boardReplyPage.do")
+	public String BoardReplyPage(@ModelAttribute BoardVO boardVO, Model model) {
+		
+		BoardVO reboardVO = boardService.selectBoardView(boardVO.getBno());
+		
+		model.addAttribute("boardVO", reboardVO);
+		
+		return "cmmn/boardReplyPage.tiles";	
+	}
+	
+	@RequestMapping("/ari/insertReplyBoard.do")
+	public String InsertReplyBoard(@ModelAttribute BoardVO boardVO, MultipartHttpServletRequest mrequest) {
+		try {
+			int success = boardService.insertReplyBoard(boardVO, mrequest);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "redirect:/ari/board.do";
 	}
 }

@@ -9,7 +9,7 @@ public interface BoardDAO {
 	
 	public abstract List<?> selectBoardList(BoardVO boardVO);
 	
-	public abstract int selectBoardCount();
+	public abstract int selectBoardCount(BoardVO boardVO);
 	
 	public abstract BoardVO selectBoardView(String bno);
 	
@@ -28,4 +28,10 @@ public interface BoardDAO {
 	public abstract int deleteFile(String bno);
 	
 	public abstract int updateFile(BoardVO boardVO);
+	
+	public abstract int updateFileExist(BoardVO boardVO);
+	
+	public abstract int updateBnoreseq(BoardVO boardVO);
+	
+	public abstract int insertReplyBoard(BoardVO boardVO);
 }

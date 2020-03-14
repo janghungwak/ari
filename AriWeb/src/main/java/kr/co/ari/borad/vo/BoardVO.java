@@ -28,11 +28,24 @@ public class BoardVO implements Serializable{
 	private String delyn;
 	private String isnew;
 	
+	//파일존재여부
+	private String fileExist;
+	
+	//검색
+	private String searchtype;
+	private String keyword;
+	
+	//게시판답글
+	private String bnoreref;
+	private String bnorelev;
+	private String bnoreseq;
+	
 	public BoardVO() {}
 
 	public BoardVO(String bno, String btitle, String bpass, String bwriter, String bcontent, String bregdate,
 			int firstIndex, int recordCountPerPage, int currentPageNo, int pageSize, String fno, String fname,
-			String rname, long fsize, String delyn, String isnew) {
+			String rname, long fsize, String delyn, String isnew, String fileExist, String searchtype, String keyword,
+			String bnoreref, String bnorelev, String bnoreseq) {
 		super();
 		this.bno = bno;
 		this.btitle = btitle;
@@ -50,6 +63,12 @@ public class BoardVO implements Serializable{
 		this.fsize = fsize;
 		this.delyn = delyn;
 		this.isnew = isnew;
+		this.fileExist = fileExist;
+		this.searchtype = searchtype;
+		this.keyword = keyword;
+		this.bnoreref = bnoreref;
+		this.bnorelev = bnorelev;
+		this.bnoreseq = bnoreseq;
 	}
 
 	public String getBno() {
@@ -179,5 +198,52 @@ public class BoardVO implements Serializable{
 	public void setIsnew(String isnew) {
 		this.isnew = isnew;
 	}
-			
+
+	public String getFileExist() {
+		return fileExist;
+	}
+
+	public void setFileExist(String fileExist) {
+		this.fileExist = fileExist;
+	}
+
+	public String getSearchtype() {
+		return searchtype;
+	}
+
+	public void setSearchtype(String searchtype) {
+		this.searchtype = searchtype;
+	}
+
+	public String getKeyword() {
+		return keyword;
+	}
+
+	public void setKeyword(String keyword) {
+		this.keyword = keyword;
+	}
+
+	public String getBnoreref() {
+		return bnoreref;
+	}
+
+	public void setBnoreref(String bnoreref) {
+		this.bnoreref = bnoreref;
+	}
+
+	public String getBnorelev() {
+		return bnorelev;
+	}
+
+	public void setBnorelev(String bnorelev) {
+		this.bnorelev = bnorelev;
+	}
+
+	public String getBnoreseq() {
+		return bnoreseq;
+	}
+
+	public void setBnoreseq(String bnoreseq) {
+		this.bnoreseq = bnoreseq;
+	}
 }

@@ -67,13 +67,9 @@ function removeFile() {
 				</span>
 			</h3>
 		</div>
-		<div class="table_content">
+		<div class="table_content" style="table-layout: fixed;">
 			<form id="insertform" action="/ari/insertBoard.do?${_csrf.parameterName}=${_csrf.token}" method="POST" enctype="multipart/form-data">
 			 <table class="table">
-			 	<colgroup>
-			 		<col width="10%"/>
-			 		<col width="90%"/>
-			 	</colgroup>
 			 	<tbody>
 			 		<tr>
 			 			<th>제목</th>
@@ -100,7 +96,7 @@ function removeFile() {
 			 		</tr>
 			 		<tr>
 			 			<th>첨부파일</th>
-			 			<td><div class="fileButton"><a onclick="attachFile();">＋</a> <a onclick="removeFile();">－</a></div ><div class="fileInput"></div></td>			 			
+			 			<td><div class="fileButton"><a onclick="attachFile();" style="cursor: default;">＋</a> <a onclick="removeFile();" style="cursor: default;">－</a></div ><div class="fileInput"></div></td>			 			
 			 		</tr>
 			 		<tr>
 			 			<th>비밀번호</th>

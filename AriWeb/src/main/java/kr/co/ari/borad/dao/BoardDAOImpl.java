@@ -22,9 +22,9 @@ public class BoardDAOImpl implements BoardDAO {
 	}
 	
 	@Override
-	public int selectBoardCount() {
+	public int selectBoardCount(BoardVO boardVO) {
 		// TODO Auto-generated method stub
-		return sqlSession.selectOne("kr.co.ari.board.dao.BoardDAO.selectBoardCount");
+		return sqlSession.selectOne("kr.co.ari.board.dao.BoardDAO.selectBoardCount", boardVO);
 	}
 	
 	@Override
@@ -76,6 +76,25 @@ public class BoardDAOImpl implements BoardDAO {
 	public int updateFile(BoardVO boardVO) {
 		// TODO Auto-generated method stub
 		return sqlSession.update("kr.co.ari.board.dao.BoardDAO.updateFile", boardVO);
+	}
+	
+	@Override
+	public int updateFileExist(BoardVO boardVO) {
+		// TODO Auto-generated method stub
+		return sqlSession.update("kr.co.ari.board.dao.BoardDAO.updateFileExist", boardVO);
+		
+	}
+
+	@Override
+	public int updateBnoreseq(BoardVO boardVO) {
+		// TODO Auto-generated method stub
+		return sqlSession.update("kr.co.ari.board.dao.BoardDAO.updateBnoreseq", boardVO);
+	}
+
+	@Override
+	public int insertReplyBoard(BoardVO boardVO) {
+		// TODO Auto-generated method stub
+		return sqlSession.insert("kr.co.ari.board.dao.BoardDAO.insertReplyBoard", boardVO);
 	}
 	
 }

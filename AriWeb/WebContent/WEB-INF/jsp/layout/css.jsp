@@ -29,6 +29,7 @@ a.adm{
   	margin-left: 20px;
   	margin-right: 20px;
   	border-top: 2px solid #2457cf;
+  	clear: both;
 }
 
 .subtitle {

@@ -16,16 +16,40 @@
 	margin-top: 5px;
 	margin-bottom: 5px;
 }
+
+.search_group {
+    float: right;
+    margin: 0 20px 3px 0;
+}
+
+#search_btn {
+    margin-top: 0px;
+	margin-left: 5px;
+	padding: 3px 20px;
+}
 </style>
 <script type="text/javascript">
 	function linkPage(pageNo){
 		$('#currentPageNo').val(pageNo);
 		$('#boardForm').submit();
 	}
+	
+	function search(){
+		var initPageNo = 1;
+		$('#currentPageNo').val(initPageNo);
+		$('#boardForm').submit();
+	}
+	
+	function boardView(bno){
+		$('#bno').val(bno)
+		$('#boardForm').attr('action', '/ari/boardView.do');
+		$('#boardForm').submit();
+	}
 </script>
 </head>
 <body>
 	<div class="wrapper">
+	<form method="POST" id="boardForm" action="/ari/board.do">	
 		<div id="subTitle">
 				<h3 class="subtitle">
 					견적 문의
@@ -34,33 +58,42 @@
 					</span>
 				</h3>
 		</div>
+		<div class="search_group">
+			<select name="searchtype">
+				<option value="btitle" <c:out value="${searchtype == 'btitle' ? 'selected' : '' }"/>>제목</option>
+				<option value="bwriter" <c:out value="${searchtype == 'bwriter' ? 'selected' : '' }"/>>작성자
+				<option value="bcontent" <c:out value="${searchtype == 'bcontent' ? 'selected' : '' }"/>>내용</option>
+			</select>
+			<input type="text" name="keyword" id="keyword" value="${keyword }"/>
+			<a href="javascript:search();" class="btn btn-primary pull-right" id="search_btn">검색</a>
+		</div>
 		<div class ="table_content">
-			<form id="boardForm" action="/ari/board.do">
-			<table class="table table-striped">
-				<colgroup>
-					<col width="40%"/>
-					<col width="20%"/>
-					<col width="20%"/>
-					<col width="20%"/>
-				</colgroup>
+			<table class="table table-striped" style="table-layout: fixed;">
 				<thead>
 					<tr>
-						<th>제목</th>
-						<th>작성자</th>
-						<th>작성일</th>
-						<th>첨부파일</th>
+						<th class="text-center">제목</th>
+						<th class="text-center">작성자</th>
+						<th class="text-center">작성일</th>
+						<th class="text-center">첨부파일</th>
 					</tr>
 				</thead>
 				<tbody>
 					<c:forEach var="boardList" items="${boardList }">
-						<c:url var="link" value="/ari/boardView.do">
-							<c:param name="bno" value="${boardList.bno }"></c:param>
-						</c:url>
 						<tr>
-							<td><div style="width: 100px; text-overflow: ellipsis; overflow: hidden;"><a href="${link }"><c:out value="${boardList.btitle }"/></a></div></td>
-							<td><c:out value="${boardList.bwriter }"/></td>
-							<td><c:out value="${boardList.bregdate }"/></td>
-							<td>첨부</td>
+							<td ><a href="javascript:boardView(${boardList.bno});">
+								<input type="hidden" name="bno" id="bno" value="${boardList.bno }"/>
+								<c:if test="${boardList.bnorelev > 0 }">
+									<img src="../../../img/reply.png" style="margin-left : ${boardList.bnorelev * 15}px"/>
+								</c:if>
+								<c:out value="${boardList.btitle }"/></a>
+							</td>
+							<td class="text-center"><c:out value="${boardList.bwriter }"/></td>
+							<td class="text-center"><c:out value="${boardList.bregdate }"/></td>
+							<td class="text-center">
+								<c:if test="${boardList.fileExist eq 'Y' }">
+									<img src="../../../img/ic-attachment.ico" style="width: 16px; height: 16px;"/>
+								</c:if>
+							</td>
 						</tr>
 					</c:forEach>
 				</tbody>
@@ -70,11 +103,11 @@
 					<ui:pagination paginationInfo="${paginationInfo }" type="text" jsFunction="linkPage"/>
 				</ul>
 			</div>
+			<sec:csrfInput/>
 			<input type="hidden" name="currentPageNo" id="currentPageNo"/>
-			</form>
 			<a href="/ari/insertBoardPage.do" class="btn btn-primary pull-right">글쓰기</a>
 		</div>
+	</form>		
 	</div>
-	
 </body>
 </html>

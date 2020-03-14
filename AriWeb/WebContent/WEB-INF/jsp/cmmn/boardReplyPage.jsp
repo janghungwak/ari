@@ -31,16 +31,13 @@ function board_update(){
 		return;
 	}
 	
-	if(confirm('수정하시겠습니까?')){
+	if(confirm('등록하시겠습니까?')){
 		oEditors.getById["bcontent"].exec("UPDATE_CONTENTS_FIELD", []);
-		$('#updateform').submit();
+		$('#insertReplyform').submit();
 	}
 }
 
 var file_count=0;
-$(document).ready(function(){
-	file_count = parseInt($('#fileCnt').val());
-})
 function attachFile() {	
 	file_count++;
 	
@@ -55,12 +52,8 @@ function attachFile() {
 }
 
 function removeFile() {
-	//var fileCnt = parseInt($('#fileCnt').val());
-	//if(file_count > fileCnt){
 		$('#file_'+file_count).parent().remove();
-		//$('input').remove('#file_'+file_count);
 		file_count--;
-	//}
 }
 
 </script>
@@ -76,20 +69,23 @@ function removeFile() {
 			</h3>
 		</div>
 		<div class="table_content" style="table-layout: fixed;">
-			<form id="updateform" action="/ari/updateBoard.do?${_csrf.parameterName}=${_csrf.token}" method="POST" enctype="multipart/form-data">
+			<form id="insertReplyform" action="/ari/insertReplyBoard.do?${_csrf.parameterName}=${_csrf.token}" method="POST" enctype="multipart/form-data">
 			 <table class="table">
 			 	<tbody>
 			 		<tr>
 			 			<th>제목</th>
-			 			<td><input type="text" name="btitle" id="btitle" value="${boardVO.btitle }"/></td>
+			 			<td><input type="text" name="btitle" id="btitle" value="[RE]:${boardVO.btitle }"/></td>
 			 		</tr>
 			 		<tr>
 			 			<th>작성자</th>
-			 			<td><input type="text" name="bwriter" id="bwriter" value="${boardVO.bwriter }"/> <span></td>
+			 			<td><input type="text" name="bwriter" id="bwriter" value='<sec:authentication property="Principal.memberVO.name"/>'/></td>
 			 		</tr>
 			 		<tr>
 			 		<td colspan="2">
-			 		<textarea rows="10" cols="100" name="bcontent" id="bcontent" style="width: 100%; min-width:260px; height: 300px; display: none;">${boardVO.bcontent }</textarea> 
+			 		<textarea rows="10" cols="100" name="bcontent" id="bcontent" style="width: 100%; min-width:260px; height: 300px; display: none;">
+			 		</br>------${boardVO.bwriter }님의 글------</br>
+			 		${boardVO.bcontent }
+			 		</textarea> 
 			 		<script type="text/javascript">
 			 			var oEditors = [];			 			
 			 			nhn.husky.EZCreator.createInIFrame({
@@ -97,6 +93,12 @@ function removeFile() {
 			 				elPlaceHolder : "bcontent",
 			 				sSkinURI : "../../../smarteditor/SmartEditor2Skin.html",
 			 				fOnAppLoad : function(){
+			 					//커서위치를 최상단으로 포커싱
+			 					var oSelection = oEditors.getById["bcontent"].getEmptySelection();
+			 					oSelection.selectNodeContents(oEditors.getById["bcontent"].getWYSIWYGDocument().body);
+			 					oSelection.collapseToStart();
+			 					oSelection.select();
+			 					oEditors.getById["bcontent"].exec("FOCUS");
 			 					//oEditors.getById["bcontent"].exec("SET_IR",['']);
 			 				},
 			 			    fCreator: "createSEditor2"		 				
@@ -106,16 +108,7 @@ function removeFile() {
 			 		</tr>
 			 		<tr>
 			 			<th>첨부파일</th>
-			 			<td><div class="fileButton"><a onclick="attachFile();" style="cursor: default;">＋</a> <a onclick="removeFile();" style="cursor: default;">－</a></div >
-			 			<div class="fileInput">
-			 			<c:set var="fileCnt" value="${fn:length(fileList)}" />
-			 			<input type="hidden" id="fileCnt" name="fileCnt" value="${fileCnt }">	 
-			 				<c:forEach items="${fileList }" var="file" varStatus="idx">
-			 					<p><input type="hidden" name="IDX_${idx.count }" id="IDX" value="${file.fno }" />
-			 					<a href="#this" name="name_${idx.count }" id="name_${idx.count }">${file.fname }</a>
-			 			    	<input type="file" name="file_${idx.count }" id="file_${idx.count }" class='pfile'/></p>
-			 				</c:forEach>		 
-			 			</div></td>			 			
+			 			<td><div class="fileButton"><a onclick="attachFile();" style="cursor: default;">＋</a> <a onclick="removeFile();" style="cursor: default;">－</a><div class="fileInput"></div></div>		 			
 			 		</tr>
 			 		<tr>
 			 			<th>비밀번호</th>
@@ -123,9 +116,11 @@ function removeFile() {
 			 		</tr>
 			 	</tbody>
 			 </table>
-			 <input type="hidden" name="bno" value="${boardVO.bno }">			 
+			 <input type="hidden" name="bnoreref" value="${boardVO.bnoreref }">
+			 <input type="hidden" name="bnorelev" value="${boardVO.bnorelev }">
+			 <input type="hidden" name="bnoreseq" value="${boardVO.bnoreseq }">			 
 			 <sec:csrfInput/>
-			 <a href="javascript:board_update();" class="btn btn-primary pull-right binsert">수정</a>	
+			 <a href="javascript:board_update();" class="btn btn-primary pull-right binsert">등록</a>	
 			 <a href="javascript:history.back(-1);" class="btn btn-primary pull-right">취소</a>			 
 			</form>
 		</div>

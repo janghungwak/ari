@@ -11,13 +11,13 @@
 <title>견적문의 상세조회</title>
 <script type="text/javascript">
  function board_updatePage(){
-		$('#formAction').attr('action', '/ari/updateBoardPage.do')
+		$('#formAction').attr('action', '/ari/updateBoardPage.do');
 		$('#formAction').submit();
  }
 
  function board_delete(){
 	 if(confirm("삭제하시겠습니까?")){		 
-		$('#formAction').attr('action', '/ari/deleteBoard.do')
+		$('#formAction').attr('action', '/ari/deleteBoard.do');
 		$('#formAction').submit();
 	 }
  }
@@ -25,9 +25,14 @@
  function board_fileDownload(fno){
 	 var html = "<input type='hidden' name='fno' value='"+fno+"' />"
 	 $('#formAction').append(html);
-	 $('#formAction').attr('action', '/ari/downloadFile.do')
+	 $('#formAction').attr('action', '/ari/downloadFile.do');
 	 $('#formAction').submit();
 	 $('#formAction').find('input[name=fno]').remove();
+ }
+ 
+ function board_reply(){
+	 $('#formAction').attr('action', '/ari/boardReplyPage.do');
+	 $('#formAction').submit();
  }
 </script>
 </head>
@@ -42,15 +47,7 @@
 			</h3>
 		</div>
 		<div class="table_content">
-
-			<table class="table">
-				<colgroup>
-					<col width="20%">
-					<col width="20%">
-					<col width="20%">
-					<col width="20%">
-					<col width="60%">
-				</colgroup>
+			<table class="table" style="table-layout: fixed;">
 				<tbody>
 					<tr>
 						<th scope="row">제목</th>
@@ -84,7 +81,10 @@
 				<sec:csrfInput/> 
 			</form>
 			<a href="javascript:board_updatePage();" class="btn btn-primary pull-right binsert">수정</a>	
-			<a href="javascript:board_delete();" class="btn btn-primary pull-right binsert">삭제</a>	
+			<a href="javascript:board_delete();" class="btn btn-primary pull-right binsert">삭제</a>
+			<sec:authorize access="hasRole('ROLE_ADMIN')">
+			<a href="javascript:board_reply();" class="btn btn-primary pull-right binsert">답글</a>
+			</sec:authorize>	
 			<a href="/ari/board.do" class="btn btn-primary pull-right">목록</a>	
 		</div>
 	</div>

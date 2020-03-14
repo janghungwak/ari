@@ -28,16 +28,16 @@ public class BoardServiceImpl implements BoardService {
 	}
 	
 	@Override
-	public int selectBoardCount() {
+	public int selectBoardCount(BoardVO boardVO) {
 		// TODO Auto-generated method stub
-		return boardDAO.selectBoardCount();
+		return boardDAO.selectBoardCount(boardVO);
 	}
 	
 	@Override
 	public BoardVO selectBoardView(String bno) {
 		// TODO Auto-generated method stub
 		BoardVO boardVO = boardDAO.selectBoardView(bno);
-		boardVO.setBcontent(StringEscapeUtils.unescapeHtml4(boardVO.getBcontent()));
+		//boardVO.setBcontent(StringEscapeUtils.unescapeHtml4(boardVO.getBcontent()));
 		return boardVO;
 	}
 	
@@ -46,9 +46,15 @@ public class BoardServiceImpl implements BoardService {
 		int result = boardDAO.insertBoard(boardVO);
 		
 		List<BoardVO> list= fileUtils.parseInsertFileInfo(boardVO, mrequest);
-		
+			
+		int success = 0;
 		for(int i=0; i<list.size(); i++) {
-			boardDAO.insertFile(list.get(i));
+			success = boardDAO.insertFile(list.get(i));
+		}
+		
+		if(success > 0) {
+			boardVO.setFileExist("Y");
+			boardDAO.updateFileExist(boardVO);
 		}
 		
 		return result;
@@ -62,18 +68,29 @@ public class BoardServiceImpl implements BoardService {
 		
 		List<BoardVO> list = fileUtils.parseUpdateFileInfo(boardVO, mrequest);
 		
+		if(list.size() <= 0) {
+			boardVO.setFileExist("N");
+			boardDAO.updateFileExist(boardVO);
+		}
+		
 		BoardVO vo = null;
 		
+		int success = 0;
 		for(int i=0; i<list.size(); i++) {
 			vo = list.get(i);
 			
 			if(vo.getIsnew().equals("Y")) {
 				System.out.println("insert파일");
-				boardDAO.insertFile(vo);
+				success = boardDAO.insertFile(vo);
 			}else {
 				System.out.println("update파일");
-				boardDAO.updateFile(vo);
+				success = boardDAO.updateFile(vo);
 			}
+		}
+		
+		if(success > 0) {
+			boardVO.setFileExist("Y");
+			boardDAO.updateFileExist(boardVO);
 		}
 		
 		return result;
@@ -94,6 +111,27 @@ public class BoardServiceImpl implements BoardService {
 	public BoardVO selectFile(BoardVO boardVO) {
 		// TODO Auto-generated method stub
 		return boardDAO.selectFile(boardVO);
+	}
+
+	@Override
+	public int insertReplyBoard(BoardVO boardVO, MultipartHttpServletRequest mrequest) {
+		// TODO Auto-generated method stub
+		boardDAO.updateBnoreseq(boardVO);
+		
+		List<BoardVO> list= fileUtils.parseInsertFileInfo(boardVO, mrequest);
+		
+		
+		int success = 0;
+		for(int i=0; i<list.size(); i++) {
+			success = boardDAO.insertFile(list.get(i));
+		}
+		
+		if(success > 0) {
+			boardVO.setFileExist("Y");
+			boardDAO.updateFileExist(boardVO);
+		}
+		
+		return boardDAO.insertReplyBoard(boardVO);
 	}
 
 }
