@@ -47,7 +47,7 @@
 		
 	<insert id="insertBoard" parameterType="boardVO" useGeneratedKeys="true" keyProperty="bno">
 		<selectKey keyProperty="bnoreref" resultType="boardVO" order="BEFORE">
-			SELECT MAX(BNO)+1 AS BNOREREF FROM BOARD
+			SELECT IFNULL(MAX(BNO)+1, 1) AS BNOREREF FROM BOARD
 		</selectKey>		
 		INSERT INTO BOARD(BNOREREF, BTITLE, BPASS, BWRITER, BCONTENT, BREGDATE)
 		VALUES (#{bnoreref}, #{btitle}, #{bpass}, #{bwriter}, #{bcontent}, NOW())

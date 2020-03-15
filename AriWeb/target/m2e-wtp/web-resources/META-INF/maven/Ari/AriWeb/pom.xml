@@ -20,6 +20,8 @@
 	    <spring.maven.artifact.version>4.3.16.RELEASE</spring.maven.artifact.version>
 		<egovframework.rte.version>3.8.0</egovframework.rte.version>
 		<org.apache.tiles-version>3.0.8</org.apache.tiles-version>
+		<project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
+ 		<project.reporting.outputEncoding>utf-8</project.reporting.outputEncoding>	
 	</properties>
 
 	<repositories>
@@ -180,13 +182,6 @@
     	<version>2.0.3</version>
 	</dependency>
 	
-	<!-- Spring-jdbc -->
-	<dependency>
-    	<groupId>org.springframework</groupId>
-    	<artifactId>spring-jdbc</artifactId>
-    	<version>5.2.3.RELEASE</version>
-	</dependency>
-
 	<!-- Spring Security -->
 	<dependency>
     	<groupId>org.springframework.security</groupId>
@@ -234,16 +229,23 @@
             <plugins>
                 <plugin>
 	                <groupId>org.apache.tomcat.maven</groupId>
-	                <artifactId>tomcat7-maven-plugin</artifactId>
-	                <version>2.2</version>
+	                <artifactId>tomcat8-maven-plugin</artifactId>
+	                <version>3.0</version>
 	                <configuration>
-	                    <port>80</port>
 	                    <path>/</path>
 	                    <systemProperties>
 	                        <JAVA_OPTS>-Xms256m -Xmx768m -XX:MaxPermSize=256m</JAVA_OPTS>
 	                    </systemProperties>
 	                </configuration>
 	            </plugin>
+	            <plugin>
+					<artifactId>maven-war-plugin</artifactId>
+					<version>2.2</version>
+					<configuration>
+					<warSourceDirectory>WebContent</warSourceDirectory>
+					<webXml>WebContent/WEB-INF/web.xml</webXml>
+					</configuration>
+					</plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
