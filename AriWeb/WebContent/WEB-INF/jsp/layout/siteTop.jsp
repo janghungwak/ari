@@ -17,7 +17,6 @@
 		 $(".lnb").mouseleave(function(){	
 				 $(".snb").hide();
 		});
-		 
 	});
 	
 </script>
@@ -27,24 +26,47 @@
 <body>
 	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
-    	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse.collapse">
+    	<button type="button" id ="menu-button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse.collapse">
 			<span class="sr-only">Toggle navigation</span>
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 		</button>
       <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <a class="navbar-brand" href="/ari/main.do" ><img src="../../../img/logo.jpg" style="margin-top: -10px;"/></a>
-      </div>
-      <div class="navbar-collapse collapse">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="/ari/main.do" ><img src="../../../img/logo.jpg" style="margin-top: -10px;"/></a>
+	</div>
+	<div class="navbar-collapse collapse">
+		<div id='cssmenu'>
+			<ul>
+				<li><a href='/ari/main.do'><span>HOME</span></a></li>
+				<li><a href='/ari/companyIntro/selectCompanyIntroList.do'><span>회사소개</span></a></li>			
+				<li class='has-sub'><a href='#'><span>제품소개</span></a>
+					<ul>
+						<li class='has-sub'><a href='#'><span>원자재</span></a>
+							<ul>
+								<li><a href='/ari/product/Distribution/selectPanList.do'><span>판</span></a></li>
+								<li><a href='#'><span>파이프</span></a></li>
+								<li><a href='#'><span>환봉</span></a></li>
+								<li><a href='#'><span>앵글</span></a></li>
+								<li><a href='#'><span>채널</span></a></li>
+								<li class='last'><a href='#'><span>평철</span></a></li>
+							</ul>
+						</li>
+						<li><a href='#'><span>분전함</span></a></li>
+					</ul>
+				</li>
+				<li class='last'><a href='/ari/board.do'><span>견적문의</span></a></li>
+			</ul>
+		</div>
+      <!-- 
         <div class="menu">
           <ul class="nav nav-tabs" role="tablist">
             <li role="presentation" class="lnb">
-            	<a href="/ari/main.do">회사소개</a>
+            	<a href="/ari/companyIntro/selectComHistoryList.do">회사소개</a>
             	<ul class="snb">
-            		<li><a href="/ari/main.do">연혁</a></li>
-            		<li><a href="/ari/main.do">조직도</a></li>
+            		<li><a href="/ari/companyIntro/selectComHistoryList.do">연혁</a></li>
+            		<li><a href="/ari/companyIntro/selectOrgChartList.do">조직도</a></li>
             	</ul>
             </li>
             
@@ -58,7 +80,7 @@
             
             <li role="presentation" class="lnb"><a href="/ari/board.do">견적문의</a></li>
           </ul>
-        </div>
+        </div> -->
       </div>
     </div>
   </nav>

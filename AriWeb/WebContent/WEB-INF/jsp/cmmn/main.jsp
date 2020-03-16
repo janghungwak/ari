@@ -16,51 +16,9 @@
 				controls : true,
 			});
 		});
-	 	
-	 	function initialize() {
-		var Y_point			= 37.1527200;		// Y 좌표
-		var X_point			= 126.9629000;		// X 좌표
-		var zoomLevel		= 18;						// 지도의 확대 레벨 : 숫자가 클수록 확대정도가 큼
-		var markerTitle		= "(주)아리";				// 현재 위치 마커에 마우스를 오버을때 나타나는 정보
-		var markerMaxWidth	= 300;						// 마커를 클릭했을때 나타나는 말풍선의 최대 크기
-	
-		// 말풍선 내용
-		/*
-		var contentString	= '<div>' +
-		'<h2></h2>'+
-		'<p></p>' +
-		//'<a href="" target="_blank"></a>'+ //링크도 넣을 수 있음
-		'</div>';
-		*/
-		
-		var myLatlng = new google.maps.LatLng(Y_point, X_point);
-		var mapOptions = {
-							zoom: zoomLevel,
-							center: myLatlng,
-							mapTypeId: google.maps.MapTypeId.ROADMAP
-		}
-		var map = new google.maps.Map(document.getElementById('map_view'), mapOptions);
-	
-		var marker = new google.maps.Marker({
-												position: myLatlng,
-												map: map,
-												title: markerTitle
-		});
-	
-		/*
-		var infowindow = new google.maps.InfoWindow(
-													{	content: contentString,
-														maxWidth: markerMaxWidth
-													}
-		);
-		*/
-		google.maps.event.addListener(marker, 'click', function() {
-			infowindow.open(map, marker);
-		});
-	}
 </script>
 </head>
-<body onload="initialize();">
+<body>
 	<div style ="background-image: url(../../../img/mainBanner/bg.png); background-repeat:repeat-x; background-position: bottom; min-height:768px;">	 
 		<div class="container">
 			<div class="row">
@@ -109,7 +67,7 @@
 						</div>
 						<p>(주)아리의 회사소개, 연혁 등을 확인 하실 수 있습니다.</p>
 						<div class="ficon">
-							<a href="#" class="btn btn-default" role="button">Read more</a>
+							<a href="/ari/companyIntro/selectCompanyIntroList.do" class="btn btn-default" role="button">Read more</a>
 						</div>
 					</div>
 				</div>
@@ -122,7 +80,7 @@
 						</div>
 						<p>(주)아리에서 생산 및 납품을 하는 제품에 대한 정보를 확인 하실 수 있습니다.</p>
 						<div class="ficon">
-							<a href="#" class="btn btn-default" role="button">Read more</a>
+							<a href="/ari/product/Distribution/selectPanList.do" class="btn btn-default" role="button">Read more</a>
 						</div>
 					</div>
 				</div>
@@ -135,7 +93,7 @@
 						</div>
 						<p>(주)아리에서 생산하는 제품에 대한 문의를 하실 수 있습니다.</p>
 						<div class="ficon">
-							<a href="#" class="btn btn-default" role="button">Read more</a>
+							<a href="/ari/board.do" class="btn btn-default" role="button">Read more</a>
 						</div>
 					</div>
 				</div>
@@ -159,18 +117,7 @@
 		<div class="grid">
 			<figure class="effect-zoe">
 				<img src="../../../img/mainBanner/product1.jpg" alt="" style="width:100%; height:360px;"/>
-				<figcaption>
-					<h2>Title <span>Name</span></h2>
-						<p class="icon-links">
-							<a href="#"><span class="icon-heart"></span></a>
-							<a href="#"><span class="icon-eye"></span></a>
-							<a href="#"><span class="icon-paper-clip"></span></a>
-						</p>
-						<p class="description">Zoe never had the patience of her sisters. She deliberately punched the bear in his face.</p>
-				</figcaption>
-			</figure>
-			<figure class="effect-zoe">
-				<img src="../../../img/mainBanner/product2.jpg" alt="" style="width:100%; height:360px;"/>
+				<!-- 
 				<figcaption>
 					<h2>Title <span>Name</span></h2>
 					<p class="icon-links">
@@ -179,7 +126,20 @@
 						<a href="#"><span class="icon-paper-clip"></span></a>
 					</p>
 					<p class="description">Zoe never had the patience of her sisters. She deliberately punched the bear in his face.</p>
-				</figcaption>
+				</figcaption> -->
+			</figure>
+			<figure class="effect-zoe">
+				<img src="../../../img/mainBanner/product2.jpg" alt="" style="width:100%; height:360px;"/>
+				<!-- 
+				<figcaption>
+					<h2>Title <span>Name</span></h2>
+					<p class="icon-links">
+						<a href="#"><span class="icon-heart"></span></a>
+						<a href="#"><span class="icon-eye"></span></a>
+						<a href="#"><span class="icon-paper-clip"></span></a>
+					</p>
+					<p class="description">Zoe never had the patience of her sisters. She deliberately punched the bear in his face.</p>
+				</figcaption> -->
 			</figure>
 		</div>
 	</div>
@@ -188,6 +148,7 @@
 		<div class="grid">
 			<figure class="effect-zoe">
 				<img src="../../../img/mainBanner/product3.jpg" alt="" style="width:100%; height:360px;"/>
+				<!-- 
 				<figcaption>
 					<h2>Title <span>Name</span></h2>
 					<p class="icon-links">
@@ -196,10 +157,11 @@
 						<a href="#"><span class="icon-paper-clip"></span></a>
 					</p>
 					<p class="description">Zoe never had the patience of her sisters. She deliberately punched the bear in his face.</p>
-				</figcaption>
+				</figcaption> -->
 			</figure>
 			<figure class="effect-zoe">
-				<img src="../../../img/30.jpg" alt="img30" style="width:100%; height:360px;"/>
+				<img src="../../../img/mainBanner/product4.jpg" alt="" style="width:100%; height:360px;"/>
+				<!-- 
 				<figcaption>
 					<h2>Title <span>Name</span></h2>
 					<p class="icon-links">
@@ -208,7 +170,7 @@
 						<a href="#"><span class="icon-paper-clip"></span></a>
 					</p>
 					<p class="description">Zoe never had the patience of her sisters. She deliberately punched the bear in his face.</p>
-				</figcaption>
+				</figcaption> -->
 			</figure>
 		</div>
 	</div>
@@ -232,12 +194,34 @@
 					<div class="col-md-4 f-contact">
 						<h3 class="widgetheading"></h3>
 						<div id="map_view"></div>
+							<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d5832f06f2f46f5e9d24ec29001ef968"></script>
+							<script>
+								var mapContainer = document.getElementById('map_view'), // 지도를 표시할 div 
+								mapOption = { 
+								    center: new kakao.maps.LatLng(37.15286124275842, 126.96288548524096), // 지도의 중심좌표
+								    level: 3 // 지도의 확대 레벨
+								};
+								
+								var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+								
+								//마커가 표시될 위치입니다 
+								var markerPosition  = new kakao.maps.LatLng(37.15286124275842, 126.96288548524096); 
+								
+								//마커를 생성합니다
+								var marker = new kakao.maps.Marker({
+								position: markerPosition
+								});
+								
+								//마커가 지도 위에 표시되도록 설정합니다
+								marker.setMap(map);
+								
+								//아래 코드는 지도 위의 마커를 제거하는 코드입니다
+								//marker.setMap(null);   
+							</script>
 					</div>
 				</div>
 			</div>
 		</div>
 	</footer>
-  
-
 </body>
 </html>

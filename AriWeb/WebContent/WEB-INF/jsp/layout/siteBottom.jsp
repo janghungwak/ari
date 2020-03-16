@@ -23,7 +23,7 @@
   </script>
 </head>
 <body>
-	<footer>
+	<footer id="footer">
     <div class="last-div">
       <div class="container">
         <div class="row">

@@ -8,4 +8,4 @@
   <script src="../../../js/jquery.isotope.min.js"></script> 
   <script src="../../../js/wow.min.js"></script> 
   <script src="../../../js/functions.js"></script> 
-  <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+  <script src="../../../js/menuScript.js"></script> 
