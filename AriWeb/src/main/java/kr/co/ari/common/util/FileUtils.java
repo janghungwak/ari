@@ -48,7 +48,7 @@ public class FileUtils {
 		
 		while (iterator.hasNext()) {
 			multFile=mrequest.getFile(iterator.next());
-			//파일없을때까지
+			//파일내용이 비어있지않으면
 			if(multFile.isEmpty()==false) {
 				//파일명
 				originalName = multFile.getOriginalFilename();
@@ -103,7 +103,7 @@ public class FileUtils {
 		while (iterator.hasNext()) {
 			multFile = mrequest.getFile(iterator.next());
 			
-			//파일없을때까지
+			//파일내용이 비어있지않으면
 			if(multFile.isEmpty()==false) {						
 			//파일명
 			originalName = multFile.getOriginalFilename();
@@ -147,5 +147,10 @@ public class FileUtils {
 			
 		}		
 		return fileList;
+	}
+	
+	public String filePath() {
+		filePath = File.separator + fileupload + File.separator;	
+		return filePath;
 	}
 }

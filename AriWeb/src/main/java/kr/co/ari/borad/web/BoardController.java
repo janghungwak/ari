@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.io.FileUtils;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -22,6 +23,8 @@ import kr.co.ari.borad.vo.BoardVO;
 
 @Controller
 public class BoardController {
+	@Value("${file.filepath}")
+	private String filepath;
 	
 	@Resource(name="boardService")
 	private BoardService boardService;
@@ -97,7 +100,6 @@ public class BoardController {
 	public String insertBoard(@ModelAttribute BoardVO boardVO, MultipartHttpServletRequest mrequest) throws Exception {
 		System.out.println("게시판입력");
 		try {
-
 			boardService.insertBoard(boardVO, mrequest);	
 			
 		} catch (Exception e) {
@@ -153,7 +155,7 @@ public class BoardController {
 		String fname = vo.getFname();
 		String rname = vo.getRname();
 		
-		byte[] fileByte = FileUtils.readFileToByteArray(new File(File.separator+"fileUpload"+File.separator+rname));
+		byte[] fileByte = FileUtils.readFileToByteArray(new File(File.separator+filepath+File.separator+rname));
 		
 		response.setContentType("application/octet-stream");
 		response.setContentLength(fileByte.length);

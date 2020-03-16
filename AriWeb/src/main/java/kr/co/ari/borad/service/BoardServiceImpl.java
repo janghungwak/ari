@@ -45,7 +45,7 @@ public class BoardServiceImpl implements BoardService {
 	public int insertBoard(BoardVO boardVO, MultipartHttpServletRequest mrequest) {
 		int result = boardDAO.insertBoard(boardVO);
 		
-		List<BoardVO> list= fileUtils.parseInsertFileInfo(boardVO, mrequest);
+		List<BoardVO> list = fileUtils.parseInsertFileInfo(boardVO, mrequest);
 			
 		int success = 0;
 		for(int i=0; i<list.size(); i++) {

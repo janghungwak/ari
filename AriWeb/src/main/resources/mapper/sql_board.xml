@@ -45,12 +45,14 @@
 		WHERE BNO = #{bno}
 	</select>
 		
-	<insert id="insertBoard" parameterType="boardVO" useGeneratedKeys="true" keyProperty="bno">
-		<selectKey keyProperty="bnoreref" resultType="boardVO" order="BEFORE">
-			SELECT IFNULL(MAX(BNO)+1, 1) AS BNOREREF FROM BOARD
-		</selectKey>		
+	<insert id="insertBoard" parameterType="boardVO">
+		<selectKey keyProperty="bnoreref,bno" resultType="boardVO" order="BEFORE">
+			SELECT IFNULL(MAX(BNO)+1, 1) AS BNOREREF, IFNULL(MAX(BNO)+1, 1) AS BNO FROM BOARD
+		</selectKey>
+		<![CDATA[		
 		INSERT INTO BOARD(BNOREREF, BTITLE, BPASS, BWRITER, BCONTENT, BREGDATE)
 		VALUES (#{bnoreref}, #{btitle}, #{bpass}, #{bwriter}, #{bcontent}, NOW())
+		]]>
 	</insert>
 	
 	<insert id="insertFile" >

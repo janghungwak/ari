@@ -82,4 +82,6 @@
     <!-- resources exclusions from servlet mapping -->
     <mvc:default-servlet-handler/>
 
+    <!-- properties 설정 -->
+    <context:property-placeholder location="classpath:/properties/*.properties"/>
 </beans>
