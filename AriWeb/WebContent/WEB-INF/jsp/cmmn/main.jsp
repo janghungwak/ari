@@ -6,11 +6,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="naver-site-verification" content="49e391132c654d6253a23f9b937b501a1db2b9ce"/>
 <script type="text/javascript">
 
 	$(document).ready(function() {
 			$('.bxslider').bxSlider({
-				auto:true,
+				auto:false,
 				speed:500,
 				pause:4000,
 				controls : true,
@@ -25,19 +26,13 @@
 				<div class="slider" >
 					<div class="img-responsive">
 						<ul class="bxslider">
-							<li><img src="../../../img/mainBanner/leftMain_1.png" alt="" style="width: 100%; height:100%"/></li>
 							<li><img src="../../../img/mainBanner/coil1.jpg" alt="" style="width: 100%; height:100%"/></li>
-							<li><img src="../../../img/mainBanner/stsPan1.png" alt="" style="width: 100%; height:100%"/></li>
-							<li><img src="../../../img/mainBanner/stsPan2.png" alt="" style="width: 100%; height:100%"/></li>
 						</ul>
 					</div>
 
 					<div class="img-responsive">
 						<ul class="bxslider">
 							<li><img src="../../../img/mainBanner/rightMain.png" alt="" style="width: 90%; height:100%"/></li>
-							<li><img src="../../../img/mainBanner/stsPan1.png" alt="" style="width: 100%; height:100%"/></li>
-							<li><img src="../../../img/mainBanner/stsPan3.png" alt="" style="width: 100%; height:100%"/></li>
-							<li><img src="../../../img/mainBanner/stsPan2.png" alt="" style="width: 100%; height:100%"/></li>
 						</ul>
 					</div>
 				</div>
@@ -86,10 +81,10 @@
 				</div>
 				
 				<div class="col-md-4">
-					<div class="wow bounceIn" data-wow-offset="0" data-wow-delay="1.0s">
+					<div class="wow bounceIn" data-wow-offset="0" data-wow-delay="1.6s">
 						<h4>견적문의</h4>
 						<div class="icon">
-							<i class="fa fa-desktop fa-3x"></i>
+							<i class="fa fa-comment fa-3x"></i>
 						</div>
 						<p>(주)아리에서 생산하는 제품에 대한 문의를 하실 수 있습니다.</p>
 						<div class="ficon">
