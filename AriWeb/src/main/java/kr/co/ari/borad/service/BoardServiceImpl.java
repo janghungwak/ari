@@ -118,6 +118,8 @@ public class BoardServiceImpl implements BoardService {
 		// TODO Auto-generated method stub
 		boardDAO.updateBnoreseq(boardVO);
 		
+		int result = boardDAO.insertReplyBoard(boardVO);
+		
 		List<BoardVO> list= fileUtils.parseInsertFileInfo(boardVO, mrequest);
 		
 		
@@ -131,7 +133,7 @@ public class BoardServiceImpl implements BoardService {
 			boardDAO.updateFileExist(boardVO);
 		}
 		
-		return boardDAO.insertReplyBoard(boardVO);
+		return result;
 	}
 
 }

@@ -111,7 +111,7 @@
 		and BNORESEQ > #{bnoreseq}
 	</update>
 	
-	<insert id="insertReplyBoard" parameterType="boardVO">
+	<insert id="insertReplyBoard" parameterType="boardVO" useGeneratedKeys="true" keyProperty="bno">
 		INSERT INTO BOARD(BNOREREF, BNORELEV, BNORESEQ, BTITLE, BPASS, BWRITER, BCONTENT, BREGDATE)
 		VALUES (#{bnoreref}, #{bnorelev}+1, #{bnoreseq}+1, #{btitle}, #{bpass}, #{bwriter}, #{bcontent}, NOW())
 	</insert>

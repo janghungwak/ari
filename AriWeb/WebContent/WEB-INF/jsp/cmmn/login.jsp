@@ -78,9 +78,6 @@ $(document).ready(function(){
       <h2 class="form-signin-heading">관리자 로그인</h2>
       <input type="text" class="form-control" name="username" placeholder="Id" required="" autofocus="" />
       <input type="password" class="form-control" name="password" placeholder="Password" required=""/>      
-      <label class="checkbox">
-        <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> 아이디 저장하기
-      </label>
       <button class="btn btn-lg btn-primary btn-block" type="submit">로그인</button>
       <sec:csrfInput/>
     </form>
