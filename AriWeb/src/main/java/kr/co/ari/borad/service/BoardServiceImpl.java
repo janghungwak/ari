@@ -1,6 +1,7 @@
 package kr.co.ari.borad.service;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 
@@ -134,6 +135,12 @@ public class BoardServiceImpl implements BoardService {
 		}
 		
 		return result;
+	}
+
+	@Override
+	public int selectBoardPassChk(Map<String, Object> map) {
+		// TODO Auto-generated method stub
+		return boardDAO.selectBoardPassChk(map);
 	}
 
 }

@@ -1,6 +1,7 @@
 package kr.co.ari.borad.service;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
@@ -25,4 +26,6 @@ public interface BoardService {
 	public abstract BoardVO selectFile(BoardVO boardVO);
 	
 	public abstract int insertReplyBoard(BoardVO boardVO, MultipartHttpServletRequest mrequest);
+	
+	public abstract int selectBoardPassChk(Map<String, Object> map);
 }

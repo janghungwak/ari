@@ -3,7 +3,9 @@ package kr.co.ari.borad.web;
 import java.io.File;
 import java.io.PrintWriter;
 import java.net.URLEncoder;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -30,13 +32,17 @@ public class BoardController {
 	private BoardService boardService;
 	
 	@RequestMapping("/ari/board.do")
-	public String boardPage(@ModelAttribute BoardVO boardVO, Model model) throws Exception {
+	public String boardPage(@ModelAttribute BoardVO boardVO, Model model, HttpServletRequest request) throws Exception {
 		System.out.println("게시판");
 		try {
 			PaginationInfo paginationInfo = new PaginationInfo();
 			
+			if(request.getParameter("currentPageNo") != null) {
+				boardVO.setCurrentPageNo(Integer.parseInt(request.getParameter("currentPageNo")));
+			}
+			
 			//현재페이지 번호가 없으면 1
-			if(boardVO.getCurrentPageNo() == 0) {
+			if(boardVO.getCurrentPageNo() == 0 && request.getParameter("currentPageNo") == null) {
 				paginationInfo.setCurrentPageNo(1);
 			}else{//현재페이지 번호
 				paginationInfo.setCurrentPageNo(boardVO.getCurrentPageNo());
@@ -67,6 +73,8 @@ public class BoardController {
 			model.addAttribute("paginationInfo", paginationInfo);
 			model.addAttribute("searchtype", boardVO.getSearchtype());
 			model.addAttribute("keyword", boardVO.getKeyword());
+			model.addAttribute("passMatch", request.getParameter("passMatch"));
+			model.addAttribute("currentPageNo", boardVO.getCurrentPageNo());
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -79,6 +87,7 @@ public class BoardController {
 	@RequestMapping("/ari/boardView.do")
 	public String boardView(Model model, HttpServletRequest request) throws Exception {
 		String bno = request.getParameter("bno");
+		String passMatch = request.getParameter("passMatch");
 		
 		BoardVO boardVO = boardService.selectBoardView(bno);	
 		
@@ -86,6 +95,7 @@ public class BoardController {
 		
 		model.addAttribute("boardVO", boardVO);
 		model.addAttribute("fileList", fileList);
+		model.addAttribute("passMatch", passMatch);
 		return "cmmn/boardView.tiles";
 	}
 	
@@ -184,7 +194,7 @@ public class BoardController {
 	}
 	
 	@RequestMapping("/ari/boardReplyPage.do")
-	public String BoardReplyPage(@ModelAttribute BoardVO boardVO, Model model) {
+	public String BoardReplyPage(@ModelAttribute BoardVO boardVO, Model model) throws Exception {
 		
 		BoardVO reboardVO = boardService.selectBoardView(boardVO.getBno());
 		
@@ -194,12 +204,46 @@ public class BoardController {
 	}
 	
 	@RequestMapping("/ari/insertReplyBoard.do")
-	public String InsertReplyBoard(@ModelAttribute BoardVO boardVO, MultipartHttpServletRequest mrequest) {
+	public String InsertReplyBoard(@ModelAttribute BoardVO boardVO, MultipartHttpServletRequest mrequest) throws Exception {
 		try {
 			int success = boardService.insertReplyBoard(boardVO, mrequest);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return "redirect:/ari/board.do";
+	}
+	
+	@RequestMapping("/ari/boardPassChk.do")
+	public String BoardPassChk(HttpServletRequest request) throws Exception {			
+			String bno = request.getParameter("bno");
+			String bpass = request.getParameter("bpass");
+			String mod = request.getParameter("mod");
+			System.out.println(mod);
+			String currentPageNo = request.getParameter("currentPageNo");
+			Map<String, Object> map = new LinkedHashMap<>();
+			
+			map.put("bno", bno);
+			map.put("bpass", bpass);
+		
+			int boardPassChk = boardService.selectBoardPassChk(map);
+			
+			if("update".equals(mod)) { //상세조회에서 수정할때
+				if(boardPassChk > 0) {//성공하면
+					return "forward:/ari/updateBoardPage.do?bno="+bno;
+				}else {
+					return "forward:/ari/boardView.do?bno="+bno+"&passMatch=false";
+				}
+			}else if("delete".equals(mod)) { //상세조회에서 삭제할떄
+				if(boardPassChk > 0) {//성공하면
+					return "forward:/ari/deleteBoard.do?bno="+bno;
+				}else {
+					return "forward:/ari/boardView.do?bno="+bno+"&passMatch=false";
+				}
+			}else {	//게시판목록에서 접근할때		
+				if(boardPassChk > 0) {//성공하면
+					return "forward:/ari/boardView.do?bno="+bno+"&passMatch=true";
+				}
+			}
+		return "redirect:/ari/board.do?passMatch=false&currentPageNo="+currentPageNo;
 	}
 }

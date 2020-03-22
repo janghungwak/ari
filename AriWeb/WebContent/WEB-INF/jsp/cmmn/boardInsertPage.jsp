@@ -9,6 +9,7 @@
 <title>견적 문의 입력</title>
 <script type="text/javascript">
 function board_insert(){
+	var bsecchk = $('#bsecchk').is(':checked');
 	var btitle = $('#btitle').val();
 	var bwriter = $('#bwriter').val();
 	var bpass = $('#bpass').val();
@@ -28,8 +29,16 @@ function board_insert(){
 		return;
 	}
 	
-	oEditors.getById["bcontent"].exec("UPDATE_CONTENTS_FIELD", []);
-	$('#insertform').submit();
+	if(bsecchk == true){
+		$('#bsec').val('Y');
+	}else{
+		$('#bsec').val('N');
+	} 
+
+	if(confirm('등록하시겠습니까?')){
+		oEditors.getById["bcontent"].exec("UPDATE_CONTENTS_FIELD", []);
+		$('#insertform').submit();
+	}
 }
 
 var file_count=0;
@@ -72,12 +81,17 @@ function removeFile() {
 			 <table class="table">
 			 	<tbody>
 			 		<tr>
-			 			<th>제목</th>
-			 			<td><input type="text" name="btitle" id="btitle"/></td>
+			 			<th class="text-left">제목</th>
+			 			<td class="text-left"><input type="text" name="btitle" id="btitle"/></td>
 			 		</tr>
 			 		<tr>
-			 			<th>작성자</th>
-			 			<td><input type="text" name="bwriter" id="bwriter"/></td>
+			 			<th class="text-left">작성자</th>
+			 			<td class="text-left"><input type="text" name="bwriter" id="bwriter"/>
+			 			<p style="padding : 3px 3px 3px 3px; margin-bottom: 0px; display: inline-block;">
+			 				<span><input type="checkbox" id="bsecchk"/>비밀글</span>
+			 			</p>
+			 			<input type="hidden" name="bsec" id="bsec">
+			 			</td>
 			 		</tr>
 			 		<tr>
 			 		<td colspan="2">
@@ -95,12 +109,12 @@ function removeFile() {
 			 		</td>
 			 		</tr>
 			 		<tr>
-			 			<th>첨부파일</th>
-			 			<td><div class="fileButton"><a onclick="attachFile();" style="cursor: default;">＋</a> <a onclick="removeFile();" style="cursor: default;">－</a></div ><div class="fileInput"></div></td>			 			
+			 			<th class="text-left">첨부파일</th>
+			 			<td class="text-left"><div class="fileButton"><a onclick="attachFile();" style="cursor: default;">＋</a> <a onclick="removeFile();" style="cursor: default;">－</a></div ><div class="fileInput"></div></td>			 			
 			 		</tr>
 			 		<tr>
-			 			<th>비밀번호</th>
-			 			<td><input type="text" name="bpass" id="bpass"/></td>
+			 			<th class="text-left">비밀번호</th>
+			 			<td class="text-left"><input type="password" name="bpass" id="bpass"/></td>
 			 		</tr>
 			 	</tbody>
 			 </table>

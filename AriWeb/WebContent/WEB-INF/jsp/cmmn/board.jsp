@@ -12,37 +12,88 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>견적문의</title>
 <style type="text/css">
-.pagination{
+.pagination {
 	margin-top: 5px;
 	margin-bottom: 5px;
 }
 
 .search_group {
-    float: right;
-    margin: 0 20px 3px 0;
+	float: right;
+	margin: 0 20px 3px 0;
 }
 
 #search_btn {
-    margin-top: 0px;
+	margin-top: 0px;
 	margin-left: 5px;
 	padding: 3px 20px;
 }
+
+#bpassButton {
+	margin-top: 0px;
+	margin-bottom: 4px;
+	margin-left: 5px;
+	padding: 3px 15px;
+}
+
+.modal {
+        text-align: center;
+}
+ 
+@media screen and (min-width: 300px) { 
+        .modal:before {
+                display: inline-block;
+                vertical-align: middle;
+                content: " ";
+                height: 100%;
+        }
+}
+ 
+.modal-dialog {
+        display: inline-block;
+        text-align: left;
+        vertical-align: middle;
+        width: 300px;
+}
 </style>
 <script type="text/javascript">
-	function linkPage(pageNo){
+	$(document).ready(function(){
+		var message = "${passMatch}";
+		var currentPageNo = "${currentPageNo}";
+		if(message == "false"){
+			alert('비밀번호를 다시 확인해주세요.');
+			$('#currentPageNo').val(currentPageNo);
+			$('#boardForm').submit();
+			//location.href='/ari/board.do';
+		}
+	})
+
+	function linkPage(pageNo) {
 		$('#currentPageNo').val(pageNo);
 		$('#boardForm').submit();
 	}
-	
-	function search(){
+
+	function search() {
 		var initPageNo = 1;
 		$('#currentPageNo').val(initPageNo);
 		$('#boardForm').submit();
 	}
+
+	function boardView(bno) {
+		var bsec = $('#bsec_' + bno).val();
+		$('input[name="bno"]').val(bno);
+		
+		if (bsec == 'Y') {
+			$('#passChkModal').modal();
+		} else {
+			$('#boardForm').attr('action', '/ari/boardView.do');
+			$('#boardForm').submit();
+		}
+	}
 	
-	function boardView(bno){
-		$('#bno').val(bno)
-		$('#boardForm').attr('action', '/ari/boardView.do');
+	function passChk(){
+		var currentPageNo = '${paginationInfo.currentPageNo}'; 
+		$('#currentPageNo').val(currentPageNo);	
+		$('#boardForm').attr('action', '/ari/boardPassChk.do');
 		$('#boardForm').submit();
 	}
 </script>
@@ -80,12 +131,18 @@
 				<tbody>
 					<c:forEach var="boardList" items="${boardList }">
 						<tr>
-							<td ><a href="javascript:boardView(${boardList.bno});">
-								<input type="hidden" name="bno" id="bno" value="${boardList.bno }"/>
+							<td class="text-left">
+								<a href="javascript:boardView(${boardList.bno});">
+								<input type="hidden" name="bno" id="bno_${boardList.bno}" value="${boardList.bno }"/>
+								<input type="hidden" name="bsec" id="bsec_${boardList.bno}" value="${boardList.bsec }">
 								<c:if test="${boardList.bnorelev > 0 }">
 									<img src="../../../img/reply.png" style="margin-left : ${boardList.bnorelev * 15}px"/>
 								</c:if>
-								<c:out value="${boardList.btitle }"/></a>
+								<c:out value="${boardList.btitle }"/>
+								<c:if test="${boardList.bsec eq 'Y' }">
+									<img src="../../../img/icon_lock.gif" style="margin-left : 3px;">
+								</c:if>
+								</a>
 							</td>
 							<td class="text-center"><c:out value="${boardList.bwriter }"/></td>
 							<td class="text-center"><c:out value="${boardList.bregdate }"/></td>
@@ -107,7 +164,24 @@
 			<input type="hidden" name="currentPageNo" id="currentPageNo"/>
 			<a href="/ari/insertBoardPage.do" class="btn btn-primary pull-right">글쓰기</a>
 		</div>
-	</form>		
+		
+		<!-- Modal -->
+			<div class="modal fade" id="passChkModal" role="dialog" style="width: auto;">
+				<div class="modal-dialog">
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">×</button>
+							<h4 class="modal-title">게시판 비밀번호 입력</h4>
+						</div>
+						<div class="modal-body">						
+							<input type="text" name="bpass" id="bpass" style="width: 70%"/>	
+							<button type="button" class="btn btn-primary" id="bpassButton" onclick="passChk();">확인</button>					
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>		
 	</div>
 </body>
 </html>

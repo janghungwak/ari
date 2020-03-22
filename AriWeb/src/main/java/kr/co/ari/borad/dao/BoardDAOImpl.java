@@ -1,6 +1,7 @@
 package kr.co.ari.borad.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -95,6 +96,12 @@ public class BoardDAOImpl implements BoardDAO {
 	public int insertReplyBoard(BoardVO boardVO) {
 		// TODO Auto-generated method stub
 		return sqlSession.insert("kr.co.ari.board.dao.BoardDAO.insertReplyBoard", boardVO);
+	}
+
+	@Override
+	public int selectBoardPassChk(Map<String, Object> map) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectOne("kr.co.ari.board.dao.BoardDAO.selectBoardPassChk", map);
 	}
 	
 }

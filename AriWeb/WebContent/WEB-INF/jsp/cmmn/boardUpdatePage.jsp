@@ -10,7 +10,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>견적 문의 수정</title>
 <script type="text/javascript">
-
 function board_update(){
 	var btitle = $('#btitle').val();
 	var bwriter = $('#bwriter').val();
@@ -63,6 +62,12 @@ function removeFile() {
 	//}
 }
 
+function boardView() {
+	$('#updateform').attr('action', '/ari/boardView.do');
+	$('#updateform').attr('enctype', '');
+	$('#updateform').submit();
+}
+
 </script>
 </head>
 <body>
@@ -80,12 +85,17 @@ function removeFile() {
 			 <table class="table">
 			 	<tbody>
 			 		<tr>
-			 			<th>제목</th>
-			 			<td><input type="text" name="btitle" id="btitle" value="${boardVO.btitle }"/></td>
+			 			<th class="text-left">제목</th>
+			 			<td class="text-left"><input type="text" name="btitle" id="btitle" value="${boardVO.btitle }"/></td>
 			 		</tr>
 			 		<tr>
-			 			<th>작성자</th>
-			 			<td><input type="text" name="bwriter" id="bwriter" value="${boardVO.bwriter }"/> <span></td>
+			 			<th class="text-left">작성자</th>
+			 			<td class="text-left"><input type="text" name="bwriter" id="bwriter" value="${boardVO.bwriter }"/> 
+						<p style="padding : 3px 3px 3px 3px; margin-bottom: 0px; display: inline-block;">
+			 				<span><input type="checkbox" id="bsecchk" <c:if test="${boardVO.bsec eq 'Y' }">checked</c:if>/>비밀글</span>
+			 			</p>
+			 			<input type="hidden" name="bsec" id="bsec" value="${boardVO.bsec}">
+						</td>
 			 		</tr>
 			 		<tr>
 			 		<td colspan="2">
@@ -105,8 +115,8 @@ function removeFile() {
 			 		</td>
 			 		</tr>
 			 		<tr>
-			 			<th>첨부파일</th>
-			 			<td><div class="fileButton"><a onclick="attachFile();" style="cursor: default;">＋</a> <a onclick="removeFile();" style="cursor: default;">－</a></div >
+			 			<th class="text-left">첨부파일</th>
+			 			<td class="text-left"><div class="fileButton"><a onclick="attachFile();" style="cursor: default;">＋</a> <a onclick="removeFile();" style="cursor: default;">－</a></div >
 			 			<div class="fileInput">
 			 			<c:set var="fileCnt" value="${fn:length(fileList)}" />
 			 			<input type="hidden" id="fileCnt" name="fileCnt" value="${fileCnt }">	 
@@ -118,15 +128,15 @@ function removeFile() {
 			 			</div></td>			 			
 			 		</tr>
 			 		<tr>
-			 			<th>비밀번호</th>
-			 			<td><input type="text" name="bpass" id="bpass"/></td>
+			 			<th class="text-left">비밀번호</th>
+			 			<td class="text-left"><input type="password" name="bpass" id="bpass"/></td>
 			 		</tr>
 			 	</tbody>
 			 </table>
 			 <input type="hidden" name="bno" value="${boardVO.bno }">			 
 			 <sec:csrfInput/>
 			 <a href="javascript:board_update();" class="btn btn-primary pull-right binsert">수정</a>	
-			 <a href="javascript:history.back(-1);" class="btn btn-primary pull-right">취소</a>			 
+			 <a href="javascript:boardView();" class="btn btn-primary pull-right">취소</a>			 
 			</form>
 		</div>
 	</div>

@@ -10,6 +10,7 @@ public class BoardVO implements Serializable{
 	private String bwriter;
 	private String bcontent;
 	private String bregdate;
+	private String bsec;
 	
 	//페이징처리 변수
 	private int firstIndex=0;
@@ -43,9 +44,9 @@ public class BoardVO implements Serializable{
 	public BoardVO() {}
 
 	public BoardVO(String bno, String btitle, String bpass, String bwriter, String bcontent, String bregdate,
-			int firstIndex, int recordCountPerPage, int currentPageNo, int pageSize, String fno, String fname,
-			String rname, long fsize, String delyn, String isnew, String fileExist, String searchtype, String keyword,
-			String bnoreref, String bnorelev, String bnoreseq) {
+			String bsec, int firstIndex, int recordCountPerPage, int currentPageNo, int pageSize, String fno,
+			String fname, String rname, long fsize, String delyn, String isnew, String fileExist, String searchtype,
+			String keyword, String bnoreref, String bnorelev, String bnoreseq) {
 		super();
 		this.bno = bno;
 		this.btitle = btitle;
@@ -53,6 +54,7 @@ public class BoardVO implements Serializable{
 		this.bwriter = bwriter;
 		this.bcontent = bcontent;
 		this.bregdate = bregdate;
+		this.bsec = bsec;
 		this.firstIndex = firstIndex;
 		this.recordCountPerPage = recordCountPerPage;
 		this.currentPageNo = currentPageNo;
@@ -117,6 +119,14 @@ public class BoardVO implements Serializable{
 
 	public void setBregdate(String bregdate) {
 		this.bregdate = bregdate;
+	}
+
+	public String getBsec() {
+		return bsec;
+	}
+
+	public void setBsec(String bsec) {
+		this.bsec = bsec;
 	}
 
 	public int getFirstIndex() {
@@ -245,5 +255,5 @@ public class BoardVO implements Serializable{
 
 	public void setBnoreseq(String bnoreseq) {
 		this.bnoreseq = bnoreseq;
-	}
+	}	
 }

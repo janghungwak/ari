@@ -32,7 +32,7 @@
         <property name="paramName" value="language" />
     </bean>
 
-    <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+<!--     <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
         <property name="defaultErrorView" value="cmmn/error"/>
         <property name="exceptionMappings">
             <props>
@@ -42,7 +42,7 @@
                 <prop key="org.springframework.security.AccessDeniedException">cmmn/error</prop>
             </props>
         </property>
-    </bean>
+    </bean> -->
     
     <!-- Tiles -->
     <bean id="tilesConfigurer" 
@@ -84,4 +84,5 @@
 
     <!-- properties 설정 -->
     <context:property-placeholder location="classpath:/properties/*.properties"/>
+  
 </beans>

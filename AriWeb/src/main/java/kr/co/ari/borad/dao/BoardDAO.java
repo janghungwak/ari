@@ -2,6 +2,7 @@ package kr.co.ari.borad.dao;
 
 
 import java.util.List;
+import java.util.Map;
 
 import kr.co.ari.borad.vo.BoardVO;
 
@@ -34,4 +35,6 @@ public interface BoardDAO {
 	public abstract int updateBnoreseq(BoardVO boardVO);
 	
 	public abstract int insertReplyBoard(BoardVO boardVO);
+	
+	public abstract int selectBoardPassChk(Map<String, Object> map);
 }
