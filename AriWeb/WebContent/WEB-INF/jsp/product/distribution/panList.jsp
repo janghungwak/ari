@@ -9,7 +9,7 @@
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
         	<div class="blogs">
-        		<img src="../../../img/contentReadyImg.png" class="img-responsive" style="width:100%;">
+        		<img src="../../../../img/contentReadyImg.png" class="img-responsive" style="width:100%;">
         	</div>
        	</div>
     </div>
