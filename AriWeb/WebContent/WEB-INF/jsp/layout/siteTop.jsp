@@ -46,11 +46,11 @@
 						<li class='has-sub'><a href='#'><span>원자재</span></a>
 							<ul>
 								<li><a href='/ari/product/Distribution/selectPanList.do'><span>판</span></a></li>
-								<li><a href='#'><span>파이프</span></a></li>
-								<li><a href='#'><span>환봉</span></a></li>
-								<li><a href='#'><span>앵글</span></a></li>
-								<li><a href='#'><span>채널</span></a></li>
-								<li class='last'><a href='#'><span>평철</span></a></li>
+								<li><a href='/ari/product/Distribution/selectPipeList.do'><span>파이프</span></a></li>
+								<li><a href='/ari/product/Distribution/selectRoundbarList.do'><span>환봉</span></a></li>
+								<li><a href='/ari/product/Distribution/selectAngleList.do'><span>앵글</span></a></li>
+								<li><a href='/ari/product/Distribution/selectChannelList.do'><span>채널</span></a></li>
+								<li class='last'><a href='/ari/product/Distribution/selectFlatbarList.do'><span>평철</span></a></li>
 							</ul>
 						</li>
 						<li><a href='#'><span>분전함</span></a></li>
