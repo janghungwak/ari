@@ -7,8 +7,9 @@
 <link rel="stylesheet" type="text/css" href="../../../css/normalize.css" />
 <link rel="stylesheet" type="text/css" href="../../../css/demo.css" />
 <link rel="stylesheet" type="text/css" href="../../../css/set1.css" />
-<link href="../../../css/overwrite.css" rel="stylesheet">
-<link href="../../../css/style.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="../../../css/overwrite.css" >
+<link rel="stylesheet" type="text/css" href="../../../css/style.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="../../../css/mainStyle.css" />
 
 <style type="text/css">
 a.adm{

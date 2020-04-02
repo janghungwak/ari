@@ -34,7 +34,7 @@
 		</button>
       <!-- Brand and toggle get grouped for better mobile display -->
 	<div class="navbar-header">
-		<a class="navbar-brand" href="/ari/main.do" ><img src="../../../img/logo.jpg" style="margin-top: -10px;"/></a>
+		<a class="navbar-brand" href="/ari/main.do" ><img src="../../../img/logo.jpg" style="margin-top: -15px;"/></a>
 	</div>
 	<div class="navbar-collapse collapse">
 		<div id='cssmenu'>
