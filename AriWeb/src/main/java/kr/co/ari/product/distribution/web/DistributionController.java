@@ -7,62 +7,72 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class DistributionController {
 
 	/**
-	 * 제품소개-판 이동
+	 * 제품소개-스텐일반커버
 	 * 
-	 *  판에 대한 제품소개 페이지로 이동한다.
+	 *  스텐일반커버에 대한 제품소개 페이지로 이동한다.
 	 */
-	@RequestMapping("/ari/product/Distribution/selectPanList.do") 
-	public String selectPanList() throws Exception {
-		return "product/distribution/panList.tiles";
+	@RequestMapping("/ari/product/distribution/selectStanGnrCoverList.do") 
+	public String selectStanGnrCoverList() throws Exception {
+		return "product/distribution/stanGnrCoverList.tiles";
 	}
 	
 	/**
-	 * 제품소개-파이프 이동
+	 * 제품소개-스텐계량기커버 이동
 	 * 
 	 *  파이프에 대한 제품소개 페이지로 이동한다.
 	 */
-	@RequestMapping("/ari/product/Distribution/selectPipeList.do") 
-	public String selectPipeList() throws Exception {
-		return "product/distribution/pipeList.tiles";
+	@RequestMapping("/ari/product/distribution/selectStanMeterCoverList.do") 
+	public String selectStanMeterCoverList() throws Exception {
+		return "product/distribution/stanMeterCoverList.tiles";
 	}
 	
 	/**
-	 * 제품소개-환봉 이동
+	 * 제품소개-옥내분전함 이동
 	 * 
-	 *  환봉에 대한 제품소개 페이지로 이동한다.
+	 *  옥내분전함에 대한 제품소개 페이지로 이동한다.
 	 */
-	@RequestMapping("/ari/product/Distribution/selectRoundbarList.do") 
-	public String selectRoundbarList() throws Exception {
-		return "product/distribution/roundbarList.tiles";
+	@RequestMapping("/ari/product/distribution/selectIndoorDistributionBoxList.do") 
+	public String selectIndoorDistributionBoxList() throws Exception {
+		return "product/distribution/indoorDistributionBoxList.tiles";
 	}
 	
 	/**
-	 * 제품소개-앵글 이동
+	 * 제품소개-옥외분전함 이동
 	 * 
-	 *  앵글에 대한 제품소개 페이지로 이동한다.
+	 *  옥외분전함에 대한 제품소개 페이지로 이동한다.
 	 */
-	@RequestMapping("/ari/product/Distribution/selectAngleList.do") 
-	public String selectAngleList() throws Exception {
-		return "product/distribution/angleList.tiles";
+	@RequestMapping("/ari/product/distribution/selectOutdoorDistributionBoxList.do") 
+	public String selectOutdoorDistributionBoxList() throws Exception {
+		return "product/distribution/outdoorDistributionBoxList.tiles";
 	}
 	
 	/**
-	 * 제품소개-채널 이동
+	 * 제품소개-옥외이중함 이동
 	 * 
-	 *  채널에 대한 제품소개 페이지로 이동한다.
+	 *  옥외이중함에 대한 제품소개 페이지로 이동한다.
 	 */
-	@RequestMapping("/ari/product/Distribution/selectChannelList.do") 
+	@RequestMapping("/ari/product/distribution/selectOutdoorDualityList.do") 
 	public String selectChannelList() throws Exception {
-		return "product/distribution/channelList.tiles";
+		return "product/distribution/outdoorDualityList.tiles";
 	}
 	
 	/**
-	 * 제품소개-평철 이동
+	 * 제품소개-집합계량기 이동
 	 * 
-	 *  평철에 대한 제품소개 페이지로 이동한다.
+	 *  집합계량기에 대한 제품소개 페이지로 이동한다.
 	 */
-	@RequestMapping("/ari/product/Distribution/selectFlatbarList.do") 
-	public String selectFlatbarList() throws Exception {
-		return "product/distribution/flatbarList.tiles";
+	@RequestMapping("/ari/product/distribution/selectCollectiveGutterList.do") 
+	public String selectCollectiveGutterList() throws Exception {
+		return "product/distribution/collectiveGutterList.tiles";
+	}
+	
+	/**
+	 * 제품소개-기타주문품 이동
+	 * 
+	 *  기타주문품에 대한 제품소개 페이지로 이동한다.
+	 */
+	@RequestMapping("/ari/product/distribution/selectEtcOrderProductList.do") 
+	public String selectEtcOrderProductList() throws Exception {
+		return "product/distribution/etcOrderProductList.tiles";
 	}
 }

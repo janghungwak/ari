@@ -17,7 +17,6 @@ public class MainController {
 	 */
 	@RequestMapping("/ari/main.do") 
 	public String mainPage() throws Exception {
-		System.out.println("메인화면");
 		return "cmmn/main.tiles";
 	}
 	

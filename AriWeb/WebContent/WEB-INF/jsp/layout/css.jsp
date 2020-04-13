@@ -1,9 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<link rel="stylesheet" href="../../../css/jquery.bxslider.css">    
+<link rel="stylesheet" href="../../../css/slick.css" >
+<link rel="stylesheet" href="../../../css/slick-theme.css" >
 <link rel="stylesheet" href="../../../css/bootstrap.min.css" >
 <link rel="stylesheet" href="../../../css/animate.css">
 <link rel="stylesheet" href="../../../css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="../../../css/ariTable.css" />
 <link rel="stylesheet" type="text/css" href="../../../css/normalize.css" />
 <link rel="stylesheet" type="text/css" href="../../../css/demo.css" />
 <link rel="stylesheet" type="text/css" href="../../../css/set1.css" />

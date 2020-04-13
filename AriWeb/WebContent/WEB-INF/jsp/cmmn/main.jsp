@@ -7,17 +7,6 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="naver-site-verification" content="49e391132c654d6253a23f9b937b501a1db2b9ce"/>
-<script type="text/javascript">
-
-	$(document).ready(function() {
-			$('.bxslider').bxSlider({
-				auto:false,
-				speed:500,
-				pause:4000,
-				controls : true,
-			});
-		});
-</script>
 </head>
 <body>
 	<img src="../../../img/mainBanner/bg.png" style="background-repeat: repeat-x; background-position: bottom; height: 450px; width: 100%;">
@@ -32,7 +21,6 @@
 		<div class="row">
 			<div class="box">
 				<div class="col-mainFotter-box">
-					<div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
 						<h3 class="widgetheading">회사소개</h3>
 						<div class="icon">
 							<i class="fa fa-heart-o fa-3x"></i>
@@ -41,24 +29,23 @@
 						<div class="ficon">
 							<a href="/ari/companyIntro/selectCompanyIntroList.do" class="btn btn-default" role="button">Read more</a>
 						</div>
-					</div>
 				</div>
 
 				<div class="col-mainFotter-box">
-					<div class="wow bounceIn" data-wow-offset="0" data-wow-delay="1.0s">
 						<h3 class="widgetheading">제품소개</h3>
 						<div class="icon">
 							<i class="fa fa-desktop fa-3x"></i>
 						</div>
 						<p>(주)아리에서 생산 및 납품을 하는 제품에 대한 정보를 확인 하실 수 있습니다.</p>
 						<div class="ficon">
-							<a href="/ari/product/Distribution/selectPanList.do" class="btn btn-default" role="button">Read more</a>
+							<a href="/ari/product/materials/selectPanList.do" class="btn btn-default" role="button">Read more</a>
 						</div>
-					</div>
 				</div>
 				
 				<div class="col-mainFotter-box">
-					<div class="wow bounceIn" data-wow-offset="0" data-wow-delay="1.6s">
+					<!--추후에 애니메이션 효과 추가해달라고 하면 해당 div사용하면 됨
+					 <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="1.6s"> 
+					-->
 						<h3 class="widgetheading">견적문의</h3>
 						<div class="icon">
 							<i class="fa fa-comment fa-3x"></i>
@@ -67,7 +54,6 @@
 						<div class="ficon">
 							<a href="/ari/board.do" class="btn btn-default" role="button">Read more</a>
 						</div>
-					</div>
 				</div>
 			</div>
 			
@@ -109,7 +95,7 @@
 						</div>
 						<p>(주)아리에서 생산 및 납품을 하는 제품에 대한<br>정보를 확인 하실 수 있습니다.</p>
 						<div class="ficon">
-							<a href="/ari/product/Distribution/selectPanList.do" class="btn btn-default" role="button">Read more</a>
+							<a href="/ari/product/materials/selectPanList.do" class="btn btn-default" role="button">Read more</a>
 						</div>
 					</div>
 				</div>
