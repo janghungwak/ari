@@ -7,7 +7,7 @@
 <script type="text/javascript">
 $(document).ready(function(){
 	
-	/* $('#slick_indoorDistributionBoxSlide').slick({
+	 $('#slick_indoorDistributionBoxSlide').slick({
 		slidesToShow : 1,		// 한 화면에 보여질 컨텐츠 개수
 		slidesToScroll : 1,		//스크롤 한번에 움직일 컨텐츠 개수
 		fade:true,
@@ -17,7 +17,7 @@ $(document).ready(function(){
 	});
 
 	$('#slick_indoorDistributionBoxSlide_nav').slick({
-		slidesToShow : 3,		// 한 화면에 보여질 컨텐츠 개수
+		slidesToShow : 4,		// 한 화면에 보여질 컨텐츠 개수
 		slidesToScroll : 1,		//스크롤 한번에 움직일 컨텐츠 개수
 		asNavFor:'#slick_indoorDistributionBoxSlide',
 		centerMode : true,
@@ -40,7 +40,7 @@ $(document).ready(function(){
 				} 
 			}
 		]
-	}); */
+	});
 });
 </script>
 </head>
@@ -51,18 +51,16 @@ $(document).ready(function(){
 			    <div class="blogs">
 					<div class="text-center">
 						<h2>제품 사진</h2>
-						<p>아리에서 생산하는 옥내방수함의 제품사진입니다.</p>
+						<p>아리에서 생산하는 옥내분전함의 제품사진입니다.</p>
 					</div>
 					<hr>
-					<!-- 사진 주면 div영역 제거예정 (57 ~ 60Line 제거예정)-->
-					<div style="text-align: center;">
-						<img src="../../../../img/contentReadyImg.png" class="img-responsive" style="width:50%;">
-					</div>
-					<!-- <div class="slick-div">
+					<div class="slick-div">
 						<div id="slick_indoorDistributionBoxSlide">
 							<div><img src="../../../../img/product/distribution/indoorDistributionBox/indoorDistributionBox1.jpg" alt="" /></div>
 							<div><img src="../../../../img/product/distribution/indoorDistributionBox/indoorDistributionBox2.jpg" alt="" /></div>
 							<div><img src="../../../../img/product/distribution/indoorDistributionBox/indoorDistributionBox3.jpg" alt="" /></div>
+							<div><img src="../../../../img/product/distribution/indoorDistributionBox/indoorDistributionBox4.jpg" alt="" /></div>
+							<div><img src="../../../../img/product/distribution/indoorDistributionBox/indoorDistributionBox5.jpg" alt="" /></div>
 						</div>
 					</div>
 	
@@ -71,8 +69,10 @@ $(document).ready(function(){
 							<div><img src="../../../../img/product/distribution/indoorDistributionBox/indoorDistributionBox1.jpg" alt="" /></div>
 							<div><img src="../../../../img/product/distribution/indoorDistributionBox/indoorDistributionBox2.jpg" alt="" /></div>
 							<div><img src="../../../../img/product/distribution/indoorDistributionBox/indoorDistributionBox3.jpg" alt="" /></div>
+							<div><img src="../../../../img/product/distribution/indoorDistributionBox/indoorDistributionBox4.jpg" alt="" /></div>
+							<div><img src="../../../../img/product/distribution/indoorDistributionBox/indoorDistributionBox5.jpg" alt="" /></div>
 						</div>
-					</div>-->
+					</div>
 				</div>
 			</div>	
 		</div>
