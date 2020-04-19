@@ -37,6 +37,8 @@ function board_replyInsert(){
 		$('#bsec').val('N');
 	} 
 	
+	$('#bpass').attr('disabled', false);
+	
 	if(confirm('등록하시겠습니까?')){
 		oEditors.getById["bcontent"].exec("UPDATE_CONTENTS_FIELD", []);
 		$('#insertReplyform').submit();
@@ -129,7 +131,7 @@ function boardView() {
 			 		</tr>
 			 		<tr>
 			 			<th class="text-left">비밀번호</th>
-			 			<td class="text-left"><input type="password" name="bpass" id="bpass"/></td>
+			 			<td class="text-left"><input type="password" name="bpass" id="bpass" value="${boardVO.bpass }" disabled="disabled"/></td>
 			 		</tr>
 			 	</tbody>
 			 </table>

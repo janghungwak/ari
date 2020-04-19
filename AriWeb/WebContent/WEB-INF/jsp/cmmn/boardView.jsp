@@ -39,13 +39,16 @@
 </style>
 <script type="text/javascript">
  $(document).ready(function(){
-	 var bsec = "${boardVO.bsec}";
+	 var bsec = "${boardVO.bsec}";	 
 	 var passMatch = "${passMatch}";
-	 if(bsec == "Y"){
-		 if(passMatch == ""){
-			 $('.wrapper').html('');
-			 location.href="/ari/board.do";
-		 }
+	 var adminVO = '${sessionScope.SPRING_SECURITY_CONTEXT.authentication.principal.memberVO}';
+	 if(adminVO == ''){
+		 if(bsec == "Y"){
+		 	if(passMatch == ""){
+				 $('.wrapper').html('');
+			 	location.href="/ari/board.do";
+		 	}
+	 	}
 	 }
  })
 

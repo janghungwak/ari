@@ -7,9 +7,26 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="naver-site-verification" content="49e391132c654d6253a23f9b937b501a1db2b9ce"/>
+<script type="text/javascript">
+$(document).ready(function(){
+
+	setInterval(function(){
+		  $("#blinkEle").toggle();
+		 }, 1000);
+	
+});
+</script>
 </head>
 <body>
-	<img src="../../../img/mainBanner/bg.png" style="background-repeat: repeat-x; background-position: bottom; height: 450px; width: 100%;">
+		<div class="mainImageContainer">
+			<div class="col-md-6 col-md-offset-3">
+				<p id ="blinkEle">
+					스텐레스,일반강 원자재 일체 도,소매<br>스텐레스 분전함 Cover&Box (주문제작) 전문
+				</p>
+			</div>
+		</div>
+		<!-- <img src="../../../img/mainBanner/bg.png" style="background-repeat: repeat-x; background-position: bottom; height: 450px; width: 100%;"> -->
+	
 
 	<!-- 모바일 용 화면과 pc용 화면 2가지를 구분지어서 개발처리
 		col-mb-class : 모바일 전용 화면 클래스 미디어설정 css 스타일

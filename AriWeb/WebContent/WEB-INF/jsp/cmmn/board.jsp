@@ -80,13 +80,18 @@
 
 	function boardView(bno) {
 		var bsec = $('#bsec_' + bno).val();
+		var adminVO = '${sessionScope.SPRING_SECURITY_CONTEXT.authentication.principal.memberVO}';
 		$('input[name="bno"]').val(bno);
-		
-		if (bsec == 'Y') {
-			$('#passChkModal').modal();
-		} else {
+		if(adminVO == ''){
+			if (bsec == 'Y') {
+				$('#passChkModal').modal();
+			} else {
+				$('#boardForm').attr('action', '/ari/boardView.do');
+				$('#boardForm').submit();
+			}
+		}else{
 			$('#boardForm').attr('action', '/ari/boardView.do');
-			$('#boardForm').submit();
+			$('#boardForm').submit();			
 		}
 	}
 	
@@ -94,6 +99,12 @@
 		var currentPageNo = '${paginationInfo.currentPageNo}'; 
 		$('#currentPageNo').val(currentPageNo);	
 		$('#boardForm').attr('action', '/ari/boardPassChk.do');
+		$('#boardForm').submit();
+	}
+	
+	function adminBoardView(bno){
+		$('input[name="bno"]').val(bno);
+		$('#boardForm').attr('action', '/ari/boardView.do');
 		$('#boardForm').submit();
 	}
 </script>

@@ -1,3 +1,19 @@
+/*원자재 - 스텐레스 강판재  관련 CSS*/
+  .stanPanTable th{
+	vertical-align: middle !important;
+	text-align: center !important;
+  }
+	
+  .stanPanTable td{
+	padding: 0.75rem;
+	vertical-align: middle;
+  }  
+  
+  .stanPanTable td:first-child{
+  	font-weight: bold;
+  }  
+
+
 .ariTable {
   width: 100%;
   margin-bottom: 1rem;
@@ -17,7 +33,6 @@
   vertical-align: top;
   border : 1px solid #dee2e6;
 }
-
 
 @media (max-width: 768px) {
 	/*비고에서만 사용*/
@@ -466,7 +481,7 @@
   }
   .ariTable td,
   .ariTable th {
-    background-color: #fff !important;
+    background-color: #fff;
   }
   .ariTable-bordered th,
   .ariTable-bordered td {

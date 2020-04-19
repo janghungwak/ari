@@ -129,7 +129,7 @@ function boardView() {
 			 		</tr>
 			 		<tr>
 			 			<th class="text-left">비밀번호</th>
-			 			<td class="text-left"><input type="password" name="bpass" id="bpass"/></td>
+			 			<td class="text-left"><input type="password" name="bpass" id="bpass" value="${boardVO.bpass }"/></td>
 			 		</tr>
 			 	</tbody>
 			 </table>
