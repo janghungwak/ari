@@ -10,9 +10,6 @@
 <script type="text/javascript">
 $(document).ready(function(){
 
-	setInterval(function(){
-		  $("#blinkEle").toggle();
-		 }, 1000);
 	
 });
 </script>
@@ -21,7 +18,7 @@ $(document).ready(function(){
 		<div class="mainImageContainer">
 			<div class="col-md-6 col-md-offset-3">
 				<p id ="blinkEle">
-					스텐레스,일반강 원자재 일체 도,소매<br>스텐레스 분전함 Cover&Box (주문제작) 전문
+					<marquee scrolldelay="200">스텐레스,일반강 원자재 일체 도,소매<br>스텐레스 분전함 Cover&Box (주문제작) 전문</marquee>
 				</p>
 			</div>
 		</div>

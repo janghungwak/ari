@@ -10,15 +10,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>로그인 페이지</title>
 <style type="text/css">
-body {
-	background: #eee !important;	
-}
 
 .form-signin {
   max-width: 380px;
   padding: 15px 35px 45px;
   margin: 0 auto;
-  background-color: #fff;
+  background-color: #eee;
   border: 1px solid rgba(0,0,0,0.1);  
 
   .form-signin-heading,
