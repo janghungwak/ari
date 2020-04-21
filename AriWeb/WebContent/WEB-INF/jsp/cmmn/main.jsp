@@ -52,7 +52,7 @@ $(document).ready(function(){
 						</div>
 						<p>(주)아리에서 생산 및 납품을 하는 제품에 대한 정보를 확인 하실 수 있습니다.</p>
 						<div class="ficon">
-							<a href="/ari/product/materials/selectPanList.do" class="btn btn-default" role="button">Read more</a>
+							<a href="/ari/product/distribution/selectStanGnrCoverList.do" class="btn btn-default" role="button">Read more</a>
 						</div>
 				</div>
 				
@@ -109,7 +109,7 @@ $(document).ready(function(){
 						</div>
 						<p>(주)아리에서 생산 및 납품을 하는 제품에 대한<br>정보를 확인 하실 수 있습니다.</p>
 						<div class="ficon">
-							<a href="/ari/product/materials/selectPanList.do" class="btn btn-default" role="button">Read more</a>
+							<a href="/ari/product/distribution/selectStanGnrCoverList.do" class="btn btn-default" role="button">Read more</a>
 						</div>
 					</div>
 				</div>
