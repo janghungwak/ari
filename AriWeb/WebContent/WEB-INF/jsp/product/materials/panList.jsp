@@ -34,7 +34,7 @@
 									<th scope="col" colspan="2">1,524X3,048<br>(5'X10')</th>
 								</tr>
 								<tr>
-									<th scope="col" style="text-align: center;"><span>강종</span><br><span>두께</span></th>
+									<th scope="col" style="text-align: center;"><span>강종(→)</span><br><span>두께(↓)</span></th>
 									<th scope="col">SUS304</th>
 									<th scope="col">SUS316<br>310S</th>
 									<th scope="col">SUS430</th>
@@ -357,7 +357,7 @@
 							</colgroup>
 							<thead>
 								<tr>
-									<th scope="col" rowspan="4" style="border-right: 1px solid #dee2e6;"><span>규격(mm)</span><br><span>두께(mm)</span></th>
+									<th scope="col" rowspan="4" style="border-right: 1px solid #dee2e6;"><span>규격(→)(mm)</span><br><span>두께(↓)(mm)</span></th>
 								</tr>
 								<tr>
 									<th scope="col">3X6</th>

@@ -24,8 +24,7 @@
 							<li><a href="/ari/product/materials/selectPanList.do"><span>판</span></a></li>
 							<li><a href="/ari/product/materials/selectPipeList.do"><span>파이프</span></a></li>
 							<li><a href="/ari/product/materials/selectRoundbarList.do"><span>환봉</span></a></li>
-							<li><a href="/ari/product/materials/selectAngleList.do"><span>앵글</span></a></li>
-							<li><a href="/ari/product/materials/selectChannelList.do"><span>채널</span></a></li>
+							<li><a href="/ari/product/materials/selectAngleAndChannelList.do"><span>앵글</span></a></li>
 							<li class="last"><a href="/ari/product/materials/selectFlatbarList.do"><span>평철</span></a></li>
 						</ul>
 					</li>

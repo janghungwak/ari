@@ -37,23 +37,13 @@ public class MaterialsController {
 	}
 	
 	/**
-	 * 제품소개-앵글 이동
+	 * 제품소개-앵글 및 채널 이동
 	 * 
-	 *  앵글에 대한 제품소개 페이지로 이동한다.
+	 *  앵글 및 채널에 대한 제품소개 페이지로 이동한다.
 	 */
-	@RequestMapping("/ari/product/materials/selectAngleList.do") 
+	@RequestMapping("/ari/product/materials/selectAngleAndChannelList.do") 
 	public String selectAngleList() throws Exception {
-		return "product/materials/angleList.tiles";
-	}
-	
-	/**
-	 * 제품소개-채널 이동
-	 * 
-	 *  채널에 대한 제품소개 페이지로 이동한다.
-	 */
-	@RequestMapping("/ari/product/materials/selectChannelList.do") 
-	public String selectChannelList() throws Exception {
-		return "product/materials/channelList.tiles";
+		return "product/materials/angleAndChannelList.tiles";
 	}
 	
 	/**

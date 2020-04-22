@@ -14,7 +14,7 @@
 						<h3>스텐레스 구조용 파이프 (Stainless Steel Pipe STS304) (kg/m)</h3>
 					</div>
 					<div class="text-center">
-						<table class="stanPanTable ariTable ariTable-hover">
+						<table class="pipe ariTable ariTable-hover">
 							<colgroup>
 								<col width="9%"/>
 								<col width="9%"/>
@@ -31,7 +31,7 @@
 							</colgroup>
 							<thead>
 								<tr>
-									<th scope="col" style="text-align: center;"><span>두께</span><br><span>외경</span></th>
+									<th scope="col" style="text-align: center;"><span>두께(→)</span><br><span>외경(↓)</span></th>
 									<th scope="col">0.5</th>
 									<th scope="col">0.6</th>
 									<th scope="col">0.7</th>

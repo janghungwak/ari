@@ -11,6 +11,36 @@
   
   .stanPanTable td:first-child{
   	font-weight: bold;
+  }
+
+/*원자재 - 파이프  관련 CSS*/
+  .pipe th{
+	vertical-align: middle !important;
+	text-align: center !important;
+  }
+	
+  .pipe td{
+	padding: 0.75rem;
+	vertical-align: middle;
+  }  
+  
+  .stanPanTable td:first-child{
+  	font-weight: bold;
+  }
+  
+  /*원자재 - 앵글 및 채널  관련 CSS*/
+  .angleAndChannel th{
+	vertical-align: middle !important;
+	text-align: center !important;
+  }
+	
+  .angleAndChannel td{
+	padding: 0.75rem;
+	vertical-align: middle;
+  }  
+  
+  .angleAndChannel td:first-child{
+  	font-weight: bold;
   }  
 
 
