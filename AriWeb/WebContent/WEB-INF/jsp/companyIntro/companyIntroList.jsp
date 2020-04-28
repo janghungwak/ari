@@ -6,21 +6,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 <body>
-	<div class="container">
-    	<div class="row">
-      		<div class="col-md-6 col-md-offset-3">
-        		<div class="blogs">
-          			<div class="text-center">
-            			<h2>HISTORY</h2>
-            				<p>(주)아리가 지금까지 걸어온 길처럼 앞으로도 최고가 되기 위해 노력하겠습니다.</p>
-          				</div>
-          				<hr>
-          				<img src="../../../img/contentReadyImg.png" class="img-responsive" style="width:100%;">
-				</div>
-			</div>
-		</div>
-	</div>	
-    
 	<div class="row">
 	  <div class="col-md-6 col-md-offset-3">
 	    <div class="blogs">
@@ -40,7 +25,7 @@
 				<div class="blogs">
 					<div class="text-center">
 						<h2>LOCATION</h2>
-							<p></p>
+							<p>(주)아리를 찾아오시는 길입니다.</p>
 					</div>
 	     				<hr>
 	     				<h3 class="widgetheading"></h3>

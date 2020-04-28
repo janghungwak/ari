@@ -15,13 +15,19 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
-		<div class="mainImageContainer">
-			<div class="col-md-6 col-md-offset-3">
-				<p id ="blinkEle">
-					<marquee scrolldelay="200">스텐레스,일반강 원자재 일체 도,소매<br>스텐레스 분전함 Cover&Box (주문제작) 전문</marquee>
-				</p>
-			</div>
+
+	<div class="col-md-6 col-md-offset-3">
+		<p id ="blinkEle">
+			<marquee scrolldelay="100">스텐레스,일반강 원자재 일체 도,소매/스텐레스 분전함 Cover&Box (주문제작) 전문</marquee>
+		</p>
+	</div>
+	
+	<div class="mainImageContainer">
+		<div class="col-md-8 col-md-offset-2" style="height:88%; ">
+			<img style="float: left;" src="../../../img/mainBanner/leftMain.png"/>
+			<img style="float: right;" src="../../../img/mainBanner/rightMain.png" />
 		</div>
+	</div>
 		<!-- <img src="../../../img/mainBanner/bg.png" style="background-repeat: repeat-x; background-position: bottom; height: 450px; width: 100%;"> -->
 	
 

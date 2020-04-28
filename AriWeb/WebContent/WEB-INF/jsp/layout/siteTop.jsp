@@ -21,10 +21,16 @@
 				<ul>
 					<li class="has-sub"><a href="#"><span>원자재</span></a>
 						<ul>
-							<li><a href="/ari/product/materials/selectPanList.do"><span>판</span></a></li>
-							<li><a href="/ari/product/materials/selectPipeList.do"><span>파이프</span></a></li>
-							<li><a href="/ari/product/materials/selectRoundbarList.do"><span>환봉</span></a></li>
-							<li class="last"><a href="/ari/product/materials/selectAngChaFlatList.do"><span>앵글/채널/평철</span></a></li>
+							<li><a href="/ari/product/materials/selectStanPanList.do"><span>스텐레스 판</span></a></li>
+							<li class="has-sub"><a href="#"><span>스텐레스 파이프</span></a>
+								<ul>
+									<li><a href="/ari/product/materials/selectStrPanList.do"><span>구조용</span></a></li>
+									<li class="last"><a href="/ari/product/materials/selectPipPipeList.do"><span>배관용</span></a></li>
+								</ul>
+							</li>
+							<li><a href="/ari/product/materials/selectStanRoundbarList.do"><span>스텐레스 환봉/사각봉/육각봉</span></a></li>
+							<li><a href="/ari/product/materials/selectStanAngleList.do"><span>스텐레스 앵글</span></a></li>
+							<li class="last"><a href="/ari/product/materials/selectPanList.do"><span>철판 (7.85비중)</span></a></li>
 						</ul>
 					</li>
 					<li class="has-sub"><a href="#"><span>스텐분전함</span></a>

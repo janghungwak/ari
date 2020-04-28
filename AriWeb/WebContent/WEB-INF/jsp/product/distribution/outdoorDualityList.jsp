@@ -17,7 +17,7 @@ $(document).ready(function(){
 	});
 
 	$('#slick_outdoorDualitySlide_nav').slick({
-		slidesToShow : 2,		// 한 화면에 보여질 컨텐츠 개수
+		slidesToShow : 3,		// 한 화면에 보여질 컨텐츠 개수
 		slidesToScroll : 1,		//스크롤 한번에 움직일 컨텐츠 개수
 		asNavFor:'#slick_outdoorDualitySlide',
 		centerMode : true,
@@ -56,15 +56,17 @@ $(document).ready(function(){
 					<hr>
 					<div class="slick-div">
 						<div id="slick_outdoorDualitySlide">
-							<div><img src="../../../../img/product/distribution/outdoorDuality/outdoorDuality1.jpg" alt="" /></div>
-							<div><img src="../../../../img/product/distribution/outdoorDuality/outdoorDuality2.jpg" alt="" /></div>
+							<div><img src="../../../../img/product/distribution/outdoorDuality/outdoorDuality1.png"/></div>
+							<div><img src="../../../../img/product/distribution/outdoorDuality/outdoorDuality2.png"/></div>
+							<div><img src="../../../../img/product/distribution/outdoorDuality/outdoorDuality3.png"/></div>
 						</div>
 					</div>
 	
 					<div class="slick-nav">
 						<div id="slick_outdoorDualitySlide_nav">
-							<div><img src="../../../../img/product/distribution/outdoorDuality/outdoorDuality1.jpg" alt="" /></div>
-							<div><img src="../../../../img/product/distribution/outdoorDuality/outdoorDuality2.jpg" alt="" /></div>
+							<div><img src="../../../../img/product/distribution/outdoorDuality/outdoorDuality1.png"/></div>
+							<div><img src="../../../../img/product/distribution/outdoorDuality/outdoorDuality2.png"/></div>
+							<div><img src="../../../../img/product/distribution/outdoorDuality/outdoorDuality3.png"/></div>
 						</div>
 					</div>
 				</div>
@@ -87,67 +89,67 @@ $(document).ready(function(){
 							<thead>
 								<tr>
 									<th scope="col" style="text-align: center;">NO</th>
-									<th scope="col" style="text-align: center;">규격(가로 * 세로 * 깊이)</th>
+									<th scope="col" style="text-align: center;">규격(가로 X 세로 X 깊이)</th>
 									<th scope="col" style="text-align: center;">비고</th>
 								</tr>
 							</thead>					
 							<tbody>
 								<tr>
 									<td scope="row">1</td>
-									<td>200*300*150</td>
-									<td class="lgContent" rowspan="14">가로 * 세로 * 깊이 사이즈 주문제작 가능</td>
+									<td>200 X 300 X 150</td>
+									<td class="lgContent" rowspan="14">가로 X 세로 X 깊이 사이즈 주문제작 가능</td>
 								</tr>
 								<tr>
 									<td scope="row">2</td>
-									<td>250*350*150</td>
+									<td>250 X 350 X 150</td>
 								</tr>
 								<tr>
 									<td scope="row">3</td>
-									<td>300*400*150</td>
+									<td>300 X 400 X 150</td>
 								</tr>
 								<tr>
 									<td scope="row">4</td>
-									<td>350*450*150</td>
+									<td>350 X 450 X 150</td>
 								</tr>
 								<tr>
 									<td scope="row">5</td>
-									<td>400*500*150</td>
+									<td>400 X 500 X 150</td>
 								</tr>
 								<tr>
 									<td scope="row">6</td>
-									<td>500*600*150</td>
+									<td>500 X 600 X 150</td>
 								</tr>
 								<tr>
 									<td scope="row">7</td>
-									<td>500*700*150</td>
+									<td>500 X 700 X 150</td>
 								</tr>
 								<tr>
 									<td scope="row">8</td>
-									<td>600*700*150</td>
+									<td>600 X 700 X 150</td>
 								</tr>
 								<tr>
 									<td scope="row">9</td>
-									<td>600*800*150</td>
+									<td>600 X 800 X 150</td>
 								</tr>
 								<tr>
 									<td scope="row">10</td>
-									<td>600*900*150</td>
+									<td>600 X 900 X 150</td>
 								</tr>
 								<tr>
 									<td scope="row">11</td>
-									<td>600*1000*150</td>
+									<td>600 X 1000 X 150</td>
 								</tr>
 								<tr>
 									<td scope="row">12</td>
-									<td>700*800*150</td>
+									<td>700 X 800 X 150</td>
 								</tr>
 								<tr>
 									<td scope="row">13</td>
-									<td>700*900*150</td>
+									<td>700 X 900 X 150</td>
 								</tr>
 								<tr>
 									<td scope="row">14</td>
-									<td>700*1000*150</td>
+									<td>700 X 1000 X 150</td>
 								</tr>
 							</tbody>
 						</table>

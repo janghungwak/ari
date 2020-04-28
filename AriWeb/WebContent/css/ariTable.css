@@ -13,36 +13,70 @@
   	font-weight: bold;
   }
 
-/*원자재 - 파이프  관련 CSS*/
-  .pipe th{
+/*원자재 - 철판  관련 CSS*/
+  .panTable th{
 	vertical-align: middle !important;
 	text-align: center !important;
   }
 	
-  .pipe td{
+  .panTable td{
 	padding: 0.75rem;
 	vertical-align: middle;
   }  
   
-  .stanPanTable td:first-child{
+  .panTable td:first-child{
+  	font-weight: bold;
+  }
+
+/*원자재 - 파이프  관련 CSS*/
+  .stanPipe th{
+	vertical-align: middle !important;
+	text-align: center !important;
+  }
+	
+  .stanPipe td{
+	padding: 0.75rem;
+	vertical-align: middle;
+  }  
+  
+  .stanPipe td:first-child{
   	font-weight: bold;
   }
   
-  /*원자재 - 앵글 및 채널  관련 CSS*/
-  .angleAndChannel th{
+  .tdFraction{
+  	font-size: 20px;
+  	font-weight: bold;
+  }
+  
+  /*원자재 - 환봉  관련 CSS*/
+  .stanRoundbar th{
 	vertical-align: middle !important;
 	text-align: center !important;
   }
 	
-  .angleAndChannel td{
+  .stanRoundbar td{
 	padding: 0.75rem;
 	vertical-align: middle;
   }  
   
-  .angleAndChannel td:first-child{
+  .stanRoundbar td:first-child{
   	font-weight: bold;
   }  
 
+  /*원자재 - 스텐레스 앵글  관련 CSS*/
+  .stanAngleTable th{
+	vertical-align: middle !important;
+	text-align: center !important;
+  }
+	
+  .stanAngleTable td{
+	padding: 0.75rem;
+	vertical-align: middle;
+  }  
+  
+  .stanAngleTable td:first-child{
+  	font-weight: bold;
+  }  
 
 .ariTable {
   width: 100%;
@@ -63,6 +97,14 @@
   vertical-align: top;
   border : 1px solid #dee2e6;
 }
+
+.ariTable td:first-child{
+	font-weight: bold;
+}
+
+.tdBold{
+  	font-weight: bold;
+  }
 
 @media (max-width: 768px) {
 	/*비고에서만 사용*/
