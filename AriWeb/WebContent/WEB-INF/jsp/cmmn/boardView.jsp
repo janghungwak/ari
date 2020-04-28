@@ -60,6 +60,8 @@
 		$('#formAction').submit(); */
  }
 
+ 
+ 
  function board_delete(){
 	 $('#bpassButton').attr('onClick', 'passChk("delete")');
 	 $('#mod').val('delete');
@@ -86,6 +88,10 @@
  function passChk(mod){
 	$('#formAction').attr('action', '/ari/boardPassChk.do');
 	$('#formAction').submit();
+ }
+ 
+ function deleteCloseModal(){
+	 $('.modal-dialog').modal(hide);
  }
 </script>
 </head>
@@ -123,7 +129,8 @@
 						</td>
 					</tr>
 					<tr>
-						<td class="text-left" colspan="5" style="border-bottom: 1px solid #ddd;">
+						<th class="text-left" style="border-bottom: 1px solid #ddd;">내용</th>
+						<td class="text-left" colspan="4" style="border-bottom: 1px solid #ddd;">
 						${boardVO.bcontent }
 						</td>
 					</tr>
@@ -131,29 +138,44 @@
 			</table>
 			<form id="formAction" method="post">
 				<input type="hidden" name="bno" value="${boardVO.bno }">
+				<input type="text" name="bpass" value="${boardVO.bpass }">
 				<input type="hidden" name="mod" id="mod">
 				<sec:csrfInput/>
 				
 			<div class="modal fade" id="passChkModal" role="dialog" style="width: auto;">
-				<div class="modal-dialog">
-					<!-- Modal content-->
-					<div class="modal-content">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal">×</button>
-							<h4 class="modal-title">게시판 비밀번호 입력</h4>
-						</div>
-						<div class="modal-body">						
-							<input type="text" name="bpass" id="bpass" style="width: 70%"/>	
-							<button type="button" class="btn btn-primary" id="bpassButton">확인</button>					
+				<sec:authorize access="isAnonymous()">
+					<div class="modal-dialog">
+						<!-- Modal content-->
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal">×</button>
+								<h4 class="modal-title">게시판 비밀번호 입력</h4>
+							</div>
+							<div class="modal-body">						
+								<input type="text" name="bpass" id="bpass" style="width: 70%"/>	
+								<button type="button" class="btn btn-primary" id="bpassButton">확인</button>					
+							</div>
 						</div>
 					</div>
-				</div>
+				</sec:authorize>
+				<sec:authorize access="hasRole('ROLE_ADMIN')">
+					<div class="modal-dialog">
+						<!-- Modal content-->
+						<div class="modal-content">
+							<div class="modal-body">						
+								<h4>삭제 시 문의내용이 모두 삭제됩니다. 정말로 삭제하시겠습니까?</h4>	
+								<button type="button" class="btn btn-primary" id="bpassButton">확인</button>					
+								<button type="button" class="btn btn-default" id="closeButton" onclick="deleteCloseModal();">취소</button>					
+							</div>
+						</div>
+					</div>
+				</sec:authorize>
 			</div> 
 			</form>
 			<a href="javascript:board_updatePage();" class="btn btn-primary pull-right binsert">수정</a>	
 			<a href="javascript:board_delete();" class="btn btn-primary pull-right binsert">삭제</a>
 			<sec:authorize access="hasRole('ROLE_ADMIN')">
-			<a href="javascript:board_reply();" class="btn btn-primary pull-right binsert">답글</a>
+				<a href="javascript:board_reply();" class="btn btn-primary pull-right binsert">답글</a>
 			</sec:authorize>	
 			<a href="/ari/board.do" class="btn btn-primary pull-right">목록</a>	
 		</div>

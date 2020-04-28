@@ -14,7 +14,6 @@ function board_replyInsert(){
 	var bsecchk = $('#bsecchk').is(':checked');
 	var btitle = $('#btitle').val();
 	var bwriter = $('#bwriter').val();
-	var bpass = $('#bpass').val();
 	
 	if(btitle==""){
 		alert('제목을 입력해주세요.');
@@ -26,18 +25,11 @@ function board_replyInsert(){
 		return;
 	}
 	
-	if(bpass==""){
-		alert('비밀번호를 입력해주세요');
-		return;
-	}
-	
 	if(bsecchk == true){
 		$('#bsec').val('Y');
 	}else{
 		$('#bsec').val('N');
 	} 
-	
-	$('#bpass').attr('disabled', false);
 	
 	if(confirm('등록하시겠습니까?')){
 		oEditors.getById["bcontent"].exec("UPDATE_CONTENTS_FIELD", []);
@@ -69,7 +61,6 @@ function boardView() {
 	$('#insertReplyform').attr('enctype', '');
 	$('#insertReplyform').submit();
 }
-
 </script>
 </head>
 <body>
@@ -131,7 +122,7 @@ function boardView() {
 			 		</tr>
 			 		<tr>
 			 			<th class="text-left">비밀번호</th>
-			 			<td class="text-left"><input type="password" name="bpass" id="bpass" value="${boardVO.bpass }" disabled="disabled"/></td>
+			 			<td class="text-left"><input type="text" name="bpass" id="bpass" value="${boardVO.bpass }" disabled="disabled"/></td>
 			 		</tr>
 			 	</tbody>
 			 </table>
@@ -139,6 +130,7 @@ function boardView() {
 			 <input type="hidden" name="bnoreref" value="${boardVO.bnoreref }">
 			 <input type="hidden" name="bnorelev" value="${boardVO.bnorelev }">
 			 <input type="hidden" name="bnoreseq" value="${boardVO.bnoreseq }">			 
+			 <input type="hidden" name="bpass" value="${boardVO.bpass }">			 
 			 <sec:csrfInput/>
 			 <a href="javascript:board_replyInsert();" class="btn btn-primary pull-right binsert">등록</a>	
 			 <a href="javascript:boardView();" class="btn btn-primary pull-right">취소</a>			 

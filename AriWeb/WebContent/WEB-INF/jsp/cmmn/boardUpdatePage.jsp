@@ -129,7 +129,13 @@ function boardView() {
 			 		</tr>
 			 		<tr>
 			 			<th class="text-left">비밀번호</th>
-			 			<td class="text-left"><input type="password" name="bpass" id="bpass" value="${boardVO.bpass }"/></td>
+			 			<sec:authorize access="hasRole('ROLE_ADMIN')">
+			 				<td class="text-left"><input type="text" name="bpass" id="bpass" value="${boardVO.bpass }" disabled="disabled"/></td>
+			 			</sec:authorize>
+			 			<sec:authorize access="isAnonymous()">
+			 				<td class="text-left"><input type="text" name="bpass" id="bpass" value="${boardVO.bpass }"/></td>
+			 			</sec:authorize>
+			 			
 			 		</tr>
 			 	</tbody>
 			 </table>
