@@ -14,13 +14,13 @@
 <body>
 <div id="wrapper">
 	<div id ="siteTop">
-		<tiles:insertAttribute name="siteTop"/>
+		<tiles:insertAttribute name="siteTop" ignore="true"/>
 	</div>
 	<div id ="content">
-		<tiles:insertAttribute name="content"/>
+		<tiles:insertAttribute name="content" ignore="true"/>
 	</div>
 	<div id ="siteBottom">
-		<tiles:insertAttribute name="siteBottom"/>
+		<tiles:insertAttribute name="siteBottom" ignore="true"/>
 	</div>
 </div>
 </body>
