@@ -706,6 +706,7 @@ span.left {
   line-height: 1;
   background: #ffffff;
   margin-top: 10px;
+  z-index: 1;
 }
 #menu-line {
   position: absolute;

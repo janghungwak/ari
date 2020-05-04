@@ -33,7 +33,7 @@ $(document).ready(function(){
 
 	<!-- 모바일 용 화면과 pc용 화면 2가지를 구분지어서 개발처리
 		col-mb-class : 모바일 전용 화면 클래스 미디어설정 css 스타일
-		col-pc-class : PC 전용 화면 클래스 미디어 설저 css 스타일
+		col-pc-class : PC 전용 화면 클래스 미디어 설정 css 스타일
 		
 		cssStyle 파일 위치 : style.css 
 	 -->

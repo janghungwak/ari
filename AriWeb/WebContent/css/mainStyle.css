@@ -148,6 +148,18 @@
 	 height: 350px;
 }
 
+@media (max-width: 768px) {
+.mainImageContainer{
+	width:100%; 
+	height:390px;
+	background-position: bottom; 
+	background-image: url('/img/mainBanner/bg.png'); 
+	background-size: 100% 470px; 
+	margin-left: 0px;
+	margin-right: 0px;
+}
+}
+
 #blinkEle{
 	font-family : 'Jua', sans-serif;
 	font-size: 30px;
