@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
-import kr.co.ari.borad.vo.BoardVO;
+import kr.co.ari.board.vo.BoardVO;
 
 @Component("fileUtiles")
 public class FileUtils {

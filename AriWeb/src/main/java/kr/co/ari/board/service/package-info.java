@@ -5,4 +5,4 @@
  * @author 곽장훈
  *
  */
-package kr.co.ari.borad.service;
+package kr.co.ari.board.service;

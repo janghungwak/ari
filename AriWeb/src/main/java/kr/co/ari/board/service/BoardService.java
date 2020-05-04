@@ -1,11 +1,11 @@
-package kr.co.ari.borad.service;
+package kr.co.ari.board.service;
 
 import java.util.List;
 import java.util.Map;
 
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
-import kr.co.ari.borad.vo.BoardVO;
+import kr.co.ari.board.vo.BoardVO;
 
 public interface BoardService {
 	
@@ -15,9 +15,13 @@ public interface BoardService {
 	
 	public abstract BoardVO selectBoardView(String bno);
 	
+	public abstract int selectReplyBoardCnt(String bno);
+	
 	public abstract int insertBoard(BoardVO boardVO, MultipartHttpServletRequest mrequest);
 	
 	public abstract int updateBoard(BoardVO boardVO, MultipartHttpServletRequest mrequest);
+
+	public abstract int updateReplyBoard(BoardVO boardVO, MultipartHttpServletRequest mrequest);
 	
 	public abstract int deleteBoard(BoardVO boardVO);
 	

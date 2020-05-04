@@ -1,4 +1,4 @@
-package kr.co.ari.borad.web;
+package kr.co.ari.board.web;
 
 import java.io.File;
 import java.io.PrintWriter;
@@ -8,10 +8,13 @@ import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
+import javax.security.auth.message.callback.PrivateKeyCallback.Request;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.log4j.Logger;
+import org.apache.velocity.app.event.ReferenceInsertionEventHandler.referenceInsertExecutor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,20 +23,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import egovframework.rte.ptl.mvc.tags.ui.pagination.PaginationInfo;
-import kr.co.ari.borad.service.BoardService;
-import kr.co.ari.borad.vo.BoardVO;
+import kr.co.ari.board.service.BoardService;
+import kr.co.ari.board.vo.BoardVO;
 
 @Controller
 public class BoardController {
+	
+	private static final Logger logger = Logger.getLogger(BoardController.class);
+	
 	@Value("${file.filepath}")
 	private String filepath;
 	
 	@Resource(name="boardService")
 	private BoardService boardService;
 	
-	@RequestMapping("/ari/board.do")
+	@RequestMapping("/ari/board/board.do")
 	public String boardPage(@ModelAttribute BoardVO boardVO, Model model, HttpServletRequest request) throws Exception {
-		System.out.println("게시판");
+		logger.info("게시판");
 		try {
 			PaginationInfo paginationInfo = new PaginationInfo();
 			
@@ -81,32 +87,41 @@ public class BoardController {
 		}
 		
 			
-		return "cmmn/board.tiles";
+		return "board/board.tiles";
 	}
 	
-	@RequestMapping("/ari/boardView.do")
+	/**
+	 * 견적문의 상세조회 이동
+	 * 
+	 * 견적문의 상세조회 화면으로 이동한다.
+	 */
+	@RequestMapping("/ari/board/boardView.do")
 	public String boardView(Model model, HttpServletRequest request) throws Exception {
 		String bno = request.getParameter("bno");
 		String passMatch = request.getParameter("passMatch");
 		
 		BoardVO boardVO = boardService.selectBoardView(bno);	
 		
+		int boardReplyCnt = boardService.selectReplyBoardCnt(bno);
+		
 		List<?> fileList = boardService.selectFileList(boardVO.getBno());
 		
 		model.addAttribute("boardVO", boardVO);
 		model.addAttribute("fileList", fileList);
 		model.addAttribute("passMatch", passMatch);
-		return "cmmn/boardView.tiles";
+		model.addAttribute("boardReplyCnt", boardReplyCnt);
+		
+		return "board/boardView.tiles";
 	}
 	
-	@RequestMapping("/ari/insertBoardPage.do")
+	@RequestMapping("/ari/board/insertBoardPage.do")
 	public String insertBoardPage() throws Exception {
 		System.out.println("게시판입력페이지");
 		
-		return "cmmn/boardInsertPage.tiles";
+		return "board/boardInsertPage.tiles";
 	}
 	
-	@RequestMapping("/ari/insertBoard.do")
+	@RequestMapping("/ari/board/insertBoard.do")
 	public String insertBoard(@ModelAttribute BoardVO boardVO, MultipartHttpServletRequest mrequest) throws Exception {
 		System.out.println("게시판입력");
 		try {
@@ -116,12 +131,12 @@ public class BoardController {
 			e.printStackTrace();
 		}
 		
-		return "redirect:/ari/board.do";
+		return "redirect:/ari/board/board.do";
 	}
 	
-	@RequestMapping("/ari/updateBoardPage.do")
+	@RequestMapping("/ari/board/updateBoardPage.do")
 	public String updateBoardPage(@ModelAttribute BoardVO boardVO, Model model) throws Exception {
-		System.out.println("게시판수정페이지");
+		logger.info("게시판 수정페이지");
 		
 		BoardVO uboardVO = boardService.selectBoardView(boardVO.getBno());
 		
@@ -130,12 +145,12 @@ public class BoardController {
 		model.addAttribute("boardVO", uboardVO);
 		model.addAttribute("fileList", fileList);
 		
-		return "cmmn/boardUpdatePage.tiles";
+		return "board/boardUpdatePage.tiles";
 	}
 	
-	@RequestMapping("/ari/updateBoard.do")
+	@RequestMapping("/ari/board/updateBoard.do")
 	public String updateBoard(@ModelAttribute BoardVO boardVO, MultipartHttpServletRequest mrequest) throws Exception {
-		System.out.println("게시판수정");
+		logger.info("게시판 수정");
 		try {
 			boardService.updateBoard(boardVO, mrequest);			
 		} catch (Exception e) {
@@ -143,22 +158,22 @@ public class BoardController {
 			e.printStackTrace();
 		}
 		
-		return "redirect:/ari/boardView.do?bno="+boardVO.getBno();
+		return "redirect:/ari/board/boardView.do?bno="+boardVO.getBno();
 	}
 	
-	@RequestMapping("/ari/deleteBoard.do")
+	@RequestMapping("/ari/board/deleteBoard.do")
 	public String deleteBoard(@ModelAttribute BoardVO boardVO) throws Exception {
-		System.out.println("게시판삭제");
+		logger.info("게시판 삭제");
 		try {
 			boardService.deleteBoard(boardVO);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
-		return "redirect:/ari/board.do";
+		return "redirect:/ari/board/board.do";
 	}
 	
-	@RequestMapping("/ari/downloadFile.do")
+	@RequestMapping("/ari/board/downloadFile.do")
 	public void downloadFile(@ModelAttribute BoardVO boardVO, HttpServletResponse response) throws Exception {
 		try {
 		BoardVO vo = boardService.selectFile(boardVO);
@@ -172,7 +187,7 @@ public class BoardController {
         response.setHeader("Content-Disposition", "attachment; fileName=\"" + URLEncoder.encode(fname,"UTF-8")+"\";");
         response.setHeader("Content-Transfer-Encoding", "binary");
         response.getOutputStream().write(fileByte);
-        
+         
 
 		}catch (Exception e) {
 			// TODO: handle exception
@@ -193,31 +208,72 @@ public class BoardController {
 		}
 	}
 	
-	@RequestMapping("/ari/boardReplyPage.do")
+	/**
+	 * 답글 페이지 이동
+	 * 
+	 * 답글 등록페이지로 이동한다.
+	 */
+	@RequestMapping("/ari/board/boardReplyPage.do")
 	public String BoardReplyPage(@ModelAttribute BoardVO boardVO, Model model) throws Exception {
+		logger.info("게시판 답글 페이지이동");
 		
 		BoardVO reboardVO = boardService.selectBoardView(boardVO.getBno());
 		
 		model.addAttribute("boardVO", reboardVO);
 		
-		return "cmmn/boardReplyPage.tiles";	
+		return "board/boardReplyPage.tiles";	
 	}
 	
-	@RequestMapping("/ari/insertReplyBoard.do")
+	/**
+	 * 답글 등록
+	 * 
+	 * 입력한 답글에 대한 정보를 등록 후 견적문의 목록화면으로 이동한다.
+	 */
+	@RequestMapping("/ari/board/insertReplyBoard.do")
 	public String InsertReplyBoard(@ModelAttribute BoardVO boardVO, MultipartHttpServletRequest mrequest) throws Exception {
+		logger.info("게시판 답글등록");
 		try {
 			int success = boardService.insertReplyBoard(boardVO, mrequest);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return "redirect:/ari/board.do";
+		return "redirect:/ari/board/board.do";
 	}
 	
-	@RequestMapping("/ari/boardPassChk.do")
-	public String BoardPassChk(HttpServletRequest request) throws Exception {			
+	@RequestMapping("/ari/board/updateReplyBoardPage.do")
+	public String updateReplyBoardPage(@ModelAttribute BoardVO boardVO, Model model) throws Exception {
+		logger.info("게시판 답글 수정페이지");
+		
+		BoardVO uboardVO = boardService.selectBoardView(boardVO.getBno());
+		
+		List<?> fileList = boardService.selectFileList(boardVO.getBno());
+		
+		model.addAttribute("boardVO", uboardVO);
+		model.addAttribute("fileList", fileList);
+		
+		return "board/boardReplyUpdatePage.tiles";
+	}
+
+	@RequestMapping("/ari/board/updateReplyBoard.do")
+	public String updateReplyBoard(@ModelAttribute BoardVO boardVO, MultipartHttpServletRequest mrequest) throws Exception {
+		logger.info("게시판 답글 수정");
+		try {
+			boardService.updateReplyBoard(boardVO, mrequest);			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		
+		return "redirect:/ari/board/boardView.do?bno="+boardVO.getBno();
+	}
+	
+	@RequestMapping("/ari/board/boardPassChk.do")
+	public String BoardPassChk(@ModelAttribute BoardVO boardVO,HttpServletRequest request) throws Exception {			
 			String bno = request.getParameter("bno");
 			String bpass = request.getParameter("bpass");
 			String mod = request.getParameter("mod");
+			String bnorelev = request.getParameter("bnorelev");
+			
 			System.out.println(mod);
 			String currentPageNo = request.getParameter("currentPageNo");
 			Map<String, Object> map = new LinkedHashMap<>();
@@ -229,21 +285,30 @@ public class BoardController {
 			
 			if("update".equals(mod)) { //상세조회에서 수정할때
 				if(boardPassChk > 0) {//성공하면
-					return "forward:/ari/updateBoardPage.do?bno="+bno;
+
+					// mod가 수정할때 조회를 성공 후 원본글을 수정하는 경우에는 원본글 수정페이지로,
+					// 답글을 수정하는 경우에는 답글 수정페이지로 이동한다.
+					// bnorelev : 0 이면 원본글 그외는 순차적으로 답글 순서가 들어감.
+					if("0".equals(bnorelev)){
+						return "forward:/ari/board/updateBoardPage.do";
+					}else {
+						return "forward:/ari/board/updateReplyBoardPage.do";
+					}
+					
 				}else {
-					return "forward:/ari/boardView.do?bno="+bno+"&passMatch=false";
+					return "forward:/ari/board/boardView.do?bno="+bno+"&passMatch=false";
 				}
 			}else if("delete".equals(mod)) { //상세조회에서 삭제할떄
 				if(boardPassChk > 0) {//성공하면
-					return "forward:/ari/deleteBoard.do?bno="+bno;
+					return "forward:/ari/board/deleteBoard.do";
 				}else {
-					return "forward:/ari/boardView.do?bno="+bno+"&passMatch=false";
+					return "forward:/ari/board/boardView.do?bno="+bno+"&passMatch=false";
 				}
 			}else {	//게시판목록에서 접근할때		
 				if(boardPassChk > 0) {//성공하면
-					return "forward:/ari/boardView.do?bno="+bno+"&passMatch=true";
+					return "forward:/ari/board/boardView.do?bno="+bno+"&passMatch=true";
 				}
 			}
-		return "redirect:/ari/board.do?passMatch=false&currentPageNo="+currentPageNo;
+		return "redirect:/ari/board/board.do?passMatch=false&currentPageNo="+currentPageNo;
 	}
 }

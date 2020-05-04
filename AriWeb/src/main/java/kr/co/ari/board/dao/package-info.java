@@ -5,4 +5,4 @@
  * @author 곽장훈
  *
  */
-package kr.co.ari.borad.vo;
+package kr.co.ari.board.dao;

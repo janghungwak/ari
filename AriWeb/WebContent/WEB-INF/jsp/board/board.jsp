@@ -86,11 +86,11 @@
 			if (bsec == 'Y') {
 				$('#passChkModal').modal();
 			} else {
-				$('#boardForm').attr('action', '/ari/boardView.do');
+				$('#boardForm').attr('action', '/ari/board/boardView.do');
 				$('#boardForm').submit();
 			}
 		}else{
-			$('#boardForm').attr('action', '/ari/boardView.do');
+			$('#boardForm').attr('action', '/ari/board/boardView.do');
 			$('#boardForm').submit();			
 		}
 	}
@@ -98,20 +98,20 @@
 	function passChk(){
 		var currentPageNo = '${paginationInfo.currentPageNo}'; 
 		$('#currentPageNo').val(currentPageNo);	
-		$('#boardForm').attr('action', '/ari/boardPassChk.do');
+		$('#boardForm').attr('action', '/ari/board/boardPassChk.do');
 		$('#boardForm').submit();
 	}
 	
 	function adminBoardView(bno){
 		$('input[name="bno"]').val(bno);
-		$('#boardForm').attr('action', '/ari/boardView.do');
+		$('#boardForm').attr('action', '/ari/board/boardView.do');
 		$('#boardForm').submit();
 	}
 </script>
 </head>
 <body>
 	<div class="wrapper">
-	<form method="POST" id="boardForm" action="/ari/board.do">	
+	<form method="POST" id="boardForm" action="/ari/board/board.do">	
 		<div id="subTitle">
 				<h3 class="subtitle">
 					견적 문의
@@ -145,7 +145,6 @@
 							<td class="text-left">
 								<a href="javascript:boardView(${boardList.bno});">
 								<input type="hidden" name="bno" id="bno_${boardList.bno}" value="${boardList.bno }"/>
-								<input type="hidden" name="bpass" id="bpass_${boardList.bpass}" value="${boardList.bpass }"/>
 								<input type="hidden" name="bsec" id="bsec_${boardList.bno}" value="${boardList.bsec }">
 								<c:if test="${boardList.bnorelev > 0 }">
 									<img src="../../../img/reply.png" style="margin-left : ${boardList.bnorelev * 15}px"/>
@@ -174,7 +173,7 @@
 			</div>
 			<sec:csrfInput/>
 			<input type="hidden" name="currentPageNo" id="currentPageNo"/>
-			<a href="/ari/insertBoardPage.do" class="btn btn-primary pull-right">글쓰기</a>
+			<a href="/ari/board/insertBoardPage.do" class="btn btn-primary pull-right">글쓰기</a>
 		</div>
 		
 		<!-- Modal -->

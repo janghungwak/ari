@@ -5,7 +5,6 @@ import java.util.Collection;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 
-import kr.co.ari.borad.vo.BoardVO;
 import kr.co.ari.member.vo.MemberVO;
 
 public class UserCustom extends User {

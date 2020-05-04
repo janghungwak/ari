@@ -1,4 +1,4 @@
-package kr.co.ari.borad.service;
+package kr.co.ari.board.service;
 
 import java.util.List;
 import java.util.Map;
@@ -9,8 +9,8 @@ import org.apache.commons.lang3.StringEscapeUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
-import kr.co.ari.borad.dao.BoardDAO;
-import kr.co.ari.borad.vo.BoardVO;
+import kr.co.ari.board.dao.BoardDAO;
+import kr.co.ari.board.vo.BoardVO;
 import kr.co.ari.common.util.FileUtils;
 
 @Service("boardService")
@@ -42,6 +42,13 @@ public class BoardServiceImpl implements BoardService {
 		return boardVO;
 	}
 	
+	public int selectReplyBoardCnt(String bno) {
+		
+		int replyBoardCnt = boardDAO.selectReplyBoardCnt(bno);
+		
+		return replyBoardCnt;
+	}
+	
 	@Override
 	public int insertBoard(BoardVO boardVO, MultipartHttpServletRequest mrequest) {
 		int result = boardDAO.insertBoard(boardVO);
@@ -63,6 +70,42 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public int updateBoard(BoardVO boardVO, MultipartHttpServletRequest mrequest) {
+		int result = boardDAO.updateBoard(boardVO);
+		
+		boardDAO.deleteFile(boardVO.getBno());
+		
+		List<BoardVO> list = fileUtils.parseUpdateFileInfo(boardVO, mrequest);
+		
+		if(list.size() <= 0) {
+			boardVO.setFileExist("N");
+			boardDAO.updateFileExist(boardVO);
+		}
+		
+		BoardVO vo = null;
+		
+		int success = 0;
+		for(int i=0; i<list.size(); i++) {
+			vo = list.get(i);
+			
+			if(vo.getIsnew().equals("Y")) {
+				System.out.println("insert파일");
+				success = boardDAO.insertFile(vo);
+			}else {
+				System.out.println("update파일");
+				success = boardDAO.updateFile(vo);
+			}
+		}
+		
+		if(success > 0) {
+			boardVO.setFileExist("Y");
+			boardDAO.updateFileExist(boardVO);
+		}
+		
+		return result;
+	}
+	
+	@Override
+	public int updateReplyBoard(BoardVO boardVO, MultipartHttpServletRequest mrequest) {
 		int result = boardDAO.updateBoard(boardVO);
 		
 		boardDAO.deleteFile(boardVO.getBno());

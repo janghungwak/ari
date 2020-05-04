@@ -2,6 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.co.ari.board.dao.BoardDAO">
 	
+	<!-- 견적문의 목록에 대한 SQL -->
 	<select id="selectBoardList" parameterType="boardVO" resultType="boardVO">
 		<![CDATA[
 		SELECT BNO, BNOREREF, BNORELEV, BNORESEQ, BTITLE, BWRITER, BPASS, BCONTENT, DATE_FORMAT(BREGDATE, "%Y-%m-%d %T")AS BREGDATE, FILEEXIST, BSEC FROM BOARD
@@ -23,6 +24,7 @@
 		]]>
 	</select>
 	
+	<!-- 견적문의 목록 총 개수에 대한 SQL -->
 	<select id="selectBoardCount" resultType="int" parameterType="boardVO">
 		<![CDATA[
 		SELECT COUNT(*) FROM BOARD
@@ -40,11 +42,20 @@
 		</trim>
 	</select>
 	
+	<!-- 견적문의에 대한  SQL-->
 	<select id="selectBoardView" parameterType="String" resultType="boardVO">
 		SELECT BNO, BNOREREF, BNORELEV, BNORESEQ, BTITLE, BWRITER, BPASS, BCONTENT, DATE_FORMAT(BREGDATE, "%Y-%m-%d %T")AS BREGDATE, BSEC FROM BOARD
 		WHERE BNO = #{bno}
 	</select>
-		
+
+	<!-- 해당 견적문의에 대한 답글갯수에 대한 SQL -->
+	<select id="selectReplyBoardCnt" parameterType="String" resultType="int">
+		SELECT COUNT(*) FROM BOARD
+		WHERE BNO = #{bno}
+		  AND BNORELEV = (SELECT BNORELEV FROM BOARD WHERE BNO = #{bno})
+	</select>
+	
+	<!-- 견적문의 등록에 대한 SQL -->	
 	<insert id="insertBoard" parameterType="boardVO">
 		<selectKey keyProperty="bnoreref,bno" resultType="boardVO" order="BEFORE">
 			SELECT IFNULL(MAX(BNO)+1, 1) AS BNOREREF, IFNULL(MAX(BNO)+1, 1) AS BNO FROM BOARD
@@ -55,29 +66,34 @@
 		]]>
 	</insert>
 	
+	<!-- 견적문의 파일 등록에 대한 SQL -->
 	<insert id="insertFile" >
 		INSERT INTO BOARDFILE(BNO, FNAME, RNAME, FSIZE, ISNEW)
 		VALUES (#{bno}, #{fname}, #{rname}, #{fsize}, #{isnew})
 	</insert>
 	
+	<!-- 견적문의 파일 수정에 대한 SQL -->
 	<update id="updateFileExist" parameterType="boardVO">
 		UPDATE BOARD SET
 		FILEEXIST = #{fileExist}
 		WHERE BNO = #{bno}
 	</update>
 	
+	<!-- 견적문의 파일 목록에 대한 SQL -->
 	<select id="selectFileList" parameterType="String" resultType="boardVO">
 		SELECT FNO, BNO, FNAME, RNAME, FSIZE FROM BOARDFILE
 		WHERE BNO = #{bno}
 		AND DELYN = 'N'
 	</select>
 	
+	<!-- 견적문의 파일 목록중 파일번호에 대한 SQL -->
 	<select id="selectFile" parameterType="boardVO" resultType="boardVO">
 		SELECT FNO, BNO, FNAME, RNAME, FSIZE FROM BOARDFILE
 		WHERE FNO = #{fno}
 		AND BNO = #{bno}
 	</select>
 	
+	<!-- 견적문의 수정에 대한 SQL -->
 	<update id="updateBoard" parameterType="boardVO">
 		UPDATE BOARD SET
 		BTITLE = #{btitle},
@@ -89,12 +105,14 @@
 		WHERE BNO = #{bno}
 	</update>
 	
+	<!-- 견적문의 파일 삭제에 대한 SQL -->
 	<delete id="deleteFile" parameterType="String">
 		UPDATE BOARDFILE
 		SET DELYN = 'Y'
 		WHERE BNO = #{bno}
 	</delete>
 	
+	<!-- 견적문의 파일 목록중 파일번호 수정에 대한 SQL -->
 	<update id="updateFile" parameterType="boardVO">
 		UPDATE BOARDFILE
 		SET DELYN = 'N',
@@ -102,8 +120,15 @@
 		WHERE FNO = #{fno}
 	</update>
 	
+	<!-- 견적문의 삭제에 대한 SQL -->
 	<delete id="deleteBoard" parameterType="boardVO">
-		DELETE FROM BOARD WHERE BNO = #{bno}
+		DELETE FROM BOARD
+		<if test="bnorelev == 0 and bnorelev != ''">
+			WHERE BNOREREF = #{bnoreref}
+		</if>
+		<if test="bnorelev > 0 and bnorelev != ''">
+		    WHERE BNO = #{bno} 
+		</if>
 	</delete>
 	
 	<update id="updateBnoreseq" parameterType="boardVO">
@@ -112,6 +137,7 @@
 		and BNORESEQ > #{bnoreseq}
 	</update>
 	
+	<!-- 견적문의 답글 등록에 대한 SQL -->
 	<insert id="insertReplyBoard" parameterType="boardVO" useGeneratedKeys="true" keyProperty="bno">
 		INSERT INTO BOARD(BNOREREF, BNORELEV, BNORESEQ, BTITLE, BPASS, BWRITER, BCONTENT, BREGDATE, BSEC)
 		VALUES (#{bnoreref}, #{bnorelev}+1, #{bnoreseq}+1, #{btitle}, #{bpass}, #{bwriter}, #{bcontent}, NOW(), #{bsec})

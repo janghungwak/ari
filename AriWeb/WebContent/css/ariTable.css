@@ -1,3 +1,6 @@
+.board-textLf{
+	text-align: left !important;
+} 
 /*원자재 - 스텐레스 강판재  관련 CSS*/
   .stanPanTable th{
 	vertical-align: middle !important;

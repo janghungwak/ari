@@ -72,7 +72,7 @@ $(document).ready(function(){
 						</div>
 						<p>(주)아리에서 생산하는 제품에 대한 문의를 하실 수 있습니다.</p>
 						<div class="ficon">
-							<a href="/ari/board.do" class="btn btn-default" role="button">Read more</a>
+							<a href="/ari/board/board.do" class="btn btn-default" role="button">Read more</a>
 						</div>
 				</div>
 			</div>
@@ -128,7 +128,7 @@ $(document).ready(function(){
 						</div>
 						<p>(주)아리에서 생산하는 제품에 대한<br>문의를 하실 수 있습니다.</p>
 						<div class="ficon">
-							<a href="/ari/board.do" class="btn btn-default" role="button">Read more</a>
+							<a href="/ari/board/board.do" class="btn btn-default" role="button">Read more</a>
 						</div>
 					</div>
 				</div>

@@ -1,4 +1,4 @@
-package kr.co.ari.borad.dao;
+package kr.co.ari.board.dao;
 
 import java.util.List;
 import java.util.Map;
@@ -7,7 +7,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import kr.co.ari.borad.vo.BoardVO;
+import kr.co.ari.board.vo.BoardVO;
 
 @Repository("boardDAO")
 public class BoardDAOImpl implements BoardDAO {
@@ -43,7 +43,7 @@ public class BoardDAOImpl implements BoardDAO {
 	public int updateBoard(BoardVO boardVO) {
 		return sqlSession.update("kr.co.ari.board.dao.BoardDAO.updateBoard", boardVO);
 	}
-
+	
 	@Override
 	public int deleteBoard(BoardVO boardVO) {
 		return sqlSession.delete("kr.co.ari.board.dao.BoardDAO.deleteBoard", boardVO);
@@ -102,6 +102,12 @@ public class BoardDAOImpl implements BoardDAO {
 	public int selectBoardPassChk(Map<String, Object> map) {
 		// TODO Auto-generated method stub
 		return sqlSession.selectOne("kr.co.ari.board.dao.BoardDAO.selectBoardPassChk", map);
+	}
+
+	@Override
+	public int selectReplyBoardCnt(String bno) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectOne("kr.co.ari.board.dao.BoardDAO.selectReplyBoardCnt", bno);
 	}
 	
 }

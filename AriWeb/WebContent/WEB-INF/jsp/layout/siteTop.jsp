@@ -46,7 +46,7 @@
 					</li>
 				</ul>
 			</li>
-			<li class="last"><a href="/ari/board.do"><span>견적문의</span></a></li>
+			<li class="last"><a href="/ari/board/board.do"><span>견적문의</span></a></li>
 		</ul>
 	</div>
 </body>

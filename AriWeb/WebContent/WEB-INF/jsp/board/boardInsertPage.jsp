@@ -59,7 +59,6 @@ function attachFile() {
 function removeFile() {
 	if(file_count > 0){
 		$('#file_'+file_count).parent().remove();
-		//$('input').remove('#file_'+file_count);
 		file_count--;
 	}
 }
@@ -77,7 +76,7 @@ function removeFile() {
 			</h3>
 		</div>
 		<div class="table_content" style="table-layout: fixed;">
-			<form id="insertform" action="/ari/insertBoard.do?${_csrf.parameterName}=${_csrf.token}" method="POST" enctype="multipart/form-data">
+			<form id="insertform" action="/ari/board/insertBoard.do?${_csrf.parameterName}=${_csrf.token}" method="POST" enctype="multipart/form-data">
 			 <table class="table">
 			 	<tbody>
 			 		<tr>

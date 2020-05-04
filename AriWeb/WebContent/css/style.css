@@ -1110,12 +1110,35 @@ span.left {
     clear:both;
 }
 
+/*견적문의 관련 모달창 CSS*/
+.modal {
+    text-align: center;
+}
 
+.modal-body button{
+	margin-top: 0px;
+	margin-bottom: 4px;
+	margin-left: 5px;
+	padding: 3px 15px;
+}
+ 
+@media screen and (min-width: 300px) { 
+	.modal:before 
+	{
+        display: inline-block;
+        vertical-align: middle;
+        content: " ";
+        height: 100%;
+    }
+}
+ 
+.modal-dialog {
+	display: inline-block;
+	text-align: left;
+	vertical-align: middle;
+	width: 300px;
+}
 
-
-
-
-
-
-
-
+.modalBtn{
+	text-align: right;
+}

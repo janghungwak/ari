@@ -57,7 +57,7 @@ function removeFile() {
 }
 
 function boardView() {
-	$('#insertReplyform').attr('action', '/ari/boardView.do');
+	$('#insertReplyform').attr('action', '/ari/board/boardView.do');
 	$('#insertReplyform').attr('enctype', '');
 	$('#insertReplyform').submit();
 }
@@ -74,7 +74,7 @@ function boardView() {
 			</h3>
 		</div>
 		<div class="table_content" style="table-layout: fixed;">
-			<form id="insertReplyform" action="/ari/insertReplyBoard.do?${_csrf.parameterName}=${_csrf.token}" method="POST" enctype="multipart/form-data">
+			<form id="insertReplyform" action="/ari/board/insertReplyBoard.do?${_csrf.parameterName}=${_csrf.token}" method="POST" enctype="multipart/form-data">
 			 <table class="table">
 			 	<tbody>
 			 		<tr>
@@ -93,7 +93,7 @@ function boardView() {
 			 		<tr>
 			 		<td colspan="2">
 			 		<textarea rows="10" cols="100" name="bcontent" id="bcontent" style="width: 100%; min-width:260px; height: 300px; display: none;">
-			 		</br>------${boardVO.bwriter }님의 글------</br>
+			 		<br>------${boardVO.bwriter }님의 글------<br>
 			 		${boardVO.bcontent }
 			 		</textarea> 
 			 		<script type="text/javascript">
@@ -109,7 +109,6 @@ function boardView() {
 			 					oSelection.collapseToStart();
 			 					oSelection.select();
 			 					oEditors.getById["bcontent"].exec("FOCUS");
-			 					//oEditors.getById["bcontent"].exec("SET_IR",['']);
 			 				},
 			 			    fCreator: "createSEditor2"		 				
 			 			});
@@ -126,11 +125,12 @@ function boardView() {
 			 		</tr>
 			 	</tbody>
 			 </table>
-			 <input type="hidden" name="bno" value="${boardVO.bno }">
+			 <input type="text" name="bno" value="${boardVO.bno }">
+			 <input type="text" name="orginlBno" value="${boardVO.bno }">		
 			 <input type="hidden" name="bnoreref" value="${boardVO.bnoreref }">
 			 <input type="hidden" name="bnorelev" value="${boardVO.bnorelev }">
 			 <input type="hidden" name="bnoreseq" value="${boardVO.bnoreseq }">			 
-			 <input type="hidden" name="bpass" value="${boardVO.bpass }">			 
+			 <input type="hidden" name="bpass" value="${boardVO.bpass }">		
 			 <sec:csrfInput/>
 			 <a href="javascript:board_replyInsert();" class="btn btn-primary pull-right binsert">등록</a>	
 			 <a href="javascript:boardView();" class="btn btn-primary pull-right">취소</a>			 

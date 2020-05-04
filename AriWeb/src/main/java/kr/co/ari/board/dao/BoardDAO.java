@@ -1,10 +1,10 @@
-package kr.co.ari.borad.dao;
+package kr.co.ari.board.dao;
 
 
 import java.util.List;
 import java.util.Map;
 
-import kr.co.ari.borad.vo.BoardVO;
+import kr.co.ari.board.vo.BoardVO;
 
 public interface BoardDAO {
 	
@@ -14,10 +14,12 @@ public interface BoardDAO {
 	
 	public abstract BoardVO selectBoardView(String bno);
 	
+	public abstract int selectReplyBoardCnt(String bno);
+	
 	public abstract int insertBoard(BoardVO boardVO);
 	
 	public abstract int updateBoard(BoardVO boardVO);
-	
+
 	public abstract int deleteBoard(BoardVO boardVO);
 
 	public abstract int insertFile(BoardVO boardVO);

@@ -10,28 +10,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>견적 문의 수정</title>
 <script type="text/javascript">
-function board_update(){
+
+function boardReplyUpdate(){
 	var btitle = $('#btitle').val();
 	var bwriter = $('#bwriter').val();
 	var bpass = $('#bpass').val();
 	
-	if(btitle==""){
-		alert('제목을 입력해주세요.');
-		return;
-	}
-	
-	if(bwriter==""){
-		alert('작성자를 입력해주세요.');
-		return;
-	}
-	
-	if(bpass==""){
-		alert('비밀번호를 입력해주세요');
-		return;
-	}
-	
 	if(confirm('수정하시겠습니까?')){
 		oEditors.getById["bcontent"].exec("UPDATE_CONTENTS_FIELD", []);
+		
+		$('#bpass').removeAttr('disabled');
 		$('#updateform').submit();
 	}
 }
@@ -54,16 +42,12 @@ function attachFile() {
 }
 
 function removeFile() {
-	//var fileCnt = parseInt($('#fileCnt').val());
-	//if(file_count > fileCnt){
 		$('#file_'+file_count).parent().remove();
-		//$('input').remove('#file_'+file_count);
 		file_count--;
-	//}
 }
 
 function boardView() {
-	$('#updateform').attr('action', '/ari/boardView.do');
+	$('#updateform').attr('action', '/ari/board/boardView.do');
 	$('#updateform').attr('enctype', '');
 	$('#updateform').submit();
 }
@@ -81,7 +65,7 @@ function boardView() {
 			</h3>
 		</div>
 		<div class="table_content" style="table-layout: fixed;">
-			<form id="updateform" action="/ari/updateBoard.do?${_csrf.parameterName}=${_csrf.token}" method="POST" enctype="multipart/form-data">
+			<form id="updateform" action="/ari/board/updateReplyBoard.do?${_csrf.parameterName}=${_csrf.token}" method="POST" enctype="multipart/form-data">
 			 <table class="table">
 			 	<tbody>
 			 		<tr>
@@ -129,19 +113,15 @@ function boardView() {
 			 		</tr>
 			 		<tr>
 			 			<th class="text-left">비밀번호</th>
-			 			<sec:authorize access="hasRole('ROLE_ADMIN')">
-			 				<td class="text-left"><input type="text" name="bpass" id="bpass" value="${boardVO.bpass }" disabled="disabled"/></td>
-			 			</sec:authorize>
-			 			<sec:authorize access="isAnonymous()">
-			 				<td class="text-left"><input type="text" name="bpass" id="bpass" value="${boardVO.bpass }"/></td>
-			 			</sec:authorize>
-			 			
+		 				<td class="text-left">
+		 					<input type="text" name="bpass" id="bpass" value="${boardVO.bpass }" disabled="disabled"/>
+	 					</td>
 			 		</tr>
 			 	</tbody>
 			 </table>
 			 <input type="hidden" name="bno" value="${boardVO.bno }">			 
 			 <sec:csrfInput/>
-			 <a href="javascript:board_update();" class="btn btn-primary pull-right binsert">수정</a>	
+			 <a href="javascript:boardReplyUpdate();" class="btn btn-primary pull-right binsert">수정</a>	
 			 <a href="javascript:boardView();" class="btn btn-primary pull-right">취소</a>			 
 			</form>
 		</div>

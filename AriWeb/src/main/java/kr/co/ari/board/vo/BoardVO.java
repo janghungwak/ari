@@ -1,4 +1,4 @@
-package kr.co.ari.borad.vo;
+package kr.co.ari.board.vo;
 
 import java.io.Serializable;
 
@@ -39,7 +39,7 @@ public class BoardVO implements Serializable{
 	//게시판답글
 	private String bnoreref;
 	private String bnorelev;
-	private String bnoreseq;
+	private String bnoreseq;	//
 	
 	public BoardVO() {}
 
@@ -255,5 +255,5 @@ public class BoardVO implements Serializable{
 
 	public void setBnoreseq(String bnoreseq) {
 		this.bnoreseq = bnoreseq;
-	}	
+	}
 }
