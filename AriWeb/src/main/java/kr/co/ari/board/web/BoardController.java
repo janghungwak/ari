@@ -98,11 +98,12 @@ public class BoardController {
 	@RequestMapping("/ari/board/boardView.do")
 	public String boardView(Model model, HttpServletRequest request) throws Exception {
 		String bno = request.getParameter("bno");
+		String bnoreref = request.getParameter("bnoreref");
 		String passMatch = request.getParameter("passMatch");
 		
 		BoardVO boardVO = boardService.selectBoardView(bno);	
 		
-		int boardReplyCnt = boardService.selectReplyBoardCnt(bno);
+		int boardReplyCnt = boardService.selectReplyBoardCnt(bnoreref);
 		
 		List<?> fileList = boardService.selectFileList(boardVO.getBno());
 		

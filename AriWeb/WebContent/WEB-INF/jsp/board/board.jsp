@@ -146,6 +146,7 @@
 								<a href="javascript:boardView(${boardList.bno});">
 								<input type="hidden" name="bno" id="bno_${boardList.bno}" value="${boardList.bno }"/>
 								<input type="hidden" name="bsec" id="bsec_${boardList.bno}" value="${boardList.bsec }">
+								<input type="hidden" name="bnoreref" id="bsec_${boardList.bnoreref}" value="${boardList.bnoreref}">
 								<c:if test="${boardList.bnorelev > 0 }">
 									<img src="../../../img/reply.png" style="margin-left : ${boardList.bnorelev * 15}px"/>
 								</c:if>

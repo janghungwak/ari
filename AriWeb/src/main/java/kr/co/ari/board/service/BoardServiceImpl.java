@@ -42,9 +42,9 @@ public class BoardServiceImpl implements BoardService {
 		return boardVO;
 	}
 	
-	public int selectReplyBoardCnt(String bno) {
+	public int selectReplyBoardCnt(String bnoreref) {
 		
-		int replyBoardCnt = boardDAO.selectReplyBoardCnt(bno);
+		int replyBoardCnt = boardDAO.selectReplyBoardCnt(bnoreref);
 		
 		return replyBoardCnt;
 	}

@@ -105,9 +105,9 @@ public class BoardDAOImpl implements BoardDAO {
 	}
 
 	@Override
-	public int selectReplyBoardCnt(String bno) {
+	public int selectReplyBoardCnt(String bnoreref) {
 		// TODO Auto-generated method stub
-		return sqlSession.selectOne("kr.co.ari.board.dao.BoardDAO.selectReplyBoardCnt", bno);
+		return sqlSession.selectOne("kr.co.ari.board.dao.BoardDAO.selectReplyBoardCnt", bnoreref);
 	}
 	
 }

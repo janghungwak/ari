@@ -80,12 +80,12 @@ function removeFile() {
 			 <table class="table">
 			 	<tbody>
 			 		<tr>
-			 			<th class="text-left">제목</th>
-			 			<td class="text-left"><input type="text" name="btitle" id="btitle"/></td>
+			 			<th>제목</th>
+			 			<td class="board-textLf"><input type="text" name="btitle" id="btitle" style="width: 50%;"/></td>
 			 		</tr>
 			 		<tr>
-			 			<th class="text-left">작성자</th>
-			 			<td class="text-left"><input type="text" name="bwriter" id="bwriter"/>
+			 			<th>작성자</th>
+			 			<td class="board-textLf"><input type="text" name="bwriter" id="bwriter"/>
 			 			<p style="padding : 3px 3px 3px 3px; margin-bottom: 0px; display: inline-block;">
 			 				<span><input type="checkbox" id="bsecchk"/>비밀글</span>
 			 			</p>
@@ -93,27 +93,28 @@ function removeFile() {
 			 			</td>
 			 		</tr>
 			 		<tr>
-			 		<td colspan="2">
-			 		<textarea rows="10" cols="100" name="bcontent" id="bcontent" style="width: 100%; min-width:260px; height: 300px; display: none;"></textarea> 
-			 		<script type="text/javascript">
-			 		var oEditors = [];
-			 			oAppRef: oEditors,
-			 			nhn.husky.EZCreator.createInIFrame({
-			 				oAppRef : oEditors,
-			 				elPlaceHolder : "bcontent",
-			 				sSkinURI : "../../../smarteditor/SmartEditor2Skin.html",
-			 			    fCreator: "createSEditor2"		 				
-			 			});
-			 		</script>
-			 		</td>
+			 			<th style="border-bottom: 1px solid #ddd;">내용</th>
+			 			<td>
+			 				<textarea rows="10" cols="100" name="bcontent" id="bcontent" style="width: 100%; min-width:260px; height: 300px; display: none;"></textarea> 
+		 					<script type="text/javascript">
+			 					var oEditors = [];
+			 					oAppRef: oEditors,
+			 					nhn.husky.EZCreator.createInIFrame({
+			 						oAppRef : oEditors,
+			 						elPlaceHolder : "bcontent",
+			 						sSkinURI : "../../../smarteditor/SmartEditor2Skin.html",
+			 			    		fCreator: "createSEditor2"		 				
+			 					});
+			 				</script>
+			 			</td>
 			 		</tr>
 			 		<tr>
-			 			<th class="text-left">첨부파일</th>
-			 			<td class="text-left"><div class="fileButton"><a onclick="attachFile();" style="cursor: default;">＋</a> <a onclick="removeFile();" style="cursor: default;">－</a></div ><div class="fileInput"></div></td>			 			
+			 			<th>첨부파일</th>
+			 			<td class="board-textLf"><div class="fileButton"><a onclick="attachFile();" style="cursor: default;">＋</a> <a onclick="removeFile();" style="cursor: default;">－</a></div ><div class="fileInput"></div></td>			 			
 			 		</tr>
 			 		<tr>
-			 			<th class="text-left">비밀번호</th>
-			 			<td class="text-left"><input type="password" name="bpass" id="bpass"/></td>
+			 			<th>비밀번호</th>
+			 			<td class="board-textLf"><input type="password" name="bpass" id="bpass"/></td>
 			 		</tr>
 			 	</tbody>
 			 </table>

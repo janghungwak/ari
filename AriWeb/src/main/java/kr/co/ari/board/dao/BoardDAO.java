@@ -14,7 +14,7 @@ public interface BoardDAO {
 	
 	public abstract BoardVO selectBoardView(String bno);
 	
-	public abstract int selectReplyBoardCnt(String bno);
+	public abstract int selectReplyBoardCnt(String bnoreref);
 	
 	public abstract int insertBoard(BoardVO boardVO);
 	

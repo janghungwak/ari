@@ -51,8 +51,8 @@
 	<!-- 해당 견적문의에 대한 답글갯수에 대한 SQL -->
 	<select id="selectReplyBoardCnt" parameterType="String" resultType="int">
 		SELECT COUNT(*) FROM BOARD
-		WHERE BNO = #{bno}
-		  AND BNORELEV = (SELECT BNORELEV FROM BOARD WHERE BNO = #{bno})
+		WHERE BNOREREF = #{bnoreref}
+		  AND BNORELEV != 0
 	</select>
 	
 	<!-- 견적문의 등록에 대한 SQL -->	

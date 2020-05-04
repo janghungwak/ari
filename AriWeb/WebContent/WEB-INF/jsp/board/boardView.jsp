@@ -162,7 +162,7 @@
 										<div class="modal-body">						
 											<input type="text" name="bpass" id="bpass" style="width: 70%"/>	
 											<div class="modalBtn">
-												<button type="button" class="btn btn-primary">확인</button>
+												<button type="button" class="btn btn-primary" id="bpassButton">확인</button>
 											</div>					
 										</div>
 									</div>
