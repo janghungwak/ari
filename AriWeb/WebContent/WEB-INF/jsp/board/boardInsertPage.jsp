@@ -80,11 +80,11 @@ function removeFile() {
 			 <table class="table">
 			 	<tbody>
 			 		<tr>
-			 			<th>제목</th>
+			 			<th class="board-textLf">제목</th>
 			 			<td class="board-textLf"><input type="text" name="btitle" id="btitle" style="width: 50%;"/></td>
 			 		</tr>
 			 		<tr>
-			 			<th>작성자</th>
+			 			<th class="board-textLf">작성자</th>
 			 			<td class="board-textLf"><input type="text" name="bwriter" id="bwriter"/>
 			 			<p style="padding : 3px 3px 3px 3px; margin-bottom: 0px; display: inline-block;">
 			 				<span><input type="checkbox" id="bsecchk"/>비밀글</span>
@@ -93,8 +93,7 @@ function removeFile() {
 			 			</td>
 			 		</tr>
 			 		<tr>
-			 			<th style="border-bottom: 1px solid #ddd;">내용</th>
-			 			<td>
+			 			<td colspan="2">
 			 				<textarea rows="10" cols="100" name="bcontent" id="bcontent" style="width: 100%; min-width:260px; height: 300px; display: none;"></textarea> 
 		 					<script type="text/javascript">
 			 					var oEditors = [];
@@ -109,11 +108,11 @@ function removeFile() {
 			 			</td>
 			 		</tr>
 			 		<tr>
-			 			<th>첨부파일</th>
+			 			<th class="board-textLf">첨부파일</th>
 			 			<td class="board-textLf"><div class="fileButton"><a onclick="attachFile();" style="cursor: default;">＋</a> <a onclick="removeFile();" style="cursor: default;">－</a></div ><div class="fileInput"></div></td>			 			
 			 		</tr>
 			 		<tr>
-			 			<th>비밀번호</th>
+			 			<th class="board-textLf">비밀번호</th>
 			 			<td class="board-textLf"><input type="password" name="bpass" id="bpass"/></td>
 			 		</tr>
 			 	</tbody>

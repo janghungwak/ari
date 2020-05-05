@@ -11,50 +11,6 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>견적문의</title>
-<style type="text/css">
-.pagination {
-	margin-top: 5px;
-	margin-bottom: 5px;
-}
-
-.search_group {
-	float: right;
-	margin: 0 20px 3px 0;
-}
-
-#search_btn {
-	margin-top: 0px;
-	margin-left: 5px;
-	padding: 3px 20px;
-}
-
-#bpassButton {
-	margin-top: 0px;
-	margin-bottom: 4px;
-	margin-left: 5px;
-	padding: 3px 15px;
-}
-
-.modal {
-        text-align: center;
-}
- 
-@media screen and (min-width: 300px) { 
-        .modal:before {
-                display: inline-block;
-                vertical-align: middle;
-                content: " ";
-                height: 100%;
-        }
-}
- 
-.modal-dialog {
-        display: inline-block;
-        text-align: left;
-        vertical-align: middle;
-        width: 300px;
-}
-</style>
 <script type="text/javascript">
 	$(document).ready(function(){
 		var message = "${passMatch}";
@@ -131,6 +87,12 @@
 		</div>
 		<div class ="table_content">
 			<table class="table table-striped" style="table-layout: fixed;">
+				<colgroup>
+					<col width="*">
+					<col width="20%">
+					<col width="40%">
+					<col width="10%">
+				</colgroup>
 				<thead>
 					<tr>
 						<th class="text-center">제목</th>
@@ -142,13 +104,13 @@
 				<tbody>
 					<c:forEach var="boardList" items="${boardList }">
 						<tr>
-							<td class="text-left">
+							<td class="board-textLf">
 								<a href="javascript:boardView(${boardList.bno});">
 								<input type="hidden" name="bno" id="bno_${boardList.bno}" value="${boardList.bno }"/>
 								<input type="hidden" name="bsec" id="bsec_${boardList.bno}" value="${boardList.bsec }">
 								<input type="hidden" name="bnoreref" id="bsec_${boardList.bnoreref}" value="${boardList.bnoreref}">
 								<c:if test="${boardList.bnorelev > 0 }">
-									<img src="../../../img/reply.png" style="margin-left : ${boardList.bnorelev * 15}px"/>
+									<img src="../../../img/reply.png" style="margin-left : ${boardList.bnorelev * 5}px"/>
 								</c:if>
 								<c:out value="${boardList.btitle }"/>
 								<c:if test="${boardList.bsec eq 'Y' }">
@@ -187,7 +149,7 @@
 							<h4 class="modal-title">게시판 비밀번호 입력</h4>
 						</div>
 						<div class="modal-body">						
-							<input type="text" name="bpass" id="bpass" style="width: 70%"/>	
+							<input type="password" name="bpass" id="bpass" style="width: 70%"/>	
 							<button type="button" class="btn btn-primary" id="bpassButton" onclick="passChk();">확인</button>					
 						</div>
 					</div>

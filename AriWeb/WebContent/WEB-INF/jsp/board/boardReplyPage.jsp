@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>견적 문의 수정</title>
+<title>견적 문의 답글</title>
 <script type="text/javascript">
 function board_replyInsert(){
 	var bsecchk = $('#bsecchk').is(':checked');
@@ -78,11 +78,11 @@ function boardView() {
 			 <table class="table">
 			 	<tbody>
 			 		<tr>
-			 			<th>제목</th>
+			 			<th class="board-textLf">제목</th>
 			 			<td class="board-textLf"><input type="text" name="btitle" id="btitle" value="[RE]:${boardVO.btitle }" style="width: 50%;"/></td>
 			 		</tr>
 			 		<tr>
-			 			<th>작성자</th>
+			 			<th class="board-textLf">작성자</th>
 			 			<td class="board-textLf"><input type="text" name="bwriter" id="bwriter" value='<sec:authentication property="Principal.memberVO.name"/>'/>
 			 			<p style="padding : 3px 3px 3px 3px; margin-bottom: 0px; display: inline-block;">
 			 				<span><input type="checkbox" id="bsecchk" <c:if test="${boardVO.bsec eq 'Y' }">checked</c:if>/>비밀글</span>
@@ -91,8 +91,7 @@ function boardView() {
 			 			</td>
 			 		</tr>
 			 		<tr>
-			 			<th style="border-bottom: 1px solid #ddd;">내용</th>
-				 		<td>
+				 		<td colspan="2">
 				 			<textarea rows="10" cols="100" name="bcontent" id="bcontent" style="width: 100%; min-width:260px; height: 300px; display: none;">
 				 				<br>------${boardVO.bwriter }님의 글------<br>
 				 					${boardVO.bcontent }
@@ -117,17 +116,17 @@ function boardView() {
 				 		</td>
 			 		</tr>
 			 		<tr>
-			 			<th>첨부파일</th>
+			 			<th class="board-textLf">첨부파일</th>
 			 			<td class="board-textLf"><div class="fileButton"><a onclick="attachFile();" style="cursor: default;">＋</a> <a onclick="removeFile();" style="cursor: default;">－</a><div class="fileInput"></div></div>		 			
 			 		</tr>
 			 		<tr>
-			 			<th>비밀번호</th>
+			 			<th class="board-textLf">비밀번호</th>
 			 			<td class="board-textLf"><input type="text" name="bpass" id="bpass" value="${boardVO.bpass }" disabled="disabled"/></td>
 			 		</tr>
 			 	</tbody>
 			 </table>
-			 <input type="text" name="bno" value="${boardVO.bno }">
-			 <input type="text" name="orginlBno" value="${boardVO.bno }">		
+			 <input type="hidden" name="bno" value="${boardVO.bno }">
+			 <input type="hidden" name="orginlBno" value="${boardVO.bno }">		
 			 <input type="hidden" name="bnoreref" value="${boardVO.bnoreref }">
 			 <input type="hidden" name="bnorelev" value="${boardVO.bnorelev }">
 			 <input type="hidden" name="bnoreseq" value="${boardVO.bnoreseq }">			 

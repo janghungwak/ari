@@ -54,6 +54,7 @@ a.adm{
 
 .binsert {
 	margin-left: 10px;
+	margin-bottom: 10px;
 }
 
 .fileButton {
@@ -83,4 +84,47 @@ a.adm{
     padding: 3px 0 0 3px;
     height: 32px;
 }  
+
+.pagination {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.search_group {
+	float: right;
+	margin: 0 20px 3px 0;
+}
+
+#search_btn {
+	margin-top: 0px;
+	margin-left: 5px;
+	padding: 3px 20px;
+}
+
+#bpassButton {
+	margin-top: 0px;
+	margin-bottom: 4px;
+	margin-left: 5px;
+	padding: 3px 15px;
+}
+
+.modal {
+        text-align: center;
+}
+ 
+@media screen and (min-width: 300px) { 
+        .modal:before {
+                display: inline-block;
+                vertical-align: middle;
+                content: " ";
+                height: 100%;
+        }
+}
+ 
+.modal-dialog {
+        display: inline-block;
+        text-align: left;
+        vertical-align: middle;
+        width: 300px;
+}
 </style>  

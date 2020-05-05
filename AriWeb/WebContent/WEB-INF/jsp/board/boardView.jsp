@@ -101,17 +101,17 @@
 			<table class="table" style="table-layout: fixed;">
 				<tbody>
 					<tr>
-						<th scope="row">제목</th>
+						<th class="board-textLf" scope="row">제목</th>
 						<td class="board-textLf" colspan="3"><c:out value="${boardVO.btitle }"/></td>
 					</tr>
 					<tr>
-						<th scope="row">작성자</th>
+						<th class="board-textLf" scope="row">작성자</th>
 						<td class="board-textLf"><c:out value="${boardVO.bwriter }"/></td>
-						<th scope="row">등록일</th>
+						<th class="board-textLf" scope="row">등록일</th>
 						<td class="board-textLf" colspan="2"><c:out value="${boardVO.bregdate }"/></td>
 					</tr>
 					<tr>
-						<th>첨부파일</th>
+						<th class="board-textLf">첨부파일</th>
 						<td class="board-textLf" colspan="4">
 							<c:forEach items="${fileList }" var="file">
 								<p style="padding: 3px 3px 3px 0px; margin-bottom: 0px">
@@ -121,7 +121,7 @@
 						</td>
 					</tr>
 					<tr>
-						<th style="border-bottom: 1px solid #ddd;">내용</th>
+						<th class="board-textLf" style="border-bottom: 1px solid #ddd;">내용</th>
 						<td class="board-textLf" colspan="4" style="border-bottom: 1px solid #ddd;">
 						${boardVO.bcontent }
 						</td>
@@ -160,10 +160,8 @@
 											<h4 class="modal-title">게시판 비밀번호 입력</h4>
 										</div>
 										<div class="modal-body">						
-											<input type="text" name="bpass" id="bpass" style="width: 70%"/>	
-											<div class="modalBtn">
-												<button type="button" class="btn btn-primary" id="bpassButton">확인</button>
-											</div>					
+											<input type="password" name="bpass" id="bpass" style="width: 70%"/>	
+											<button type="button" class="btn btn-primary" id="bpassButton">확인</button>				
 										</div>
 									</div>
 								</div>
