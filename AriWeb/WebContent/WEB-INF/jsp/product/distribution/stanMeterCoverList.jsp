@@ -78,8 +78,8 @@ $(document).ready(function(){
 				</div>
 			</div>
 		</div>
-		<div class="text-center">
-			<h3>※ 주문제작으로 별도 문의 부탁드립니다. ※</h3>
+		<div class="stanMeterCoverMemo text-center">
+			※ 주문제작으로 별도 문의 부탁드립니다. ※
 		</div>
 	</div>
 </body>

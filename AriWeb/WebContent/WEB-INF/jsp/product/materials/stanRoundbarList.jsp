@@ -4,6 +4,24 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	$(".stanRoundbar1").freezeTable({
+		freezeColumn: true,
+		scrollBar: false,
+		scrollable: false,
+		columnNum: 1
+	});
+
+	$(".stanRoundbar2").freezeTable({
+		freezeColumn: true,
+		scrollBar: false,
+		scrollable: false,
+		columnNum: 1
+	});
+})
+</script>
 </head>
 <body>
 	<div class="productContainer">
@@ -14,7 +32,7 @@
 						<h3>스텐레스 환봉/사각봉/육각봉 (304 기준)</h3>
 					</div>
 					<div style="float: left; width: 48%;">
-						<div class="text-center">
+						<div class="stanRoundbar1 text-center">
 							<table class="stanRoundbar ariTable ariTable-hover">
 								<colgroup>
 									<col width="5%"/>
@@ -194,7 +212,7 @@
 					</div>
 					
 					<div style="float: left; width: 48%; margin-left: 10px;">
-						<div class="text-center">
+						<div class="stanRoundbar2 text-center">
 							<table class="stanRoundbar ariTable ariTable-hover">
 								<colgroup>
 									<col width="5%"/>

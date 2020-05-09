@@ -10,6 +10,7 @@
   <script src="../../../js/wow.min.js"></script> 
   <script src="../../../js/functions.js"></script> 
   <script src="../../../js/menuScript.js"></script> 
+  <script src="../../../js/freeze-table.min.js"></script> 
 
   
   

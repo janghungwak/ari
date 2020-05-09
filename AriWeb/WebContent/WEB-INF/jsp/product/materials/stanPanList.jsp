@@ -4,16 +4,36 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript">
+	$(document).ready(function(){
+		
+		$(".stanTable").freezeTable({
+			freezeColumn: true,
+			scrollBar: false,
+			scrollable: false,
+			columnNum: 1
+			
+		});
+
+		$(".gravitiesTable").freezeTable({
+			freezeColumn: true,
+			scrollBar: false,
+			scrollable: false,
+			columnNum: 1
+		});
+	})
+
+</script>
 </head>
 <body>
 	<div class="productContainer">
 		<div class="row">
 			<div class="col-md-6 col-md-offset-3">
 			    <div class="blogs">
-					<div class="text-left">
+					<div class="productTitle text-left">
 						<h3>스텐레스 강판재 (STS304 기준)</h3>
 					</div>
-					<div class="text-center">
+					<div class="stanTable text-center">
 						<table class="stanPanTable ariTable ariTable-hover">
 							<colgroup>
 								<col width="10%"/>
@@ -334,38 +354,38 @@
 								</tr>
 							</tbody>
 						</table>
-						<div class="text-left"><h5>※ 스텐레스판 중량 산출방법 : 두께(m/m) X 가로(M) X 세로(m) X 비중 = kg(장)</h5></div>
-						<div class="text-left">
-							<h3>비중표</h3>
-							<div class ="text-center">
-								<table class="stanPanTable ariTable ariTable-hover">
-									<thead>
-										<tr>
-											<th scope="col">비중</th>
-											<th scope="col">Stainless 鋼의 JIS규격 </th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>7.70kg</td>
-											<td>SUS-430, 420J1, 420J2</td>
-										</tr>
-										<tr>
-											<td>7.75kg</td>
-											<td>SUS-405, 403, 410</td>
-										</tr>
-										<tr>
-											<td>7.93kg</td>
-											<td>SUS-304, 304L, 321J1, 302J1L, 305S</td>
-										</tr>
-										<tr>
-											<td>7.98kg</td>
-											<td>SUS-316, 316L, 316J1, 316J1L, 309S, 310S, 347, 317, 317L</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-						</div>
+					</div>
+					<div class="stanPanWeight text-left">※ 스텐레스판 중량 산출방법 : 두께(m/m) X 가로(M) X 세로(m) X 비중 = kg(장)</div>
+					<div class="productTitle text-left">
+						<h3>비중표</h3>
+					</div>
+					<div class ="gravitiesTable text-center">
+						<table class="stanPanTable ariTable ariTable-hover">
+							<thead>
+								<tr>
+									<th scope="col">비중</th>
+									<th scope="col">Stainless 鋼의 JIS규격 </th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>7.70kg</td>
+									<td>SUS-430, 420J1, 420J2</td>
+								</tr>
+								<tr>
+									<td>7.75kg</td>
+									<td>SUS-405, 403, 410</td>
+								</tr>
+								<tr>
+									<td>7.93kg</td>
+									<td>SUS-304, 304L, 321J1, 302J1L, 305S</td>
+								</tr>
+								<tr>
+									<td>7.98kg</td>
+									<td>SUS-316, 316L, 316J1, 316J1L, 309S, 310S, 347, 317, 317L</td>
+								</tr>
+							</tbody>
+						</table>
 					</div>
 				</div>
 			</div>	

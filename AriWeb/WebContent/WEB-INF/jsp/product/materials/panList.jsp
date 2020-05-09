@@ -4,6 +4,17 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	$(".panTable").freezeTable({
+		freezeColumn: true,
+		scrollBar: false,
+		scrollable: false,
+		columnNum: 1
+	});
+})
+</script>
 </head>
 <body>
 	<div class="productContainer">
@@ -13,7 +24,7 @@
 					<div class="text-left">
 						<h3>철판(Sheet & Plate Bar)</h3>
 					</div>
-					<div class="text-center">
+					<div class="panTable text-center">
 						<table class="panTable ariTable ariTable-hover">
 							<colgroup>
 								<col width="12%"/>

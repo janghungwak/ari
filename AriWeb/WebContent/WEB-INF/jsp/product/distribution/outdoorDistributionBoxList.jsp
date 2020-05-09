@@ -85,14 +85,14 @@ $(document).ready(function(){
 						<table class="ariTable ariTable-hover">
 							<colgroup>
 								<col width="10%"/>
-								<col width="20%"/>
-								<col width="70%"/>
+								<col width="40%"/>
+								<col width="50%"/>
 							</colgroup>
 							<thead>
 								<tr>
-									<th scope="col" style="text-align: center;">NO</th>
-									<th scope="col" style="text-align: center;">규격(가로 X 세로 X 깊이)</th>
-									<th scope="col" style="text-align: center;">비고</th>
+									<th scope="col" style="text-align: center; vertical-align: middle;">NO</th>
+									<th scope="col" style="text-align: center; vertical-align: middle;">규격<br>(가로 X 세로 X 깊이)</th>
+									<th scope="col" style="text-align: center; vertical-align: middle;">비고</th>
 								</tr>
 							</thead>					
 							<tbody>

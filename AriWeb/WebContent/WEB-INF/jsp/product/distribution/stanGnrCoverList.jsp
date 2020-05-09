@@ -85,8 +85,8 @@ $(document).ready(function(){
 						<table class="ariTable ariTable-hover">
 							<colgroup>
 								<col width="10%"/>
-								<col width="20%"/>
-								<col width="70%"/>
+								<col width="30%"/>
+								<col width="60%"/>
 							</colgroup>
 							<thead>
 								<tr>
@@ -98,56 +98,56 @@ $(document).ready(function(){
 							<tbody>
 								<tr>
 									<td scope="row">1</td>
-									<td>200*300</td>
+									<td>200 X 300</td>
 									<td class="lgContent" rowspan="13">SUS 강종, 두께 사이즈 주문제작 가능</td>
 								</tr>
 								<tr>
 									<td scope="row">2</td>
-									<td>300*400</td>
+									<td>300 X 400</td>
 								</tr>
 								<tr>
 									<td scope="row">3</td>
-									<td>400*500</td>
+									<td>400 X 500</td>
 								</tr>
 								<tr>
 									<td scope="row">4</td>
-									<td>500*600</td>
+									<td>500 X 600</td>
 								</tr>
 								<tr>
 									<td scope="row">5</td>
-									<td>600*700</td>
+									<td>600 X 700</td>
 								</tr>
 								<tr>
 									<td scope="row">6</td>
-									<td>600*800</td>
+									<td>600 X 800</td>
 								</tr>
 								<tr>
 									<td scope="row">7</td>
-									<td>600*900</td>
+									<td>600 X 900</td>
 								</tr>
 								<tr>
 									<td scope="row">8</td>
-									<td>600*1000</td>
+									<td>600 X 1000</td>
 								</tr>
 								<tr>
 									<td scope="row">9</td>
-									<td>700*800</td>
+									<td>700 X 800</td>
 								</tr>
 								<tr>
 									<td scope="row">10</td>
-									<td>700*900</td>
+									<td>700 X 900</td>
 								</tr>
 								<tr>
 									<td scope="row">11</td>
-									<td>700*1000</td>
+									<td>700 X 1000</td>
 								</tr>
 								<tr>
 									<td scope="row">12</td>
-									<td>700*1200</td>
+									<td>700 X 1200</td>
 								</tr>
 								<tr>
 									<td scope="row">13</td>
-									<td>800*1200</td>
+									<td>800 X 1200</td>
 								</tr>
 							</tbody>
 						</table>

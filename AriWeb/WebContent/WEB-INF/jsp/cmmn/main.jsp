@@ -95,7 +95,7 @@ $(document).ready(function(){
 		<div class="row">
 			<div class="box">
 				<div class="col-md-4">
-					<div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
+					<!-- <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s"> -->
 						<h4>회사소개</h4>
 						<div class="icon">
 							<i class="fa fa-heart-o fa-3x"></i>
@@ -104,11 +104,10 @@ $(document).ready(function(){
 						<div class="ficon">
 							<a href="/ari/companyIntro/selectCompanyIntroList.do" class="btn btn-default" role="button">Read more</a>
 						</div>
-					</div>
 				</div>
 
 				<div class="col-md-4">
-					<div class="wow bounceIn" data-wow-offset="0" data-wow-delay="1.0s">
+					<!-- <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="1.0s"> -->
 						<h4>제품소개</h4>
 						<div class="icon">
 							<i class="fa fa-desktop fa-3x"></i>
@@ -117,11 +116,10 @@ $(document).ready(function(){
 						<div class="ficon">
 							<a href="/ari/product/distribution/selectStanGnrCoverList.do" class="btn btn-default" role="button">Read more</a>
 						</div>
-					</div>
 				</div>
 				
 				<div class="col-md-4">
-					<div class="wow bounceIn" data-wow-offset="0" data-wow-delay="1.6s">
+					<!-- <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="1.6s"> -->
 						<h4>견적문의</h4>
 						<div class="icon">
 							<i class="fa fa-comment fa-3x"></i>
@@ -130,7 +128,6 @@ $(document).ready(function(){
 						<div class="ficon">
 							<a href="/ari/board/board.do" class="btn btn-default" role="button">Read more</a>
 						</div>
-					</div>
 				</div>
 			</div>
 		</div>
