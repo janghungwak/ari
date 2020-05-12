@@ -24,8 +24,8 @@ $(document).ready(function(){
 	
 	<div class="mainImageContainer">
 		<div class="col-md-8 col-md-offset-2" style="height:88%; ">
-			<img style="float: left;" src="../../../img/mainBanner/leftMain.png"/>
-			<img style="float: right;" src="../../../img/mainBanner/rightMain.png" />
+			<img class="leftMainImg"  src="../../../img/mainBanner/leftMain.png"/>
+			<img class="rightMainImg" src="../../../img/mainBanner/rightMain.png"/>
 		</div>
 	</div>
 		<!-- <img src="../../../img/mainBanner/bg.png" style="background-repeat: repeat-x; background-position: bottom; height: 450px; width: 100%;"> -->
