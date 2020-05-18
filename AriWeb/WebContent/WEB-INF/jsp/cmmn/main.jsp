@@ -15,17 +15,25 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
-
-	<div class="col-md-6 col-md-offset-3">
-		<p id ="blinkEle">
-			<marquee scrolldelay="100">스텐레스,일반강 원자재 일체 도,소매/스텐레스 분전함 Cover&Box (주문제작) 전문</marquee>
-		</p>
-	</div>
-	
 	<div class="mainImageContainer">
-		<div class="col-md-8 col-md-offset-2" style="height:88%; ">
-			<img class="leftMainImg"  src="../../../img/mainBanner/leftMain.gif"/>
-			<img class="rightMainImg" src="../../../img/mainBanner/rightMain.gif"/>
+		<div class="col-md-8 col-md-offset-1" style="height:88%; ">
+			<p id ="blinkEle" style="float: left;">
+				스텐레스,일반강 원자재 도,소매 가공<br>
+				스텐레스 분전함, COVER & BOX 기성품 제작 및 그 외<br>
+				사이즈 주문 제작 전문	
+			</p>
+			<div class = "mainLeftDiv" style="float: left; margin-top: 55px; margin-right: 10px;">
+				<img class = "mainLeftImg" alt="" src="../../../img/mainBanner/mainLeft1.jpg" style="width: 130px; height: 140px; margin-left: -130px">
+			</div>
+			<div class = "mainCTDiv" style="float: left; margin-top: 20px; margin-right: 10px;">
+				<img class = "mainCTImg" alt="" src="../../../img/mainBanner/mainCT1.jpg" style="width: 130px; height: 140px;">
+			</div>
+			<div class = "mainCBDiv" style="float: left;">
+				<img class = "mainCBImg" alt="" src="../../../img/mainBanner/mainCB1.jpg" style="width: 120px; margin-top: 170px; margin-left: -80px;">
+			</div>
+			<div class = "mainRIDiv" style="float: left;">
+				<img class = "mainRIImg" alt="" src="../../../img/mainBanner/mainRight1.jpg" style="width: 120px; margin-left: -37px;">
+			</div>
 		</div>
 	</div>
 		<!-- <img src="../../../img/mainBanner/bg.gif" style="background-repeat: repeat-x; background-position: bottom; height: 450px; width: 100%;"> -->

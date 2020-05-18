@@ -56,21 +56,21 @@ $(document).ready(function(){
 					<hr>
 					<div class="slick-div">
 						<div id="slick_etcOrderProductSlide">
-							<div><img src="../../../../img/product/distribution/etcOrderProduct/etcOrderProduct1.gif"/></div>
-							<div><img src="../../../../img/product/distribution/etcOrderProduct/etcOrderProduct2.gif"/></div>
-							<div><img src="../../../../img/product/distribution/etcOrderProduct/etcOrderProduct3.gif"/></div>
-							<div><img src="../../../../img/product/distribution/etcOrderProduct/etcOrderProduct4.gif"/></div>
-							<div><img src="../../../../img/product/distribution/etcOrderProduct/etcOrderProduct5.gif"/></div>
+							<div><img src="../../../../img/product/distribution/etcOrderProduct/etcOrderProduct1.jpg"/></div>
+							<div><img src="../../../../img/product/distribution/etcOrderProduct/etcOrderProduct2.jpg"/></div>
+							<div><img src="../../../../img/product/distribution/etcOrderProduct/etcOrderProduct3.jpg"/></div>
+							<div><img src="../../../../img/product/distribution/etcOrderProduct/etcOrderProduct4.jpg"/></div>
+							<div><img src="../../../../img/product/distribution/etcOrderProduct/etcOrderProduct5.jpg"/></div>
 						</div>
 					</div>
 	
 					<div class="slick-nav">
 						<div id="slick_etcOrderProductSlide_nav">
-							<div><img src="../../../../img/product/distribution/etcOrderProduct/etcOrderProduct1.gif"/></div>
-							<div><img src="../../../../img/product/distribution/etcOrderProduct/etcOrderProduct2.gif"/></div>
-							<div><img src="../../../../img/product/distribution/etcOrderProduct/etcOrderProduct3.gif"/></div>
-							<div><img src="../../../../img/product/distribution/etcOrderProduct/etcOrderProduct4.gif"/></div>
-							<div><img src="../../../../img/product/distribution/etcOrderProduct/etcOrderProduct5.gif"/></div>
+							<div><img src="../../../../img/product/distribution/etcOrderProduct/etcOrderProduct1.jpg"/></div>
+							<div><img src="../../../../img/product/distribution/etcOrderProduct/etcOrderProduct2.jpg"/></div>
+							<div><img src="../../../../img/product/distribution/etcOrderProduct/etcOrderProduct3.jpg"/></div>
+							<div><img src="../../../../img/product/distribution/etcOrderProduct/etcOrderProduct4.jpg"/></div>
+							<div><img src="../../../../img/product/distribution/etcOrderProduct/etcOrderProduct5.jpg"/></div>
 						</div>
 					</div>
 				</div>

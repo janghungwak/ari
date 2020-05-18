@@ -56,19 +56,19 @@ $(document).ready(function(){
 					<hr>
 					<div class="slick-div">
 						<div id="slick_outdoorDistributionBoxSlide">
-							<div><img src="../../../../img/product/distribution/outdoorDistributionBox/outdoorDistributionBox1.gif" alt="" /></div>
-							<div><img src="../../../../img/product/distribution/outdoorDistributionBox/outdoorDistributionBox2.gif" alt="" /></div>
-							<div><img src="../../../../img/product/distribution/outdoorDistributionBox/outdoorDistributionBox3.gif" alt="" /></div>
-							<div><img src="../../../../img/product/distribution/outdoorDistributionBox/outdoorDistributionBox4.gif" alt="" /></div>
+							<div><img src="../../../../img/product/distribution/outdoorDistributionBox/outdoorDistributionBox1.jpg" alt="" /></div>
+							<div><img src="../../../../img/product/distribution/outdoorDistributionBox/outdoorDistributionBox2.jpg" alt="" /></div>
+							<div><img src="../../../../img/product/distribution/outdoorDistributionBox/outdoorDistributionBox3.jpg" alt="" /></div>
+							<div><img src="../../../../img/product/distribution/outdoorDistributionBox/outdoorDistributionBox4.jpg" alt="" /></div>
 						</div>
 					</div>
 	
 					<div class="slick-nav">
 						<div id="slick_outdoorDistributionBoxSlide_nav">
-							<div><img src="../../../../img/product/distribution/outdoorDistributionBox/outdoorDistributionBox1.gif" alt="" /></div>
-							<div><img src="../../../../img/product/distribution/outdoorDistributionBox/outdoorDistributionBox2.gif" alt="" /></div>
-							<div><img src="../../../../img/product/distribution/outdoorDistributionBox/outdoorDistributionBox3.gif" alt="" /></div>
-							<div><img src="../../../../img/product/distribution/outdoorDistributionBox/outdoorDistributionBox4.gif" alt="" /></div>
+							<div><img src="../../../../img/product/distribution/outdoorDistributionBox/outdoorDistributionBox1.jpg" alt="" /></div>
+							<div><img src="../../../../img/product/distribution/outdoorDistributionBox/outdoorDistributionBox2.jpg" alt="" /></div>
+							<div><img src="../../../../img/product/distribution/outdoorDistributionBox/outdoorDistributionBox3.jpg" alt="" /></div>
+							<div><img src="../../../../img/product/distribution/outdoorDistributionBox/outdoorDistributionBox4.jpg" alt="" /></div>
 						</div>
 					</div>
 				</div>

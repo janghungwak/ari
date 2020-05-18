@@ -56,15 +56,15 @@ $(document).ready(function(){
 					<hr>
 					<div class="slick-div">
 						<div id="slick_collectiveGutterSlide">
-							<div><img src="../../../../img/product/distribution/collectiveGutter/collectiveGutter1.gif"/></div>
-							<div><img src="../../../../img/product/distribution/collectiveGutter/collectiveGutter2.gif"/></div>
+							<div><img src="../../../../img/product/distribution/collectiveGutter/collectiveGutter1.jpg"/></div>
+							<div><img src="../../../../img/product/distribution/collectiveGutter/collectiveGutter2.jpg"/></div>
 						</div>
 					</div>
 	
 					<div class="slick-nav">
 						<div id="slick_collectiveGutterSlide_nav">
-							<div><img src="../../../../img/product/distribution/collectiveGutter/collectiveGutter1.gif"/></div>
-							<div><img src="../../../../img/product/distribution/collectiveGutter/collectiveGutter2.gif"/></div>
+							<div><img src="../../../../img/product/distribution/collectiveGutter/collectiveGutter1.jpg"/></div>
+							<div><img src="../../../../img/product/distribution/collectiveGutter/collectiveGutter2.jpg"/></div>
 						</div>
 					</div>
 				</div>
