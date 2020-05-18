@@ -56,19 +56,19 @@ $(document).ready(function(){
 					<hr>
 					<div class="slick-div">
 						<div id="slick_indoorDistributionBoxSlide">
-							<div><img src="../../../../img/product/distribution/indoorDistributionBox/indoorDistributionBox1.png" alt="" /></div>
-							<div><img src="../../../../img/product/distribution/indoorDistributionBox/indoorDistributionBox2.png" alt="" /></div>
-							<div><img src="../../../../img/product/distribution/indoorDistributionBox/indoorDistributionBox3.png" alt="" /></div>
-							<div><img src="../../../../img/product/distribution/indoorDistributionBox/indoorDistributionBox4.png" alt="" /></div>
+							<div><img src="../../../../img/product/distribution/indoorDistributionBox/indoorDistributionBox1.gif" alt="" /></div>
+							<div><img src="../../../../img/product/distribution/indoorDistributionBox/indoorDistributionBox2.gif" alt="" /></div>
+							<div><img src="../../../../img/product/distribution/indoorDistributionBox/indoorDistributionBox3.gif" alt="" /></div>
+							<div><img src="../../../../img/product/distribution/indoorDistributionBox/indoorDistributionBox4.gif" alt="" /></div>
 						</div>
 					</div>
 	
 					<div class="slick-nav">
 						<div id="slick_indoorDistributionBoxSlide_nav">
-							<div><img src="../../../../img/product/distribution/indoorDistributionBox/indoorDistributionBox1.png" alt="" /></div>
-							<div><img src="../../../../img/product/distribution/indoorDistributionBox/indoorDistributionBox2.png" alt="" /></div>
-							<div><img src="../../../../img/product/distribution/indoorDistributionBox/indoorDistributionBox3.png" alt="" /></div>
-							<div><img src="../../../../img/product/distribution/indoorDistributionBox/indoorDistributionBox4.png" alt="" /></div>
+							<div><img src="../../../../img/product/distribution/indoorDistributionBox/indoorDistributionBox1.gif" alt="" /></div>
+							<div><img src="../../../../img/product/distribution/indoorDistributionBox/indoorDistributionBox2.gif" alt="" /></div>
+							<div><img src="../../../../img/product/distribution/indoorDistributionBox/indoorDistributionBox3.gif" alt="" /></div>
+							<div><img src="../../../../img/product/distribution/indoorDistributionBox/indoorDistributionBox4.gif" alt="" /></div>
 						</div>
 					</div>
 				</div>

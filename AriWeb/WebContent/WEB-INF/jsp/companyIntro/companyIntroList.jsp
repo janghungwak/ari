@@ -14,7 +14,7 @@
 	        <p>(주)아리의 체계적인 조직도만큼 체계적이고 완벽한 제품생산을 통해<br>고객님들께 최고의 품질을 약속드리겠습니다.</p>
 	      </div>
 	      <hr>
-	      <img src="../../../img/orgChart.png" class="img-responsive" style="width:100%;">
+	      <img src="../../../img/orgChart.gif" class="img-responsive" style="width:100%;">
 	    </div>
 	  </div>
 	</div>

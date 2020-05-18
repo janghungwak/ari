@@ -110,7 +110,7 @@
 								<input type="hidden" name="bsec" id="bsec_${boardList.bno}" value="${boardList.bsec }">
 								<input type="hidden" name="bnoreref" id="bsec_${boardList.bnoreref}" value="${boardList.bnoreref}">
 								<c:if test="${boardList.bnorelev > 0 }">
-									<img src="../../../img/reply.png" style="margin-left : ${boardList.bnorelev * 5}px"/>
+									<img src="../../../img/reply.gif" style="margin-left : ${boardList.bnorelev * 5}px"/>
 								</c:if>
 								<c:out value="${boardList.btitle }"/>
 								<c:if test="${boardList.bsec eq 'Y' }">

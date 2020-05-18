@@ -49,9 +49,9 @@ $(document).ready(function(){
 										<th scope="col">Hexagon Bar</th>
 									</tr>
 									<tr>
-										<th scope="col"><img src="../../../../img/product/meterials/roundBar.png" style="width: 70px; height: 70px;"></th>
-										<th scope="col"><img src="../../../../img/product/meterials/square.png" style="width: 70px; height: 70px;"></th>
-										<th scope="col"><img src="../../../../img/product/meterials/hexagon.png" style="width: 70px; height: 70px;"></th>
+										<th scope="col"><img src="../../../../img/product/meterials/roundBar.gif" style="width: 70px; height: 70px;"></th>
+										<th scope="col"><img src="../../../../img/product/meterials/square.gif" style="width: 70px; height: 70px;"></th>
+										<th scope="col"><img src="../../../../img/product/meterials/hexagon.gif" style="width: 70px; height: 70px;"></th>
 									</tr>
 								</thead>					
 								<tbody>
@@ -225,7 +225,7 @@ $(document).ready(function(){
 										<th scope="col">Round Bar</th>
 									</tr>
 									<tr>
-										<th scope="col"><img src="../../../../img/product/meterials/roundBar.png" style="width: 70px; height: 70px;"></th>	
+										<th scope="col"><img src="../../../../img/product/meterials/roundBar.gif" style="width: 70px; height: 70px;"></th>	
 									</tr>
 								</thead>					
 								<tbody>

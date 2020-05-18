@@ -56,17 +56,17 @@ $(document).ready(function(){
 					<hr>
 					<div class="slick-div">
 						<div id="slick_outdoorDualitySlide">
-							<div><img src="../../../../img/product/distribution/outdoorDuality/outdoorDuality1.png"/></div>
-							<div><img src="../../../../img/product/distribution/outdoorDuality/outdoorDuality2.png"/></div>
-							<div><img src="../../../../img/product/distribution/outdoorDuality/outdoorDuality3.png"/></div>
+							<div><img src="../../../../img/product/distribution/outdoorDuality/outdoorDuality1.gif"/></div>
+							<div><img src="../../../../img/product/distribution/outdoorDuality/outdoorDuality2.gif"/></div>
+							<div><img src="../../../../img/product/distribution/outdoorDuality/outdoorDuality3.gif"/></div>
 						</div>
 					</div>
 	
 					<div class="slick-nav">
 						<div id="slick_outdoorDualitySlide_nav">
-							<div><img src="../../../../img/product/distribution/outdoorDuality/outdoorDuality1.png"/></div>
-							<div><img src="../../../../img/product/distribution/outdoorDuality/outdoorDuality2.png"/></div>
-							<div><img src="../../../../img/product/distribution/outdoorDuality/outdoorDuality3.png"/></div>
+							<div><img src="../../../../img/product/distribution/outdoorDuality/outdoorDuality1.gif"/></div>
+							<div><img src="../../../../img/product/distribution/outdoorDuality/outdoorDuality2.gif"/></div>
+							<div><img src="../../../../img/product/distribution/outdoorDuality/outdoorDuality3.gif"/></div>
 						</div>
 					</div>
 				</div>

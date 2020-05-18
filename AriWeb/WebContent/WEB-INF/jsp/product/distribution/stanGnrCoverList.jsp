@@ -58,17 +58,17 @@ $(document).ready(function(){
 					<hr>
 					<div class="slick-div">
 						<div id="slick_stanGnrCoverSlide">
-							<div><img src="../../../../img/product/distribution/stanGnrCover/stanGnrCover1.png" alt="" /></div>
-							<div><img src="../../../../img/product/distribution/stanGnrCover/stanGnrCover2.png" alt="" /></div>
-							<div><img src="../../../../img/product/distribution/stanGnrCover/stanGnrCover3.png" alt="" /></div>
+							<div><img src="../../../../img/product/distribution/stanGnrCover/stanGnrCover1.gif" alt="" /></div>
+							<div><img src="../../../../img/product/distribution/stanGnrCover/stanGnrCover2.gif" alt="" /></div>
+							<div><img src="../../../../img/product/distribution/stanGnrCover/stanGnrCover3.gif" alt="" /></div>
 						</div>
 					</div>
 	
 					<div class="slick-nav">
 						<div id="slick_stanGnrCoverSlide_nav">
-							<div><img src="../../../../img/product/distribution/stanGnrCover/stanGnrCover1.png" alt="" /></div>
-							<div><img src="../../../../img/product/distribution/stanGnrCover/stanGnrCover2.png" alt="" /></div>
-							<div><img src="../../../../img/product/distribution/stanGnrCover/stanGnrCover3.png" alt="" /></div>
+							<div><img src="../../../../img/product/distribution/stanGnrCover/stanGnrCover1.gif" alt="" /></div>
+							<div><img src="../../../../img/product/distribution/stanGnrCover/stanGnrCover2.gif" alt="" /></div>
+							<div><img src="../../../../img/product/distribution/stanGnrCover/stanGnrCover3.gif" alt="" /></div>
 						</div>
 					</div>
 				</div>

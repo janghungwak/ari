@@ -56,23 +56,23 @@ $(document).ready(function(){
 					<hr>
 					<div class="slick-div">
 						<div id="slick_stanMeterCoverSlide">
-							<div><img src="../../../../img/product/distribution/stanMeterCover/stanMeterCover1.png" alt="" /></div>
-							<div><img src="../../../../img/product/distribution/stanMeterCover/stanMeterCover2.png" alt="" /></div>
-							<div><img src="../../../../img/product/distribution/stanMeterCover/stanMeterCover3.png" alt="" /></div>
-							<div><img src="../../../../img/product/distribution/stanMeterCover/stanMeterCover4.png" alt="" /></div>
-							<div><img src="../../../../img/product/distribution/stanMeterCover/stanMeterCover5.png" alt="" /></div>
-							<div><img src="../../../../img/product/distribution/stanMeterCover/stanMeterCover6.png" alt="" /></div>
+							<div><img src="../../../../img/product/distribution/stanMeterCover/stanMeterCover1.gif" alt="" /></div>
+							<div><img src="../../../../img/product/distribution/stanMeterCover/stanMeterCover2.gif" alt="" /></div>
+							<div><img src="../../../../img/product/distribution/stanMeterCover/stanMeterCover3.gif" alt="" /></div>
+							<div><img src="../../../../img/product/distribution/stanMeterCover/stanMeterCover4.gif" alt="" /></div>
+							<div><img src="../../../../img/product/distribution/stanMeterCover/stanMeterCover5.gif" alt="" /></div>
+							<div><img src="../../../../img/product/distribution/stanMeterCover/stanMeterCover6.gif" alt="" /></div>
 						</div>
 					</div>
 	
 					<div class="slick-nav">
 						<div id="slick_stanMeterCoverSlide_nav">
-							<div><img src="../../../../img/product/distribution/stanMeterCover/stanMeterCover1.png" alt="" /></div>
-							<div><img src="../../../../img/product/distribution/stanMeterCover/stanMeterCover2.png" alt="" /></div>
-							<div><img src="../../../../img/product/distribution/stanMeterCover/stanMeterCover3.png" alt="" /></div>
-							<div><img src="../../../../img/product/distribution/stanMeterCover/stanMeterCover4.png" alt="" /></div>
-							<div><img src="../../../../img/product/distribution/stanMeterCover/stanMeterCover5.png" alt="" /></div>
-							<div><img src="../../../../img/product/distribution/stanMeterCover/stanMeterCover6.png" alt="" /></div>
+							<div><img src="../../../../img/product/distribution/stanMeterCover/stanMeterCover1.gif" alt="" /></div>
+							<div><img src="../../../../img/product/distribution/stanMeterCover/stanMeterCover2.gif" alt="" /></div>
+							<div><img src="../../../../img/product/distribution/stanMeterCover/stanMeterCover3.gif" alt="" /></div>
+							<div><img src="../../../../img/product/distribution/stanMeterCover/stanMeterCover4.gif" alt="" /></div>
+							<div><img src="../../../../img/product/distribution/stanMeterCover/stanMeterCover5.gif" alt="" /></div>
+							<div><img src="../../../../img/product/distribution/stanMeterCover/stanMeterCover6.gif" alt="" /></div>
 						</div>
 					</div>
 				</div>

@@ -24,11 +24,11 @@ $(document).ready(function(){
 	
 	<div class="mainImageContainer">
 		<div class="col-md-8 col-md-offset-2" style="height:88%; ">
-			<img class="leftMainImg"  src="../../../img/mainBanner/leftMain.png"/>
-			<img class="rightMainImg" src="../../../img/mainBanner/rightMain.png"/>
+			<img class="leftMainImg"  src="../../../img/mainBanner/leftMain.gif"/>
+			<img class="rightMainImg" src="../../../img/mainBanner/rightMain.gif"/>
 		</div>
 	</div>
-		<!-- <img src="../../../img/mainBanner/bg.png" style="background-repeat: repeat-x; background-position: bottom; height: 450px; width: 100%;"> -->
+		<!-- <img src="../../../img/mainBanner/bg.gif" style="background-repeat: repeat-x; background-position: bottom; height: 450px; width: 100%;"> -->
 	
 
 	<!-- 모바일 용 화면과 pc용 화면 2가지를 구분지어서 개발처리

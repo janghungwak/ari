@@ -18,7 +18,7 @@
 							<thead>
 								<tr>
 									<th scope="col" colspan="2">
-										<img src="../../../../img/product/meterials/angle.png" style="width:100px; height:100px;">
+										<img src="../../../../img/product/meterials/angle.gif" style="width:100px; height:100px;">
 									</th>
 								</tr>
 								<tr>
