@@ -12,6 +12,7 @@
 <link rel="stylesheet" type="text/css" href="../../../css/overwrite.css" >
 <link rel="stylesheet" type="text/css" href="../../../css/style.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="../../../css/mainStyle.css" />
+<link rel="stylesheet" type="text/css" href="../../../css/jquery.bxslider.css" />
 
 <style type="text/css">
 a.adm{

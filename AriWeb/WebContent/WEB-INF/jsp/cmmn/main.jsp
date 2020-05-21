@@ -9,13 +9,29 @@
 <meta name="naver-site-verification" content="49e391132c654d6253a23f9b937b501a1db2b9ce"/>
 <script type="text/javascript">
 $(document).ready(function(){
-
+	var slider = $('.bxslider').bxSlider({
+	    mode: 'horizontal'
+	});
 	
 });
 </script>
 </head>
 <body>
-	<div class="mainImageContainer">
+	<div class="container">
+	    <div class="row">
+	      <div class="slider">
+	        <div class="slider-img-responsive">
+	          <ul class="bxslider">
+	            <li><img src="../../../img/mainBanner/firstMain.jpg" alt="" style="width:98%; height: 97%;" /></li>
+	            <li><img src="../../../img/mainBanner/secondMain.jpg" alt="" style="width:98%; height: 97%;" /></li>
+	            <li><img src="../../../img/mainBanner/thirdMain.jpg" alt="" style="width:98%; height: 97%;" /></li>
+	          </ul>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+
+	<!-- <div class="mainImageContainer">
 		<div class="col-md-8 col-md-offset-1" style="height:88%; ">
 			<p id ="blinkEle" style="float: left;">
 				스텐레스,일반강 원자재 도,소매 가공<br>
@@ -35,7 +51,7 @@ $(document).ready(function(){
 				<img class = "mainRIImg" alt="" src="../../../img/mainBanner/mainRight1.jpg" style="width: 120px; margin-left: -37px;">
 			</div>
 		</div>
-	</div>
+	</div> -->
 		<!-- <img src="../../../img/mainBanner/bg.gif" style="background-repeat: repeat-x; background-position: bottom; height: 450px; width: 100%;"> -->
 	
 
