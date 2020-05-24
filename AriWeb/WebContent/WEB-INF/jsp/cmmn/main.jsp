@@ -10,7 +10,10 @@
 <script type="text/javascript">
 $(document).ready(function(){
 	var slider = $('.bxslider').bxSlider({
-	    mode: 'horizontal'
+	    mode: 'horizontal',
+	    auto : true,
+	    speed : 1000,
+	    autoHover:true
 	});
 	
 });
@@ -24,7 +27,7 @@ $(document).ready(function(){
 	          <ul class="bxslider">
 	            <li><img src="../../../img/mainBanner/firstMain.jpg" alt="" style="width:98%; height: 97%;" /></li>
 	            <li><img src="../../../img/mainBanner/secondMain.jpg" alt="" style="width:98%; height: 97%;" /></li>
-	            <li><img src="../../../img/mainBanner/thirdMain.jpg" alt="" style="width:98%; height: 97%;" /></li>
+	            <li><img src="../../../img/mainBanner/thirdMain.jpg" alt="" style="width:98%; height: 97%;"/></li>
 	          </ul>
 	        </div>
 	      </div>
