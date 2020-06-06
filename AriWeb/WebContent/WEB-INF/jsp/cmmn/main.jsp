@@ -28,6 +28,7 @@ $(document).ready(function(){
 	            <li><img src="../../../img/mainBanner/firstMain.jpg" alt="" style="width:98%; height: 97%;" /></li>
 	            <li><img src="../../../img/mainBanner/secondMain.jpg" alt="" style="width:98%; height: 97%;" /></li>
 	            <li><img src="../../../img/mainBanner/thirdMain.jpg" alt="" style="width:98%; height: 97%;"/></li>
+	            <li><img src="../../../img/mainBanner/fourMain.jpg" alt="" style="width:98%; height: 97%;"/></li>
 	          </ul>
 	        </div>
 	      </div>
