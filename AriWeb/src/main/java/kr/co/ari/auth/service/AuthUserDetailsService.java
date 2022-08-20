@@ -13,6 +13,15 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import kr.co.ari.member.service.MemberService;
 import kr.co.ari.member.vo.MemberVO;
 
+/**
+ * 
+ * @author GWAK
+ * @since 2020.04.30
+ * @version 1.0.0
+ * 
+ * 수정이력 : 2020.04.30 최초 생성
+ */
+
 public class AuthUserDetailsService implements UserDetailsService {
 
 	@Resource(name="memberService")

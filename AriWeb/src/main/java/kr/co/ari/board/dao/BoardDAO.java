@@ -6,6 +6,15 @@ import java.util.Map;
 
 import kr.co.ari.board.vo.BoardVO;
 
+/**
+ * 
+ * @author GWAK
+ * @since 2020.04.30
+ * @version 1.0.0
+ * 
+ * 수정이력 : 2020.04.30 최초 생성
+ */
+
 public interface BoardDAO {
 	
 	public abstract List<?> selectBoardList(BoardVO boardVO);

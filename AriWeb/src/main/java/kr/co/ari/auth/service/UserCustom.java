@@ -7,7 +7,20 @@ import org.springframework.security.core.userdetails.User;
 
 import kr.co.ari.member.vo.MemberVO;
 
+/**
+ * 
+ * @author GWAK
+ * @since 2020.04.30
+ * @version 1.0.0
+ * 
+ * 수정이력 : 2020.04.30 최초 생성
+ *         2020.11.07 KIM serialVersionUID 추가
+ * 
+ */
+
 public class UserCustom extends User {
+	
+	private static final long serialVersionUID = 1L;
 	
 	private MemberVO memberVO;
 	

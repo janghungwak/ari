@@ -8,13 +8,11 @@ import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
-import javax.security.auth.message.callback.PrivateKeyCallback.Request;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
-import org.apache.velocity.app.event.ReferenceInsertionEventHandler.referenceInsertExecutor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,6 +23,15 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import egovframework.rte.ptl.mvc.tags.ui.pagination.PaginationInfo;
 import kr.co.ari.board.service.BoardService;
 import kr.co.ari.board.vo.BoardVO;
+
+/**
+ * 
+ * @author GWAK
+ * @since 2020.04.30
+ * @version 1.0.0
+ * 
+ * 수정이력 : 2020.04.30 최초 생성
+ */
 
 @Controller
 public class BoardController {

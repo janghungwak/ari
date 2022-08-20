@@ -29,8 +29,8 @@
         <div class="row">
           <div class="copyright">
           <form name="frm" action="/logout" method="post">
-            &copy; (주)아리. All Rights Reserved
-            <div class="credits">
+            <div class="credits" style="float: left;">
+            Copyright 2020. (주)아리 All Rights Reserved.<br>
               <!--
                 All the links in the footer should remain intact. 
                 You can delete the links only if you purchased the pro version.
@@ -47,6 +47,10 @@
               </sec:authorize>
             </div>
            </form>
+           <div style="float: left;">
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" ><img alt="크리에이티브 커먼즈 라이선스" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
+			이 저작물은 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">크리에이티브 커먼즈 저작자표시-비영리-변경금지 4.0 국제 라이선스</a>에 따라 이용할 수 있습니다. <br><br>
+          </div>
           </div>
         </div>
       </div>
@@ -59,7 +63,6 @@
           </ul>
         </div>
       </div>
-
       <a href="#" class="scrollup"><i class="fa fa-chevron-up"></i></a>
 
     </div>

@@ -5,13 +5,21 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 
-import org.apache.commons.lang3.StringEscapeUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import kr.co.ari.board.dao.BoardDAO;
 import kr.co.ari.board.vo.BoardVO;
 import kr.co.ari.common.util.FileUtils;
+
+/**
+ * 
+ * @author GWAK
+ * @since 2020.04.30
+ * @version 1.0.0
+ * 
+ * 수정이력 : 2020.04.30 최초 생성
+ */
 
 @Service("boardService")
 public class BoardServiceImpl implements BoardService {

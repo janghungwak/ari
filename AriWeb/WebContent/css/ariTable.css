@@ -1,6 +1,13 @@
 .board-textLf{
 	text-align: left !important;
 } 
+
+/* 원자재 내 제목 이미지 관련 CSS*/
+  .productImg {
+	max-width: 100%;
+	height: auto;
+  }
+
 /*원자재 - 스텐레스 강판재  관련 CSS*/
   .stanPanTable th{
 	vertical-align: middle !important;

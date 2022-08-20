@@ -27,7 +27,6 @@ $(document).ready(function(){
 	          <ul class="bxslider">
 	            <li><img src="../../../img/mainBanner/secondMain.jpg" alt="" style="width:98%; height: 97%;" /></li>
 	            <li><img src="../../../img/mainBanner/firstMain.jpg" alt="" style="width:98%; height: 97%;" /></li>
-	            <li><img src="../../../img/mainBanner/thirdMain.jpg" alt="" style="width:98%; height: 97%;"/></li>
 	            <li><img src="../../../img/mainBanner/fourMain.jpg" alt="" style="width:98%; height: 97%;"/></li>
 	          </ul>
 	        </div>
@@ -86,7 +85,7 @@ $(document).ready(function(){
 						</div>
 						<p>(주)아리에서 생산 및 납품을 하는 제품에 대한 정보를 확인 하실 수 있습니다.</p>
 						<div class="ficon">
-							<a href="/ari/product/distribution/selectStanGnrCoverList.do" class="btn btn-default" role="button">Read more</a>
+							<a href="/ari/product/distribution/selectSusCoverList.do" class="btn btn-default" role="button">Read more</a>
 						</div>
 				</div>
 				
@@ -142,7 +141,7 @@ $(document).ready(function(){
 						</div>
 						<p>(주)아리에서 생산 및 납품을 하는 제품에 대한<br>정보를 확인 하실 수 있습니다.</p>
 						<div class="ficon">
-							<a href="/ari/product/distribution/selectStanGnrCoverList.do" class="btn btn-default" role="button">Read more</a>
+							<a href="/ari/product/distribution/selectSusCoverList.do" class="btn btn-default" role="button">Read more</a>
 						</div>
 				</div>
 				

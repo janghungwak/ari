@@ -2,8 +2,20 @@ package kr.co.ari.board.vo;
 
 import java.io.Serializable;
 
+/**
+ * 
+ * @author GWAK
+ * @since 2020.04.30
+ * @version 1.0.0
+ * 
+ * 수정이력 : 2020.04.30 최초 생성
+ * 		   2020.11.07 KIM serialVersionUID 추가 
+ */
+
 public class BoardVO implements Serializable{
 
+	private static final long serialVersionUID = 1L;
+	
 	private String bno;
 	private String btitle;
 	private String bpass;

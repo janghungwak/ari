@@ -12,6 +12,28 @@
   <script src="../../../js/menuScript.js"></script> 
   <script src="../../../js/freeze-table.min.js"></script> 
   <script src="../../../js/jquery.bxslider.min.js"></script> 
+  <script type="text/javascript" src="http://jsgetip.appspot.com"></script>
 
-  
-  
+ <script type="text/javascript">
+ 
+//F12 버튼 방지
+  $(document).ready(function() {
+ 	$(document).bind('keydown', function(e) {
+ 		if (e.keyCode == 123 /* F12 */) {
+ 			e.preventDefault();
+ 			e.returnValue = false;
+ 		}
+ 	});
+ }); 
+
+ // 우측 클릭 방지
+ document.onmousedown = disableclick;
+ status = "마우스 우클릭은 사용하실 수 없습니다.";
+ function disableclick(event) {
+ 	if (event.button == 2) {
+ 		alert(status);
+ 		return false;
+ 	}
+ }
+
+</script>  

@@ -35,12 +35,12 @@
 					</li>
 					<li class="has-sub"><a href="#"><span>스텐분전함</span></a>
 						<ul>
-							<li><a href="/ari/product/distribution/selectStanGnrCoverList.do"><span>스텐일반커버</span></a></li>
-							<li><a href="/ari/product/distribution/selectStanMeterCoverList.do"><span>스텐계량기커버</span></a></li>
-							<li><a href="/ari/product/distribution/selectIndoorDistributionBoxList.do"><span>옥내분전함</span></a></li>
-							<li><a href="/ari/product/distribution/selectOutdoorDistributionBoxList.do"><span>옥외분전함</span></a></li>
-							<li><a href="/ari/product/distribution/selectOutdoorDualityList.do"><span>옥외이중함</span></a></li>
-							<li><a href="/ari/product/distribution/selectCollectiveGutterList.do"><span>집합계량기</span></a></li>
+							<li><a href="/ari/product/distribution/selectSusCoverList.do"><span>COVER</span></a></li>
+							<li><a href="/ari/product/distribution/selectSusWaterProofBoxList.do"><span>방수함</span></a></li>
+							<li><a href="/ari/product/distribution/selectSusOutdoorDualityBoxList.do"><span>옥외이중함</span></a></li>
+							<li><a href="/ari/product/distribution/selectSusOutdoorMeterBoxList.do"><span>계량기함</span></a></li>
+							<li><a href="/ari/product/distribution/selectSusBaseList.do"><span>BASE</span></a></li>
+							<li><a href="/ari/product/distribution/selectSusPostList.do"><span>POST</span></a></li>
 							<li class="last"><a href="/ari/product/distribution/selectEtcOrderProductList.do"><span>기타주문품</span></a></li>
 						</ul>
 					</li>

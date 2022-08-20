@@ -110,6 +110,7 @@
 		display: inline-block;
 	}
 }
+
 @media (min-width: 767px) {
 	.slick-slide img
 	{

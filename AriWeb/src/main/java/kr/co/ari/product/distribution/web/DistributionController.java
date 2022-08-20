@@ -3,67 +3,77 @@ package kr.co.ari.product.distribution.web;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+/**
+ * 
+ * @author KIM
+ * @since 2020.04.30
+ * @version 1.1.0
+ * 
+ * 수정이력 : 2020.04.30 최초 생성
+ *         2020.11.07 고객 요청에 의한 스텐분전함 영역 메뉴 개편으로 인한 소스 수정
+ */
+
 @Controller
 public class DistributionController {
-
+	
 	/**
-	 * 제품소개-스텐일반커버
+	 * 제품소개-SUS COVER 이동
 	 * 
-	 *  스텐일반커버에 대한 제품소개 페이지로 이동한다.
+	 *  SUS COVER에 대한 제품소개 페이지로 이동한다.
 	 */
-	@RequestMapping("/ari/product/distribution/selectStanGnrCoverList.do") 
-	public String selectStanGnrCoverList() throws Exception {
-		return "product/distribution/stanGnrCoverList.tiles";
+	@RequestMapping("/ari/product/distribution/selectSusCoverList.do") 
+	public String selectSusCoverList() throws Exception {
+		return "product/distribution/susCoverList.tiles";
 	}
 	
 	/**
-	 * 제품소개-스텐계량기커버 이동
+	 * 제품소개-SUS 방수함 이동
 	 * 
-	 *  파이프에 대한 제품소개 페이지로 이동한다.
+	 *  SUS 방수함에 대한 제품소개 페이지로 이동한다.
 	 */
-	@RequestMapping("/ari/product/distribution/selectStanMeterCoverList.do") 
-	public String selectStanMeterCoverList() throws Exception {
-		return "product/distribution/stanMeterCoverList.tiles";
+	@RequestMapping("/ari/product/distribution/selectSusWaterProofBoxList.do") 
+	public String selectSusWaterProofBoxList() throws Exception {
+		return "product/distribution/susWaterProofBoxList.tiles";
 	}
 	
 	/**
-	 * 제품소개-옥내분전함 이동
+	 * 제품소개-SUS 옥외이중함 이동
 	 * 
-	 *  옥내분전함에 대한 제품소개 페이지로 이동한다.
+	 *  SUS 옥외이중함에 대한 제품소개 페이지로 이동한다.
 	 */
-	@RequestMapping("/ari/product/distribution/selectIndoorDistributionBoxList.do") 
-	public String selectIndoorDistributionBoxList() throws Exception {
-		return "product/distribution/indoorDistributionBoxList.tiles";
+	@RequestMapping("/ari/product/distribution/selectSusOutdoorDualityBoxList.do") 
+	public String selectSusOutdoorDualityBoxList() throws Exception {
+		return "product/distribution/susOutdoorDualityBoxList.tiles";
 	}
 	
 	/**
-	 * 제품소개-옥외분전함 이동
+	 * 제품소개-SUS 계량기함 이동
 	 * 
-	 *  옥외분전함에 대한 제품소개 페이지로 이동한다.
+	 *  SUS 계량기함에 대한 제품소개 페이지로 이동한다.
 	 */
-	@RequestMapping("/ari/product/distribution/selectOutdoorDistributionBoxList.do") 
-	public String selectOutdoorDistributionBoxList() throws Exception {
-		return "product/distribution/outdoorDistributionBoxList.tiles";
+	@RequestMapping("/ari/product/distribution/selectSusOutdoorMeterBoxList.do") 
+	public String selectSusOutdoorMeterBoxList() throws Exception {
+		return "product/distribution/susOutdoorMeterBoxList.tiles";
 	}
 	
 	/**
-	 * 제품소개-옥외이중함 이동
+	 * 제품소개-SUS BASE 이동
 	 * 
-	 *  옥외이중함에 대한 제품소개 페이지로 이동한다.
+	 *  SUS BASE에 대한 제품소개 페이지로 이동한다.
 	 */
-	@RequestMapping("/ari/product/distribution/selectOutdoorDualityList.do") 
-	public String selectChannelList() throws Exception {
-		return "product/distribution/outdoorDualityList.tiles";
+	@RequestMapping("/ari/product/distribution/selectSusBaseList.do") 
+	public String selectSusBaseList() throws Exception {
+		return "product/distribution/susBaseList.tiles";
 	}
 	
 	/**
-	 * 제품소개-집합계량기 이동
+	 * 제품소개-SUS POST 이동
 	 * 
-	 *  집합계량기에 대한 제품소개 페이지로 이동한다.
+	 *  SUS POST에 대한 제품소개 페이지로 이동한다.
 	 */
-	@RequestMapping("/ari/product/distribution/selectCollectiveGutterList.do") 
-	public String selectCollectiveGutterList() throws Exception {
-		return "product/distribution/collectiveGutterList.tiles";
+	@RequestMapping("/ari/product/distribution/selectSusPostList.do") 
+	public String selectSusPostList() throws Exception {
+		return "product/distribution/susPostList.tiles";
 	}
 	
 	/**

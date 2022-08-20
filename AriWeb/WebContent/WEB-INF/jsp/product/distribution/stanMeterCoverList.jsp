@@ -56,7 +56,7 @@ $(document).ready(function(){
 					<hr>
 					<div class="slick-div">
 						<div id="slick_stanMeterCoverSlide">
-							<div><img src="../../../../img/product/distribution/stanMeterCover/stanMeterCover1.jpg" alt="" /></div>
+							<div><img src="../../../../img/product/distribution/stanMeterCover/test3.jpg" alt="" /></div>
 							<div><img src="../../../../img/product/distribution/stanMeterCover/stanMeterCover2.jpg" alt="" /></div>
 							<div><img src="../../../../img/product/distribution/stanMeterCover/stanMeterCover3.jpg" alt="" /></div>
 							<div><img src="../../../../img/product/distribution/stanMeterCover/stanMeterCover4.jpg" alt="" /></div>

@@ -55,5 +55,7 @@
 
 	<bean id="egovHandler" class="kr.co.ari.common.exception.AriExcepHndlr" />
 	<bean id="otherHandler" class="kr.co.ari.common.exception.AriOthersExcepHndlr" />	
+	<bean id="WSOpenAPIService" class="kr.co.ari.common.whoisAPI.WSOpenAPIService" />	
+	
 	
 </beans>
