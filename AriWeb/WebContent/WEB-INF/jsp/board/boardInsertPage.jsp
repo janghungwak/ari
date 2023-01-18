@@ -9,6 +9,7 @@
 <title>견적 문의 입력</title>
 <script type="text/javascript">
 function board_insert(){
+	var regExp = /[`~!@#$%^&*|\\\'\";:\/?]/gi;
 	var bsecchk = $('#bsecchk').is(':checked');
 	var btitle = $('#btitle').val();
 	var bwriter = $('#bwriter').val();
@@ -27,6 +28,12 @@ function board_insert(){
 	if(bpass==""){
 		alert('비밀번호를 입력해주세요');
 		return;
+	} else {
+		
+		if(regExp.test(bpass)){
+			alert('비밀번호는 영어와 숫자만 입력하실 수 있습니다.');
+			return;
+		}
 	}
 	
 	if(bsecchk == true){
