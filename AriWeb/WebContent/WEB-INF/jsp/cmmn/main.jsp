@@ -106,11 +106,9 @@ $(document).ready(function(){
 			
 			<div class="col-mainFotter-box">
 				<h3 class="widgetheading text-center">문의사항</h3>
-					<i class="fa fa-envelope"></i><a href="mailto:kms@arists.co.kr">&nbsp;원자재 유통 : kms@arists.co.kr</a><br>
-					<i class="fa fa-envelope"></i><a href="mailto:niri.19@hanmail.net">&nbsp;분전함 제조 : niri.19@hanmail.net</a>
+					<i class="fa fa-envelope"></i><a href="mailto:kms@arists.co.kr">&nbsp;E-Mail : kms@arists.co.kr</a><br>
 					<br><br>
-					<i class="fa fa-phone"></i> 원자재 유통<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TEL) 031-354-6994 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FAX) 031-354-6937<br> 
-					<i class="fa fa-phone"></i> 분전함 제조<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TEL) 031-8055-0860<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FAX) 031-8055-0870
+					<i class="fa fa-phone"></i> 유선 문의<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TEL) 031-354-6994 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FAX) 031-354-6937<br> 
 					<br><br>
 				<i class="fa fa-home"></i> (주)아리 | 경기도 화성시 정남면 서봉로 877
 			</div>
