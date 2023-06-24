@@ -14,7 +14,8 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 @Component
 public class IPCheckInterceptor extends HandlerInterceptorAdapter {
 	
-	private static String LOCAL_HOST = "127.0.0.1";
+	private static String LOCAL_HOST_IPV4 = "127.0.0.1";
+	private static String LOCAL_HOST_IPV6 = "0:0:0:0:0:0:0:1";
 	private static String KOREA_COUNTRY_CODE = "KR";
 	
 	@Autowired
@@ -39,11 +40,13 @@ public class IPCheckInterceptor extends HandlerInterceptorAdapter {
 	    if (ObjectUtils.isEmpty(clientIp) || "unknown".equalsIgnoreCase(clientIp)) {
 	        clientIp = request.getRemoteAddr();
 	    }
+	    
+	    System.out.println("조회된 IP 정보 : " + clientIp);
 		
 	    // cafe24에서 IP추출한 정보 러시아 IP
 	    //clientIp = "178.214.245.217";
 	    
-	    if(!LOCAL_HOST.equals(clientIp)) {
+	    if((!LOCAL_HOST_IPV4.equals(clientIp)) && (!LOCAL_HOST_IPV6.equals(clientIp))) {
 	    	Map<String,String> clientInfo = WSService.getClientInfoByIPAddress(clientIp);
 	    	
 	    	if(clientInfo == null) {
@@ -51,28 +54,20 @@ public class IPCheckInterceptor extends HandlerInterceptorAdapter {
 	    		return false;
 	    	}
 	    	
-	    	String country = clientInfo.get("countryCode");
+    		String country = clientInfo.get("countryCode");
 
 	    	if(!KOREA_COUNTRY_CODE.equals(country)) {
 	    		System.out.println("해외 IP가 감지되었습니다. 접근을 차단합니다. IP : " + clientIp + ", Country : " + country );
 	    		return false;
 	    	}
-	    }
+    	}
 	    
 	    return true;
 	}
 
 	@Override
-	public void afterCompletion(HttpServletRequest arg0, HttpServletResponse arg1, Object arg2, Exception arg3)
-			throws Exception {
-		// TODO Auto-generated method stub
-		
-	}
+	public void afterCompletion(HttpServletRequest arg0, HttpServletResponse arg1, Object arg2, Exception arg3) throws Exception {}
 
 	@Override
-	public void postHandle(HttpServletRequest arg0, HttpServletResponse arg1, Object arg2, ModelAndView arg3)
-			throws Exception {
-		// TODO Auto-generated method stub
-		
-	}
+	public void postHandle(HttpServletRequest arg0, HttpServletResponse arg1, Object arg2, ModelAndView arg3) throws Exception {}
 }
